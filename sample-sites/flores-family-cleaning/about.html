@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Flores Family Cleaning — San Antonio, TX</title>
+  <meta name="description" content="Meet Maria and Carlos Flores — a San Antonio family who turned a passion for clean homes into a trusted local business. Learn our story." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            terracotta: '#C75B2A',
+            amber:      '#F4A261',
+            cream:      '#FDF6EE',
+          },
+          fontFamily: {
+            serif: ['Lora', 'Georgia', 'serif'],
+            sans:  ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-cream text-gray-800 font-sans antialiased">
+
+
+  <!-- ======================== NAV ======================== -->
+  <nav class="sticky top-0 z-50 bg-white border-b border-orange-100" id="navbar">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <span class="text-2xl">🧹</span>
+        <div>
+          <p class="font-serif font-bold text-terracotta leading-none text-lg">Flores Family</p>
+          <p class="text-xs text-gray-500 tracking-wide leading-none">CLEANING</p>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"   class="text-sm font-medium text-gray-600 hover:text-terracotta transition-colors">Home</a>
+        <a href="about.html"   class="text-sm font-medium text-terracotta border-b border-terracotta pb-0.5">About</a>
+        <a href="contact.html" class="text-sm font-medium text-gray-600 hover:text-terracotta transition-colors">Contact</a>
+        <a href="contact.html" class="bg-terracotta text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-orange-700 transition-colors">
+          Book a Cleaning
+        </a>
+      </div>
+      <button id="menu-btn" class="md:hidden text-gray-600" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-orange-100 px-6 py-4 flex flex-col gap-4">
+      <a href="index.html"   class="text-sm font-medium text-gray-700">Home</a>
+      <a href="about.html"   class="text-sm font-medium text-terracotta">About</a>
+      <a href="contact.html" class="text-sm font-medium text-gray-700">Contact</a>
+      <a href="contact.html" class="bg-terracotta text-white text-sm font-medium px-5 py-2.5 rounded-full text-center">Book a Cleaning</a>
+    </div>
+  </nav>
+
+
+  <!-- ======================== PAGE HERO ======================== -->
+  <section class="relative overflow-hidden bg-cream px-6 py-20 md:py-24">
+    <div class="absolute top-0 right-0 w-80 h-80 bg-amber/20 rounded-full blur-3xl -translate-y-1/4 translate-x-1/4 pointer-events-none"></div>
+    <div class="relative z-10 max-w-3xl mx-auto text-center">
+      <span class="inline-block bg-amber/30 text-terracotta text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
+        Our Story
+      </span>
+      <h1 class="font-serif text-4xl sm:text-5xl font-bold text-gray-800 mb-5 leading-tight">
+        We&rsquo;re Not Just a Cleaning Company.<br />
+        <span class="text-terracotta">We&rsquo;re Your Neighbors.</span>
+      </h1>
+      <p class="text-gray-600 text-lg leading-relaxed">
+        Every home we clean belongs to someone in our community — and we treat it that way.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ======================== OUR STORY ======================== -->
+  <section class="py-16 md:py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+
+        <!-- Photo placeholder -->
+        <div class="bg-amber/15 rounded-3xl aspect-[4/5] flex items-center justify-center relative overflow-hidden">
+          <div class="text-center p-8">
+            <span class="text-8xl block mb-4">👨‍👩‍👧‍👦</span>
+            <p class="font-serif text-xl font-semibold text-gray-700">The Flores Family</p>
+            <p class="text-sm text-gray-500 mt-1">Maria, Carlos &amp; the crew</p>
+          </div>
+          <!-- Amber accent bar on side -->
+          <div class="absolute left-0 top-8 bottom-8 w-1.5 bg-terracotta rounded-full"></div>
+        </div>
+
+        <!-- Story text -->
+        <div>
+          <p class="text-terracotta text-xs font-semibold tracking-widest uppercase mb-4">How It Started</p>
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
+            Hi, we&rsquo;re Maria and Carlos.
+          </h2>
+          <div class="space-y-4 text-gray-600 text-base leading-relaxed">
+            <p>
+              In 2015, Maria started cleaning homes on weekends to help support our family. What began as
+              a side job quickly grew into something more — because she genuinely cared about every home
+              she walked into.
+            </p>
+            <p>
+              Carlos joined a year later, and together we built Flores Family Cleaning into one of San
+              Antonio&rsquo;s most trusted names in residential cleaning. Today our small team of trained,
+              background-checked cleaners serves hundreds of families across the city.
+            </p>
+            <p>
+              We&rsquo;re still family-run, still hands-on, and still as committed to quality as the
+              day Maria cleaned that very first house on Elm Street.
+            </p>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="contact.html"
+               class="bg-terracotta text-white font-medium px-7 py-3.5 rounded-full hover:bg-orange-700 transition-colors">
+              Book Your First Clean
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================== VALUES ======================== -->
+  <section class="py-16 md:py-24 px-6 bg-cream">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-12">
+        <p class="text-terracotta text-xs font-semibold tracking-widest uppercase mb-3">What We Stand For</p>
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800">Our Values</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-6">
+
+        <div class="bg-white rounded-2xl p-7 border border-orange-100 text-center card">
+          <div class="text-4xl mb-4">🤝</div>
+          <h3 class="font-serif text-lg font-semibold text-gray-800 mb-2">Trust</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Every cleaner is background-checked and trained. You should feel completely comfortable
+            letting us into your home.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-7 border border-orange-100 text-center card">
+          <div class="text-4xl mb-4">💯</div>
+          <h3 class="font-serif text-lg font-semibold text-gray-800 mb-2">Quality</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            We don&rsquo;t cut corners. Every visit follows a thorough checklist so nothing gets missed —
+            ever.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-7 border border-orange-100 text-center card">
+          <div class="text-4xl mb-4">💬</div>
+          <h3 class="font-serif text-lg font-semibold text-gray-800 mb-2">Communication</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            We confirm every appointment, show up on time, and follow up after every clean to make
+            sure you&rsquo;re happy.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================== CTA ======================== -->
+  <section class="py-16 md:py-20 px-6 bg-terracotta text-white">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">
+        Ready to Work With Us?
+      </h2>
+      <p class="text-white/80 text-lg leading-relaxed mb-8">
+        We&rsquo;d love to earn your trust. Book your first cleaning today — first-time customers
+        always receive a free quote.
+      </p>
+      <a href="contact.html"
+         class="inline-block bg-white text-terracotta font-semibold px-8 py-3.5 rounded-full hover:bg-cream transition-colors shadow-sm">
+        Get a Free Quote
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="bg-gray-800 text-white py-12 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 mb-10">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xl">🧹</span>
+            <div>
+              <p class="font-serif font-bold text-amber leading-none">Flores Family</p>
+              <p class="text-xs text-gray-400 tracking-wide leading-none">CLEANING</p>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">Family-owned cleaning services in San Antonio, TX. Trusted by over 500 homes since 2015.</p>
+        </div>
+        <div>
+          <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4">Navigate</p>
+          <div class="flex flex-col gap-2">
+            <a href="index.html"   class="text-sm text-gray-300 hover:text-white transition-colors">Home</a>
+            <a href="about.html"   class="text-sm text-gray-300 hover:text-white transition-colors">About Us</a>
+            <a href="contact.html" class="text-sm text-gray-300 hover:text-white transition-colors">Contact / Book</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4">Contact Us</p>
+          <div class="space-y-2">
+            <p class="text-sm text-gray-300">📞 <a href="tel:+12105550147" class="hover:text-white">(210) 555-0147</a></p>
+            <p class="text-sm text-gray-300">📧 <a href="mailto:hello@floresfamilycleaning.com" class="hover:text-white">hello@floresfamilycleaning.com</a></p>
+            <p class="text-sm text-gray-300">🕐 Mon–Sat, 8am–6pm</p>
+            <p class="text-sm text-gray-300">📍 San Antonio, TX &amp; surrounding areas</p>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-8 text-center">
+        <p class="text-gray-500 text-sm">&copy; 2025 Flores Family Cleaning. All rights reserved.</p>
+        <p class="text-gray-600 text-xs mt-1">Website by <a href="../../index.html" class="hover:text-amber transition-colors">Root &amp; Render</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
