@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Root &amp; Render</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory:        '#FAF7F2',
+            beige:        '#E8DFD4',
+            'sage-dark':  '#5A6F5D',
+            'sage-mid':   '#8FA68F',
+            'sage-light': '#B7C9B1',
+            'blush-dark': '#EBC6C6',
+            'blush-light':'#F7E3E0',
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans:  ['DM Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-ivory text-sage-dark font-sans antialiased">
+
+
+  <!-- ================================================ -->
+  <!-- NAV                                              -->
+  <!-- ================================================ -->
+  <nav class="sticky top-0 z-50 bg-ivory/95 backdrop-blur-sm border-b border-beige" id="navbar">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <a href="index.html" class="font-serif text-2xl font-semibold text-sage-dark tracking-tight">
+        Root &amp; Render
+      </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"           class="text-sm font-medium hover:text-sage-mid transition-colors">Home</a>
+        <a href="services.html"        class="text-sm font-medium hover:text-sage-mid transition-colors">Services</a>
+        <a href="index.html#portfolio" class="text-sm font-medium hover:text-sage-mid transition-colors">Portfolio</a>
+        <a href="about.html"           class="text-sm font-medium hover:text-sage-mid transition-colors">About</a>
+        <a href="contact.html"         class="text-sm font-medium text-sage-mid border-b border-sage-mid pb-0.5">Contact</a>
+        <a href="contact.html"
+           class="bg-sage-dark text-ivory text-sm font-medium px-5 py-2.5 rounded-full hover:bg-sage-mid transition-colors">
+          Start Growing Today
+        </a>
+      </div>
+
+      <button id="menu-btn" class="md:hidden text-sage-dark" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-ivory border-t border-beige px-6 py-4 flex flex-col gap-4">
+      <a href="index.html"           class="text-sm font-medium">Home</a>
+      <a href="services.html"        class="text-sm font-medium">Services</a>
+      <a href="index.html#portfolio" class="text-sm font-medium">Portfolio</a>
+      <a href="about.html"           class="text-sm font-medium">About</a>
+      <a href="contact.html"         class="text-sm font-medium text-sage-mid">Contact</a>
+      <a href="contact.html"
+         class="bg-sage-dark text-ivory text-sm font-medium px-5 py-2.5 rounded-full text-center">
+        Start Growing Today
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- ================================================ -->
+  <!-- PAGE HERO                                        -->
+  <!-- ================================================ -->
+  <section class="relative overflow-hidden px-6 py-28 bg-ivory">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+      <p class="inline-block bg-blush-light text-sage-dark text-xs font-medium tracking-widest uppercase px-4 py-1.5 rounded-full mb-8">
+        Get In Touch
+      </p>
+      <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-sage-dark mb-6">
+        Let&rsquo;s Talk About<br />
+        <em class="text-blush-dark not-italic">Your Business.</em>
+      </h1>
+      <p class="text-lg md:text-xl text-sage-mid max-w-2xl mx-auto leading-relaxed">
+        No commitment, no pressure &mdash; just a free conversation about where your business is
+        and where you want it to go. Whether you&rsquo;re brand new or established, small or growing,
+        you belong here. I can&rsquo;t wait to hear your story.
+      </p>
+    </div>
+  </section>
+
+  <!-- Leaf divider -->
+  <div class="leaf-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 text-sage-light">
+      <path d="M0,30 Q150,10 300,30 T600,30 T900,30 T1200,30" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/>
+      <ellipse cx="150" cy="22" rx="12" ry="6"   fill="currentColor" opacity="0.35" transform="rotate(-20 150 22)"/>
+      <ellipse cx="350" cy="38" rx="10" ry="5"   fill="currentColor" opacity="0.35" transform="rotate(15 350 38)"/>
+      <ellipse cx="600" cy="22" rx="14" ry="7"   fill="currentColor" opacity="0.35" transform="rotate(-10 600 22)"/>
+      <ellipse cx="850" cy="36" rx="11" ry="5.5" fill="currentColor" opacity="0.35" transform="rotate(20 850 36)"/>
+      <ellipse cx="1050" cy="22" rx="12" ry="6"  fill="currentColor" opacity="0.35" transform="rotate(-15 1050 22)"/>
+    </svg>
+  </div>
+
+
+  <!-- ================================================ -->
+  <!-- CONTACT FORM                                     -->
+  <!-- ================================================ -->
+  <section class="py-24 px-6 bg-ivory">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+        <!-- Left: context copy -->
+        <div class="lg:sticky lg:top-28">
+          <p class="text-sage-mid text-xs font-medium tracking-widest uppercase mb-4">Start Here</p>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold text-sage-dark mb-6 leading-tight">
+            Tell me about your business.
+          </h2>
+          <p class="text-gray-600 text-lg leading-relaxed mb-8">
+            Fill out the form and I&rsquo;ll be in touch within 1&ndash;2 business days.
+            No tech jargon, no pressure. Just a real conversation.
+          </p>
+
+          <!-- Trust signals -->
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-sage-light/50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-sage-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <p class="text-gray-600 text-sm leading-relaxed">Free initial consultation — no strings attached</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-sage-light/50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-sage-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <p class="text-gray-600 text-sm leading-relaxed">Response within 1&ndash;2 business days</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-sage-light/50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-sage-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <p class="text-gray-600 text-sm leading-relaxed">50% deposit to start — no surprise fees</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-sage-light/50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-sage-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <p class="text-gray-600 text-sm leading-relaxed">Proudly serving Hondo &amp; Medina County</p>
+            </div>
+          </div>
+
+          <!-- Decorative leaf -->
+          <div class="mt-12 opacity-30">
+            <svg viewBox="0 0 120 160" class="w-20 text-sage-mid">
+              <path d="M60,150 Q10,90 60,10 Q110,90 60,150Z" fill="currentColor"/>
+              <line x1="60" y1="10" x2="60" y2="150" stroke="#FAF7F2" stroke-width="2"/>
+              <line x1="60" y1="45" x2="85" y2="33" stroke="#FAF7F2" stroke-width="1.5"/>
+              <line x1="60" y1="70" x2="35" y2="58" stroke="#FAF7F2" stroke-width="1.5"/>
+              <line x1="60" y1="95" x2="88" y2="83" stroke="#FAF7F2" stroke-width="1.5"/>
+              <line x1="60" y1="118" x2="36" y2="108" stroke="#FAF7F2" stroke-width="1.5"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Right: the form -->
+        <div>
+          <form id="contact-form" action="#" class="bg-beige/30 rounded-3xl p-8 md:p-10 border border-beige space-y-5">
+
+            <!-- Business Name -->
+            <div>
+              <label class="block text-sm font-medium text-sage-dark mb-2">Business Name</label>
+              <input type="text" name="business_name" placeholder="Your Business Name" required
+                class="w-full bg-ivory border border-beige rounded-xl px-4 py-3 text-sage-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sage-mid transition" />
+            </div>
+
+            <!-- Business Address -->
+            <div>
+              <label class="block text-sm font-medium text-sage-dark mb-2">Business Address</label>
+              <input type="text" name="business_address" placeholder="123 Main St, Hondo, TX 78861"
+                class="w-full bg-ivory border border-beige rounded-xl px-4 py-3 text-sage-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sage-mid transition" />
+            </div>
+
+            <!-- First + Last Name -->
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-sage-dark mb-2">First Name</label>
+                <input type="text" name="first_name" placeholder="First" required
+                  class="w-full bg-ivory border border-beige rounded-xl px-4 py-3 text-sage-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sage-mid transition" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-sage-dark mb-2">Last Name</label>
+                <input type="text" name="last_name" placeholder="Last" required
+                  class="w-full bg-ivory border border-beige rounded-xl px-4 py-3 text-sage-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sage-mid transition" />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label class="block text-sm font-medium text-sage-dark mb-2">Email Address</label>
+              <input type="email" name="email" placeholder="you@yourbusiness.com" required
+                class="w-full bg-ivory border border-beige rounded-xl px-4 py-3 text-sage-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sage-mid transition" />
+            </div>
+
+            <!-- Phone (optional) -->
+            <div>
+              <label class="block text-sm font-medium text-sage-dark mb-2">
+                Phone Number <span class="text-gray-400 font-normal">(optional)</span>
+              </label>
+              <input type="tel" name="phone" placeholder="(830) 555-1234"
+                class="w-full bg-ivory border border-beige rounded-xl px-4 py-3 text-sage-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sage-mid transition" />
+            </div>
+
+            <!-- Package dropdown -->
+            <div>
+              <label class="block text-sm font-medium text-sage-dark mb-2">Package Interested In</label>
+              <select name="package"
+                class="w-full bg-ivory border border-beige rounded-xl px-4 py-3 text-sage-dark focus:outline-none focus:ring-2 focus:ring-sage-mid transition">
+                <option value="" disabled selected>Select a package...</option>
+                <option>🌱 Seed &mdash; Getting started</option>
+                <option>🌿 Sprout &mdash; Ready to grow</option>
+                <option>🌸 Bloom &mdash; Full digital presence</option>
+                <option>Not Sure Yet!</option>
+              </select>
+            </div>
+
+            <!-- How did you hear -->
+            <div>
+              <label class="block text-sm font-medium text-sage-dark mb-2">How did you hear about us?</label>
+              <select name="referral"
+                class="w-full bg-ivory border border-beige rounded-xl px-4 py-3 text-sage-dark focus:outline-none focus:ring-2 focus:ring-sage-mid transition">
+                <option value="" disabled selected>Select one...</option>
+                <option>Word of mouth</option>
+                <option>Google</option>
+                <option>Social media</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label class="block text-sm font-medium text-sage-dark mb-2">
+                Tell me about your business and what you need
+              </label>
+              <textarea rows="5" name="message"
+                placeholder="Share a bit about your business, what you're looking for, and any questions you have..."
+                class="w-full bg-ivory border border-beige rounded-xl px-4 py-3 text-sage-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sage-mid transition resize-none"></textarea>
+            </div>
+
+            <!-- Submit -->
+            <div class="pt-2">
+              <button type="submit" id="submit-btn"
+                class="w-full bg-sage-dark text-ivory font-medium px-10 py-4 rounded-full hover:bg-sage-mid transition-colors shadow-sm text-base">
+                Start Growing Today 🌱
+              </button>
+            </div>
+
+          </form>
+
+          <!-- Success message (hidden until submit) -->
+          <div id="success-msg" class="hidden mt-6 bg-sage-light/30 border border-sage-light rounded-2xl p-6 text-center">
+            <div class="text-3xl mb-3">🌱</div>
+            <h3 class="font-serif text-xl font-semibold text-sage-dark mb-2">Message received!</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Thank you for reaching out. Tara will review your information and be in touch within
+              1&ndash;2 business days. Talk soon!
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Leaf divider -->
+  <div class="leaf-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 text-blush-dark">
+      <path d="M0,30 Q200,50 400,30 T800,30 T1200,30" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
+      <ellipse cx="200"  cy="42" rx="12" ry="5"   fill="currentColor" opacity="0.3" transform="rotate(20 200 42)"/>
+      <ellipse cx="450"  cy="20" rx="10" ry="5"   fill="currentColor" opacity="0.3" transform="rotate(-15 450 20)"/>
+      <ellipse cx="700"  cy="40" rx="13" ry="6"   fill="currentColor" opacity="0.3" transform="rotate(10 700 40)"/>
+      <ellipse cx="950"  cy="22" rx="11" ry="5"   fill="currentColor" opacity="0.3" transform="rotate(-20 950 22)"/>
+    </svg>
+  </div>
+
+
+  <!-- ================================================ -->
+  <!-- WHAT HAPPENS NEXT                                -->
+  <!-- ================================================ -->
+  <section class="py-24 px-6 bg-beige/40">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="text-center mb-16">
+        <p class="text-sage-mid text-xs font-medium tracking-widest uppercase mb-3">The Process</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-sage-dark">
+          What Happens After You Reach Out
+        </h2>
+      </div>
+
+      <!--
+        3-step visual layout.
+        On desktop: 3 columns with a connecting line running through the step numbers.
+        Each step: numbered circle → title → description.
+      -->
+      <div class="relative">
+
+        <!-- Connecting line (desktop only) -->
+        <div class="hidden md:block absolute top-8 left-[16.66%] right-[16.66%] h-px bg-beige z-0"></div>
+
+        <div class="grid md:grid-cols-3 gap-10 relative z-10">
+
+          <!-- Step 1 -->
+          <div class="flex flex-col items-center text-center">
+            <div class="w-16 h-16 rounded-full bg-sage-dark text-ivory flex items-center justify-center font-serif text-2xl font-bold mb-6 shadow-md ring-4 ring-ivory">
+              1
+            </div>
+            <h3 class="font-serif text-xl font-semibold text-sage-dark mb-3">
+              I&rsquo;ll Review Your Information
+            </h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Within 1&ndash;2 business days I&rsquo;ll personally review everything you shared and
+              get a feel for what your business needs.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex flex-col items-center text-center">
+            <div class="w-16 h-16 rounded-full bg-blush-dark text-sage-dark flex items-center justify-center font-serif text-2xl font-bold mb-6 shadow-md ring-4 ring-ivory">
+              2
+            </div>
+            <h3 class="font-serif text-xl font-semibold text-sage-dark mb-3">
+              I&rsquo;ll Reach Out by Email
+            </h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              I&rsquo;ll send a friendly email to introduce myself and schedule a free consultation
+              call where we can talk through your vision and answer any questions.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex flex-col items-center text-center">
+            <div class="w-16 h-16 rounded-full bg-sage-light text-sage-dark flex items-center justify-center font-serif text-2xl font-bold mb-6 shadow-md ring-4 ring-ivory">
+              3
+            </div>
+            <h3 class="font-serif text-xl font-semibold text-sage-dark mb-3">
+              We&rsquo;ll Talk It Through
+            </h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              No tech jargon, no confusing contracts &mdash; just a real conversation about your
+              business. From there we&rsquo;ll decide together how to move forward.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Follow-up note -->
+      <div class="mt-14 bg-ivory border border-beige rounded-2xl px-8 py-6 text-center max-w-2xl mx-auto">
+        <p class="text-gray-500 text-sm leading-relaxed italic">
+          And if life gets busy and I don&rsquo;t hear back &mdash; no worries. I&rsquo;ll give you a
+          quick follow-up to make sure your message didn&rsquo;t get lost. Because around here,
+          nobody falls through the cracks. 🌿
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Leaf divider -->
+  <div class="leaf-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 text-sage-mid">
+      <path d="M0,30 Q150,50 300,30 T600,30 T900,30 T1200,30" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.3"/>
+      <ellipse cx="100"  cy="40" rx="10" ry="5"   fill="currentColor" opacity="0.25" transform="rotate(15 100 40)"/>
+      <ellipse cx="400"  cy="22" rx="12" ry="6"   fill="currentColor" opacity="0.25" transform="rotate(-10 400 22)"/>
+      <ellipse cx="700"  cy="38" rx="11" ry="5.5" fill="currentColor" opacity="0.25" transform="rotate(20 700 38)"/>
+      <ellipse cx="1000" cy="24" rx="10" ry="5"   fill="currentColor" opacity="0.25" transform="rotate(-15 1000 24)"/>
+    </svg>
+  </div>
+
+
+  <!-- ================================================ -->
+  <!-- OTHER WAYS TO REACH ME                           -->
+  <!-- ================================================ -->
+  <section class="py-24 px-6 bg-ivory">
+    <div class="max-w-4xl mx-auto">
+
+      <div class="text-center mb-14">
+        <p class="text-sage-mid text-xs font-medium tracking-widest uppercase mb-3">More Ways to Connect</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-sage-dark mb-4">
+          Other Ways to Reach Me
+        </h2>
+        <p class="text-gray-500 text-base max-w-lg mx-auto leading-relaxed">
+          I&rsquo;m most responsive by email and typically reply within 1&ndash;2 business days.
+          For a quicker response feel free to reach out on social media too!
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-6">
+
+        <!-- Email -->
+        <div class="bg-ivory border border-beige rounded-2xl p-8 text-center hover:shadow-md transition-all hover:-translate-y-1 service-card">
+          <div class="w-14 h-14 rounded-2xl bg-sage-light/40 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-sage-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <p class="text-xs font-medium tracking-widest uppercase text-sage-mid mb-2">Email</p>
+          <a href="mailto:hello@rootandrender.com"
+             class="font-medium text-sage-dark hover:text-sage-mid transition-colors text-sm break-all">
+            hello@rootandrender.com
+          </a>
+          <p class="text-xs text-gray-400 mt-2">Placeholder — coming soon</p>
+        </div>
+
+        <!-- Instagram -->
+        <div class="bg-ivory border border-beige rounded-2xl p-8 text-center hover:shadow-md transition-all hover:-translate-y-1 service-card">
+          <div class="w-14 h-14 rounded-2xl bg-blush-light flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-sage-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+              <circle cx="12" cy="12" r="4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <p class="text-xs font-medium tracking-widest uppercase text-sage-mid mb-2">Instagram</p>
+          <a href="#"
+             class="font-medium text-sage-dark hover:text-sage-mid transition-colors text-sm">
+            @rootandrender
+          </a>
+          <p class="text-xs text-gray-400 mt-2">Placeholder — coming soon</p>
+        </div>
+
+        <!-- Facebook -->
+        <div class="bg-ivory border border-beige rounded-2xl p-8 text-center hover:shadow-md transition-all hover:-translate-y-1 service-card">
+          <div class="w-14 h-14 rounded-2xl bg-blush-dark/30 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-sage-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+            </svg>
+          </div>
+          <p class="text-xs font-medium tracking-widest uppercase text-sage-mid mb-2">Facebook</p>
+          <a href="#"
+             class="font-medium text-sage-dark hover:text-sage-mid transition-colors text-sm">
+            Root &amp; Render
+          </a>
+          <p class="text-xs text-gray-400 mt-2">Placeholder — coming soon</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Leaf divider -->
+  <div class="leaf-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 text-sage-light">
+      <path d="M0,30 Q300,10 600,30 T1200,30" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
+      <ellipse cx="250"  cy="20" rx="11" ry="5.5" fill="currentColor" opacity="0.3" transform="rotate(-15 250 20)"/>
+      <ellipse cx="500"  cy="38" rx="12" ry="6"   fill="currentColor" opacity="0.3" transform="rotate(20 500 38)"/>
+      <ellipse cx="750"  cy="22" rx="10" ry="5"   fill="currentColor" opacity="0.3" transform="rotate(-10 750 22)"/>
+      <ellipse cx="1000" cy="40" rx="13" ry="6.5" fill="currentColor" opacity="0.3" transform="rotate(15 1000 40)"/>
+    </svg>
+  </div>
+
+
+  <!-- ================================================ -->
+  <!-- CLOSING CTA                                      -->
+  <!-- ================================================ -->
+  <section class="relative overflow-hidden py-28 px-6 bg-sage-dark text-ivory">
+    <!-- Blob accents on dark background -->
+    <div class="absolute -top-20 -right-20 w-80 h-80 bg-sage-mid/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-16 -left-16 w-64 h-64 bg-blush-dark/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto text-center">
+
+      <!-- Botanical leaf accent -->
+      <div class="flex justify-center mb-8 opacity-40">
+        <svg viewBox="0 0 80 100" class="w-12 text-sage-light">
+          <path d="M40,95 Q5,55 40,5 Q75,55 40,95Z" fill="currentColor"/>
+          <line x1="40" y1="5" x2="40" y2="95" stroke="#5A6F5D" stroke-width="1.5"/>
+          <line x1="40" y1="28" x2="58" y2="20" stroke="#5A6F5D" stroke-width="1"/>
+          <line x1="40" y1="48" x2="23" y2="40" stroke="#5A6F5D" stroke-width="1"/>
+          <line x1="40" y1="66" x2="57" y2="58" stroke="#5A6F5D" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <p class="text-sage-light text-xs font-medium tracking-widest uppercase mb-4">Rooted in Community</p>
+      <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        This Community Is Worth Investing In.
+      </h2>
+      <p class="text-sage-light/80 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+        Hondo and Medina County are full of hardworking people building something real.
+        Root &amp; Render exists to make sure those businesses get the online presence they deserve.
+        Let&rsquo;s grow this community together.
+      </p>
+      <a href="#contact-form"
+         class="inline-block bg-blush-dark text-sage-dark font-medium px-10 py-4 rounded-full hover:bg-blush-light transition-colors shadow-sm text-base">
+        Start Growing Today 🌱
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ================================================ -->
+  <!-- FOOTER                                           -->
+  <!-- ================================================ -->
+  <footer class="bg-sage-dark text-ivory py-16 px-6 border-t border-sage-mid/20">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="grid md:grid-cols-3 gap-10 mb-12">
+        <div>
+          <p class="font-serif text-2xl font-semibold mb-2">Root &amp; Render</p>
+          <p class="text-sage-light text-sm leading-relaxed">Rooted in strategy.<br />Rendered beautifully.</p>
+        </div>
+        <div>
+          <p class="text-xs font-medium tracking-widest uppercase text-sage-light mb-4">Navigate</p>
+          <div class="flex flex-col gap-2">
+            <a href="index.html"           class="text-sm text-ivory/80 hover:text-ivory transition-colors">Home</a>
+            <a href="services.html"        class="text-sm text-ivory/80 hover:text-ivory transition-colors">Services</a>
+            <a href="index.html#portfolio" class="text-sm text-ivory/80 hover:text-ivory transition-colors">Portfolio</a>
+            <a href="about.html"           class="text-sm text-ivory/80 hover:text-ivory transition-colors">About</a>
+            <a href="contact.html"         class="text-sm text-ivory/80 hover:text-ivory transition-colors">Contact</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-medium tracking-widest uppercase text-sage-light mb-4">Get In Touch</p>
+          <p class="text-sm text-ivory/80 mb-4">&#128231; hello@rootandrender.com</p>
+          <div class="flex gap-4">
+            <a href="#" class="text-sm text-ivory/80 hover:text-ivory transition-colors">Instagram</a>
+            <a href="#" class="text-sm text-ivory/80 hover:text-ivory transition-colors">Facebook</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-sage-mid/30 pt-8 text-center">
+        <p class="text-sage-light/60 text-sm">&copy; 2025 Root &amp; Render. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+  <script>
+    // ── CONTACT FORM ────────────────────────────────────────────────────────────
+    const form       = document.getElementById('contact-form');
+    const successMsg = document.getElementById('success-msg');
+    const submitBtn  = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Hide the form, show the success message
+      form.classList.add('hidden');
+      successMsg.classList.remove('hidden');
+      successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  </script>
+
+</body>
+</html>

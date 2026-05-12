@@ -1,0 +1,108 @@
+/*
+  styles.css — custom styles that Tailwind utility classes can't cover on their own.
+  Tailwind is great for spacing, colors, layout, and typography, but things like
+  blurred blob shapes, subtle animations, and the paper texture need raw CSS.
+*/
+
+/* ─── BLOBS ────────────────────────────────────────────────────────────────
+   Blobs are large, soft circles placed absolutely inside the Hero section.
+   filter: blur() makes them feathery and organic-looking.
+   pointer-events: none means they don't block clicks.
+*/
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blob-1 {
+  width: 420px;
+  height: 420px;
+  background: #B7C9B1; /* sage-light */
+  opacity: 0.22;
+  top: -120px;
+  right: -100px;
+}
+
+.blob-2 {
+  width: 320px;
+  height: 320px;
+  background: #EBC6C6; /* blush-dark */
+  opacity: 0.22;
+  bottom: 40px;
+  left: -80px;
+}
+
+.blob-3 {
+  width: 220px;
+  height: 220px;
+  background: #F7E3E0; /* blush-light */
+  opacity: 0.38;
+  top: 38%;
+  right: 22%;
+}
+
+/* ─── LEAF DIVIDERS ─────────────────────────────────────────────────────────
+   Full-width SVG wrappers that sit between sections.
+*/
+.leaf-divider {
+  overflow: hidden;
+  line-height: 0;
+  padding: 0.5rem 0;
+}
+
+/* ─── SERVICE CARDS ─────────────────────────────────────────────────────────
+   Subtle lift on hover — Tailwind's hover:shadow-md handles the shadow,
+   this handles the upward movement.
+*/
+.service-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ─── PORTFOLIO CARDS ───────────────────────────────────────────────────────
+   Tailwind already handles hover:-translate-y-1 and hover:shadow-xl inline,
+   but we set the base transition here for smoothness.
+*/
+.portfolio-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ─── PAPER TEXTURE ─────────────────────────────────────────────────────────
+   A very subtle grain overlay on the body to give the ivory background
+   a linen/paper feel. Uses a CSS noise pattern via SVG filter.
+*/
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* ─── SMOOTH SCROLL ─────────────────────────────────────────────────────────
+   Makes all anchor link jumps animate instead of snapping instantly.
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─── FORM SELECT ARROW ─────────────────────────────────────────────────────
+   Browsers style <select> differently. This restores a consistent look
+   and adds a custom arrow using a background SVG.
+*/
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%235A6F5D'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.2em;
+  padding-right: 3rem;
+  cursor: pointer;
+}

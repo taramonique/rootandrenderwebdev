@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Tara — Root &amp; Render</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory:        '#FAF7F2',
+            beige:        '#E8DFD4',
+            'sage-dark':  '#5A6F5D',
+            'sage-mid':   '#8FA68F',
+            'sage-light': '#B7C9B1',
+            'blush-dark': '#EBC6C6',
+            'blush-light':'#F7E3E0',
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans:  ['DM Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-ivory text-sage-dark font-sans antialiased">
+
+
+  <!-- ================================================ -->
+  <!-- NAV                                              -->
+  <!-- ================================================ -->
+  <nav class="sticky top-0 z-50 bg-ivory/95 backdrop-blur-sm border-b border-beige" id="navbar">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <a href="index.html" class="font-serif text-2xl font-semibold text-sage-dark tracking-tight">
+        Root &amp; Render
+      </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"           class="text-sm font-medium hover:text-sage-mid transition-colors">Home</a>
+        <a href="services.html"        class="text-sm font-medium hover:text-sage-mid transition-colors">Services</a>
+        <a href="index.html#portfolio" class="text-sm font-medium hover:text-sage-mid transition-colors">Portfolio</a>
+        <a href="about.html"           class="text-sm font-medium text-sage-mid border-b border-sage-mid pb-0.5">About</a>
+        <a href="contact.html"   class="text-sm font-medium hover:text-sage-mid transition-colors">Contact</a>
+        <a href="contact.html"
+           class="bg-sage-dark text-ivory text-sm font-medium px-5 py-2.5 rounded-full hover:bg-sage-mid transition-colors">
+          Start Growing Today
+        </a>
+      </div>
+
+      <button id="menu-btn" class="md:hidden text-sage-dark" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-ivory border-t border-beige px-6 py-4 flex flex-col gap-4">
+      <a href="index.html"           class="text-sm font-medium">Home</a>
+      <a href="services.html"        class="text-sm font-medium">Services</a>
+      <a href="index.html#portfolio" class="text-sm font-medium">Portfolio</a>
+      <a href="about.html"           class="text-sm font-medium text-sage-mid">About</a>
+      <a href="contact.html"   class="text-sm font-medium">Contact</a>
+      <a href="contact.html"
+         class="bg-sage-dark text-ivory text-sm font-medium px-5 py-2.5 rounded-full text-center">
+        Start Growing Today
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- ================================================ -->
+  <!-- PAGE HERO                                        -->
+  <!-- ================================================ -->
+  <section class="relative overflow-hidden px-6 py-28 bg-ivory">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+      <p class="inline-block bg-blush-light text-sage-dark text-xs font-medium tracking-widest uppercase px-4 py-1.5 rounded-full mb-8">
+        About Tara
+      </p>
+      <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-sage-dark mb-6">
+        The Person Behind<br />
+        <em class="text-blush-dark not-italic">the Pixels.</em>
+      </h1>
+      <p class="text-lg md:text-xl text-sage-mid max-w-2xl mx-auto leading-relaxed">
+        A little bit about me, why I started Root &amp; Render, and what drives me
+        to help Medina County businesses thrive online.
+      </p>
+    </div>
+  </section>
+
+  <!-- Leaf divider -->
+  <div class="leaf-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 text-sage-light">
+      <path d="M0,30 Q150,10 300,30 T600,30 T900,30 T1200,30" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/>
+      <ellipse cx="150" cy="22" rx="12" ry="6"   fill="currentColor" opacity="0.35" transform="rotate(-20 150 22)"/>
+      <ellipse cx="350" cy="38" rx="10" ry="5"   fill="currentColor" opacity="0.35" transform="rotate(15 350 38)"/>
+      <ellipse cx="600" cy="22" rx="14" ry="7"   fill="currentColor" opacity="0.35" transform="rotate(-10 600 22)"/>
+      <ellipse cx="850" cy="36" rx="11" ry="5.5" fill="currentColor" opacity="0.35" transform="rotate(20 850 36)"/>
+      <ellipse cx="1050" cy="22" rx="12" ry="6"  fill="currentColor" opacity="0.35" transform="rotate(-15 1050 22)"/>
+    </svg>
+  </div>
+
+
+  <!-- ================================================ -->
+  <!-- MY STORY                                         -->
+  <!-- ================================================ -->
+  <section class="py-24 px-6 bg-ivory">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+
+        <!-- Photo placeholder -->
+        <div class="relative order-2 md:order-1">
+          <div class="aspect-[4/5] bg-blush-light rounded-3xl flex items-center justify-center relative overflow-hidden">
+            <div class="text-center text-sage-mid/60 p-8">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" class="w-32 h-32 mx-auto mb-4 opacity-50">
+                <circle cx="50" cy="32" r="22" fill="#8FA68F"/>
+                <path d="M8,115 Q8,68 50,68 Q92,68 92,115" fill="#8FA68F"/>
+                <path d="M64,16 Q82,2 78,28 Q62,22 64,16Z" fill="#B7C9B1"/>
+                <path d="M36,18 Q18,4 22,30 Q38,24 36,18Z" fill="#B7C9B1"/>
+              </svg>
+              <p class="text-sm font-medium text-sage-mid/70">Real photo coming soon</p>
+            </div>
+            <div class="absolute -bottom-6 -right-6 w-36 h-36 bg-sage-light/30 rounded-full blur-2xl"></div>
+          </div>
+          <!-- Floating accent -->
+          <div class="absolute -top-4 -left-4 w-20 h-20 bg-blush-dark/25 rounded-full blur-xl"></div>
+          <!-- Small botanical leaf accent SVG -->
+          <div class="absolute -bottom-3 -right-3">
+            <svg viewBox="0 0 80 80" class="w-16 h-16 text-sage-light opacity-60">
+              <path d="M40,70 Q10,40 40,10 Q70,40 40,70Z" fill="currentColor"/>
+              <line x1="40" y1="10" x2="40" y2="70" stroke="#FAF7F2" stroke-width="1.5"/>
+              <line x1="40" y1="30" x2="55" y2="22" stroke="#FAF7F2" stroke-width="1"/>
+              <line x1="40" y1="42" x2="25" y2="34" stroke="#FAF7F2" stroke-width="1"/>
+              <line x1="40" y1="54" x2="54" y2="46" stroke="#FAF7F2" stroke-width="1"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Story text -->
+        <div class="order-1 md:order-2">
+          <p class="text-sage-mid text-xs font-medium tracking-widest uppercase mb-4">My Story</p>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold text-sage-dark mb-8 leading-tight">
+            Hi, I&rsquo;m Tara.
+          </h2>
+
+          <div class="space-y-5 text-gray-600 text-lg leading-relaxed">
+            <p>
+              I moved to Hondo in 2020 after graduating from Texas State University in San Marcos with a
+              Bachelor of Business Administration in Computer Information Systems. I&rsquo;ve been working
+              in the tech industry ever since &mdash; and somewhere along the way I started noticing
+              something that bothered me.
+            </p>
+            <p>
+              So many incredible local businesses &mdash; the kind that are the heartbeat of a community
+              like ours &mdash; had no real online presence. No website, no searchable information, just a
+              Facebook page that may or may not be up to date. As a mom and a tech professional, I knew I
+              could do something about that.
+            </p>
+            <p>
+              Root &amp; Render was born out of a simple desire to help the community I love show up online
+              &mdash; without the overwhelm, without the confusion, and without having to figure it all out alone.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Leaf divider -->
+  <div class="leaf-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 text-blush-dark">
+      <path d="M0,30 Q200,50 400,30 T800,30 T1200,30" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
+      <ellipse cx="200"  cy="42" rx="12" ry="5"   fill="currentColor" opacity="0.3" transform="rotate(20 200 42)"/>
+      <ellipse cx="450"  cy="20" rx="10" ry="5"   fill="currentColor" opacity="0.3" transform="rotate(-15 450 20)"/>
+      <ellipse cx="700"  cy="40" rx="13" ry="6"   fill="currentColor" opacity="0.3" transform="rotate(10 700 40)"/>
+      <ellipse cx="950"  cy="22" rx="11" ry="5"   fill="currentColor" opacity="0.3" transform="rotate(-20 950 22)"/>
+    </svg>
+  </div>
+
+
+  <!-- ================================================ -->
+  <!-- MY MISSION                                       -->
+  <!-- ================================================ -->
+  <section class="py-24 px-6 bg-beige/40">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+
+        <!-- Mission text -->
+        <div>
+          <p class="text-sage-mid text-xs font-medium tracking-widest uppercase mb-4">My Mission</p>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold text-sage-dark mb-8 leading-tight">
+            What Root &amp; Render<br />Is Really About.
+          </h2>
+
+          <div class="space-y-5 text-gray-600 text-lg leading-relaxed">
+            <p>
+              My goal is simple &mdash; to give Medina County business owners a way to show up online without
+              the hassle of tech.
+            </p>
+            <p>
+              I want Root &amp; Render to be the place local businesses turn to when they need a website,
+              social media content, or any kind of digital presence and just don&rsquo;t have the time or
+              know-how to build it themselves. Whether you&rsquo;re a restaurant owner, a salon, a towing
+              company, or a boutique &mdash; you deserve to be found online, and I&rsquo;m here to make
+              that happen.
+            </p>
+            <p class="font-medium text-sage-dark">
+              This community has given me a lot. This is my way of giving back.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pull quote / accent block -->
+        <div class="relative">
+          <div class="bg-sage-dark text-ivory rounded-3xl p-10 relative overflow-hidden">
+            <!-- Background blob accent -->
+            <div class="absolute -top-8 -right-8 w-40 h-40 bg-sage-mid/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-blush-dark/10 rounded-full blur-2xl pointer-events-none"></div>
+
+            <!-- Decorative leaf -->
+            <div class="mb-6">
+              <svg viewBox="0 0 60 60" class="w-10 h-10 text-sage-light opacity-60">
+                <path d="M30,55 Q5,30 30,5 Q55,30 30,55Z" fill="currentColor"/>
+                <line x1="30" y1="5" x2="30" y2="55" stroke="#5A6F5D" stroke-width="1.5"/>
+                <line x1="30" y1="20" x2="43" y2="14" stroke="#5A6F5D" stroke-width="1"/>
+                <line x1="30" y1="32" x2="17" y2="26" stroke="#5A6F5D" stroke-width="1"/>
+                <line x1="30" y1="44" x2="42" y2="38" stroke="#5A6F5D" stroke-width="1"/>
+              </svg>
+            </div>
+
+            <blockquote class="font-serif text-2xl font-semibold leading-snug text-ivory mb-6">
+              &ldquo;Every small town business deserves a website they&rsquo;re proud to share.&rdquo;
+            </blockquote>
+            <p class="text-sage-light text-sm font-medium">&mdash; Tara, Founder of Root &amp; Render</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Leaf divider -->
+  <div class="leaf-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 text-sage-mid">
+      <path d="M0,30 Q150,50 300,30 T600,30 T900,30 T1200,30" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.3"/>
+      <ellipse cx="100"  cy="40" rx="10" ry="5"   fill="currentColor" opacity="0.25" transform="rotate(15 100 40)"/>
+      <ellipse cx="400"  cy="22" rx="12" ry="6"   fill="currentColor" opacity="0.25" transform="rotate(-10 400 22)"/>
+      <ellipse cx="700"  cy="38" rx="11" ry="5.5" fill="currentColor" opacity="0.25" transform="rotate(20 700 38)"/>
+      <ellipse cx="1000" cy="24" rx="10" ry="5"   fill="currentColor" opacity="0.25" transform="rotate(-15 1000 24)"/>
+    </svg>
+  </div>
+
+
+  <!-- ================================================ -->
+  <!-- WHAT TO EXPECT                                   -->
+  <!-- ================================================ -->
+  <section class="py-24 px-6 bg-ivory">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-16">
+        <p class="text-sage-mid text-xs font-medium tracking-widest uppercase mb-3">The Experience</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-sage-dark mb-4">
+          What It&rsquo;s Like to Work Together
+        </h2>
+      </div>
+
+      <!--
+        Three value cards side by side.
+        Each has an icon, a short heading, and a line of supporting copy.
+      -->
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+
+        <div class="bg-ivory border border-beige rounded-3xl p-8 hover:shadow-md transition-all hover:-translate-y-1 service-card">
+          <div class="w-12 h-12 rounded-2xl bg-blush-light flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-sage-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-xl font-semibold text-sage-dark mb-3">Clear Communication</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            You won&rsquo;t be left wondering what&rsquo;s happening with your project. I&rsquo;ll keep you
+            in the loop every step of the way &mdash; no tech jargon, no confusion.
+          </p>
+        </div>
+
+        <div class="bg-ivory border border-beige rounded-3xl p-8 hover:shadow-md transition-all hover:-translate-y-1 service-card">
+          <div class="w-12 h-12 rounded-2xl bg-sage-light/40 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-sage-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-xl font-semibold text-sage-dark mb-3">Detail Oriented</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            I genuinely want to understand what you need before I build anything. I&rsquo;ll ask the right
+            questions and make sure every decision reflects your business and your vision.
+          </p>
+        </div>
+
+        <div class="bg-ivory border border-beige rounded-3xl p-8 hover:shadow-md transition-all hover:-translate-y-1 service-card">
+          <div class="w-12 h-12 rounded-2xl bg-blush-dark/30 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-sage-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-xl font-semibold text-sage-dark mb-3">Your Comfort First</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            My goal is for you to feel completely at ease throughout the entire process &mdash; and to
+            walk away with a website you&rsquo;re proud to share.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Supporting paragraph -->
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-gray-600 text-lg leading-relaxed">
+          I&rsquo;m detail oriented and communicative by nature &mdash; because I genuinely want to understand
+          what you need before I build anything. Every decision we make together will reflect your business
+          and your vision. No surprises. Just a great website and a process you actually enjoyed.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Leaf divider -->
+  <div class="leaf-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 text-blush-dark">
+      <path d="M0,30 Q200,50 400,30 T800,30 T1200,30" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
+      <ellipse cx="200"  cy="42" rx="12" ry="5"   fill="currentColor" opacity="0.3" transform="rotate(20 200 42)"/>
+      <ellipse cx="450"  cy="20" rx="10" ry="5"   fill="currentColor" opacity="0.3" transform="rotate(-15 450 20)"/>
+      <ellipse cx="700"  cy="40" rx="13" ry="6"   fill="currentColor" opacity="0.3" transform="rotate(10 700 40)"/>
+      <ellipse cx="950"  cy="22" rx="11" ry="5"   fill="currentColor" opacity="0.3" transform="rotate(-20 950 22)"/>
+    </svg>
+  </div>
+
+
+  <!-- ================================================ -->
+  <!-- SKILLS & TOOLS                                   -->
+  <!-- ================================================ -->
+  <section class="py-24 px-6 bg-beige/30">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-16">
+        <p class="text-sage-mid text-xs font-medium tracking-widest uppercase mb-3">Skills &amp; Tools</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-sage-dark mb-4">
+          Built on a Real Foundation
+        </h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
+          Root &amp; Render websites are built using HTML, CSS, and JavaScript &mdash; clean, professional code
+          that loads fast, looks great, and works on every device.
+        </p>
+      </div>
+
+      <!-- Skill badges grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+
+        <div class="skill-badge bg-ivory border border-beige rounded-2xl p-6 flex items-start gap-4 hover:shadow-md transition-all hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-[#f0672a]/10 flex items-center justify-center flex-shrink-0">
+            <span class="text-[#f0672a] font-bold text-sm">HTML</span>
+          </div>
+          <div>
+            <h3 class="font-semibold text-sage-dark mb-1">HTML5</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Semantic, accessible markup that search engines and screen readers love.</p>
+          </div>
+        </div>
+
+        <div class="skill-badge bg-ivory border border-beige rounded-2xl p-6 flex items-start gap-4 hover:shadow-md transition-all hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-[#264de4]/10 flex items-center justify-center flex-shrink-0">
+            <span class="text-[#264de4] font-bold text-sm">CSS</span>
+          </div>
+          <div>
+            <h3 class="font-semibold text-sage-dark mb-1">CSS3 &amp; Tailwind</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Modern styling with clean, responsive layouts that look great on any screen.</p>
+          </div>
+        </div>
+
+        <div class="skill-badge bg-ivory border border-beige rounded-2xl p-6 flex items-start gap-4 hover:shadow-md transition-all hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-[#f0db4f]/20 flex items-center justify-center flex-shrink-0">
+            <span class="text-[#8a7800] font-bold text-sm">JS</span>
+          </div>
+          <div>
+            <h3 class="font-semibold text-sage-dark mb-1">JavaScript</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Interactive elements, animations, and smart user experiences built right in.</p>
+          </div>
+        </div>
+
+        <div class="skill-badge bg-ivory border border-beige rounded-2xl p-6 flex items-start gap-4 hover:shadow-md transition-all hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-sage-light/40 flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-sage-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-sage-dark mb-1">Cybersecurity Awareness</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">A CIS background means your site is built with security in mind from day one.</p>
+          </div>
+        </div>
+
+        <div class="skill-badge bg-ivory border border-beige rounded-2xl p-6 flex items-start gap-4 hover:shadow-md transition-all hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-blush-light flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-sage-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-sage-dark mb-1">SEO Fundamentals</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Every site is structured so Google can find you and rank you from day one.</p>
+          </div>
+        </div>
+
+        <div class="skill-badge bg-ivory border border-beige rounded-2xl p-6 flex items-start gap-4 hover:shadow-md transition-all hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-blush-dark/30 flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-sage-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-sage-dark mb-1">Mobile-First Design</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Built to look and work great on phones first, then scaled up for desktops.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Supporting callout -->
+      <div class="bg-sage-dark text-ivory rounded-3xl p-10 md:p-14 relative overflow-hidden">
+        <div class="absolute -top-10 -right-10 w-56 h-56 bg-sage-mid/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-8 left-10 w-40 h-40 bg-blush-dark/10 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-3xl">
+          <p class="text-sage-light text-xs font-medium tracking-widest uppercase mb-4">The R&amp;R Difference</p>
+          <p class="font-serif text-2xl md:text-3xl font-semibold leading-snug mb-4">
+            Your website isn&rsquo;t just designed to look good &mdash; it&rsquo;s built with security and
+            performance in mind from day one.
+          </p>
+          <p class="text-sage-light/80 text-base leading-relaxed">
+            With a background in Computer Information Systems and cybersecurity, I bring more than design sense
+            to every project. Every site I build is fast, clean, and coded the right way.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Leaf divider -->
+  <div class="leaf-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 text-sage-light">
+      <path d="M0,30 Q300,10 600,30 T1200,30" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
+      <ellipse cx="250"  cy="20" rx="11" ry="5.5" fill="currentColor" opacity="0.3" transform="rotate(-15 250 20)"/>
+      <ellipse cx="500"  cy="38" rx="12" ry="6"   fill="currentColor" opacity="0.3" transform="rotate(20 500 38)"/>
+      <ellipse cx="750"  cy="22" rx="10" ry="5"   fill="currentColor" opacity="0.3" transform="rotate(-10 750 22)"/>
+      <ellipse cx="1000" cy="40" rx="13" ry="6.5" fill="currentColor" opacity="0.3" transform="rotate(15 1000 40)"/>
+    </svg>
+  </div>
+
+
+  <!-- ================================================ -->
+  <!-- CTA                                              -->
+  <!-- ================================================ -->
+  <section class="relative overflow-hidden py-28 px-6 bg-ivory">
+    <div class="blob blob-3"></div>
+    <div class="relative z-10 max-w-3xl mx-auto text-center">
+      <p class="text-sage-mid text-xs font-medium tracking-widest uppercase mb-3">Let&rsquo;s Build Something</p>
+      <h2 class="font-serif text-4xl md:text-5xl font-bold text-sage-dark mb-6 leading-tight">
+        Ready to Work Together?
+      </h2>
+      <p class="text-gray-600 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+        Whether you know exactly what you need or you&rsquo;re just starting to explore your options &mdash;
+        I&rsquo;d love to hear from you. Let&rsquo;s build something you&rsquo;re proud of.
+      </p>
+      <a href="contact.html"
+         class="inline-block bg-sage-dark text-ivory font-medium px-10 py-4 rounded-full hover:bg-sage-mid transition-colors shadow-sm text-base">
+        Get Started
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ================================================ -->
+  <!-- FOOTER                                           -->
+  <!-- ================================================ -->
+  <footer class="bg-sage-dark text-ivory py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="grid md:grid-cols-3 gap-10 mb-12">
+        <div>
+          <p class="font-serif text-2xl font-semibold mb-2">Root &amp; Render</p>
+          <p class="text-sage-light text-sm leading-relaxed">Rooted in strategy.<br />Rendered beautifully.</p>
+        </div>
+        <div>
+          <p class="text-xs font-medium tracking-widest uppercase text-sage-light mb-4">Navigate</p>
+          <div class="flex flex-col gap-2">
+            <a href="index.html"           class="text-sm text-ivory/80 hover:text-ivory transition-colors">Home</a>
+            <a href="services.html"        class="text-sm text-ivory/80 hover:text-ivory transition-colors">Services</a>
+            <a href="index.html#portfolio" class="text-sm text-ivory/80 hover:text-ivory transition-colors">Portfolio</a>
+            <a href="about.html"           class="text-sm text-ivory/80 hover:text-ivory transition-colors">About</a>
+            <a href="contact.html"   class="text-sm text-ivory/80 hover:text-ivory transition-colors">Contact</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-medium tracking-widest uppercase text-sage-light mb-4">Get In Touch</p>
+          <p class="text-sm text-ivory/80 mb-4">&#128231; hello@rootandrender.com</p>
+          <div class="flex gap-4">
+            <a href="#" class="text-sm text-ivory/80 hover:text-ivory transition-colors">Instagram</a>
+            <a href="#" class="text-sm text-ivory/80 hover:text-ivory transition-colors">Facebook</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-sage-mid/30 pt-8 text-center">
+        <p class="text-sage-light/60 text-sm">&copy; 2025 Root &amp; Render. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

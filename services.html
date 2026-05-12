@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services &amp; Pricing — Root &amp; Render</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory:        '#FAF7F2',
+            beige:        '#E8DFD4',
+            'sage-dark':  '#5A6F5D',
+            'sage-mid':   '#8FA68F',
+            'sage-light': '#B7C9B1',
+            'blush-dark': '#EBC6C6',
+            'blush-light':'#F7E3E0',
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans:  ['DM Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-ivory text-sage-dark font-sans antialiased">
+
+
+  <!-- ================================================ -->
+  <!-- NAV                                              -->
+  <!-- ================================================ -->
+  <nav class="sticky top-0 z-50 bg-ivory/95 backdrop-blur-sm border-b border-beige" id="navbar">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <a href="index.html" class="font-serif text-2xl font-semibold text-sage-dark tracking-tight">
+        Root &amp; Render
+      </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"           class="text-sm font-medium hover:text-sage-mid transition-colors">Home</a>
+        <a href="services.html"        class="text-sm font-medium text-sage-mid border-b border-sage-mid pb-0.5">Services</a>
+        <a href="index.html#portfolio" class="text-sm font-medium hover:text-sage-mid transition-colors">Portfolio</a>
+        <a href="about.html"           class="text-sm font-medium hover:text-sage-mid transition-colors">About</a>
+        <a href="contact.html"   class="text-sm font-medium hover:text-sage-mid transition-colors">Contact</a>
+        <a href="contact.html"
+           class="bg-sage-dark text-ivory text-sm font-medium px-5 py-2.5 rounded-full hover:bg-sage-mid transition-colors">
+          Start Growing Today
+        </a>
+      </div>
+
+      <button id="menu-btn" class="md:hidden text-sage-dark" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-ivory border-t border-beige px-6 py-4 flex flex-col gap-4">
+      <a href="index.html"           class="text-sm font-medium">Home</a>
+      <a href="services.html"        class="text-sm font-medium text-sage-mid">Services</a>
+      <a href="index.html#portfolio" class="text-sm font-medium">Portfolio</a>
+      <a href="about.html"           class="text-sm font-medium">About</a>
+      <a href="contact.html"   class="text-sm font-medium">Contact</a>
+      <a href="contact.html"
+         class="bg-sage-dark text-ivory text-sm font-medium px-5 py-2.5 rounded-full text-center">
+        Start Growing Today
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- ================================================ -->
+  <!-- PAGE HERO                                        -->
+  <!-- ================================================ -->
+  <section class="relative overflow-hidden px-6 py-28 bg-ivory">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+      <p class="inline-block bg-blush-light text-sage-dark text-xs font-medium tracking-widest uppercase px-4 py-1.5 rounded-full mb-8">
+        Pricing &amp; Packages
+      </p>
+      <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-sage-dark mb-6">
+        Find Your Perfect Fit.
+      </h1>
+      <p class="text-lg md:text-xl text-sage-mid max-w-2xl mx-auto leading-relaxed">
+        From your first website to a full digital presence &mdash; Root &amp; Render has a package
+        for every stage of your business journey.
+      </p>
+    </div>
+  </section>
+
+  <!-- Leaf divider -->
+  <div class="leaf-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 text-sage-light">
+      <path d="M0,30 Q150,10 300,30 T600,30 T900,30 T1200,30" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/>
+      <ellipse cx="150" cy="22" rx="12" ry="6"   fill="currentColor" opacity="0.35" transform="rotate(-20 150 22)"/>
+      <ellipse cx="350" cy="38" rx="10" ry="5"   fill="currentColor" opacity="0.35" transform="rotate(15 350 38)"/>
+      <ellipse cx="600" cy="22" rx="14" ry="7"   fill="currentColor" opacity="0.35" transform="rotate(-10 600 22)"/>
+      <ellipse cx="850" cy="36" rx="11" ry="5.5" fill="currentColor" opacity="0.35" transform="rotate(20 850 36)"/>
+      <ellipse cx="1050" cy="22" rx="12" ry="6"  fill="currentColor" opacity="0.35" transform="rotate(-15 1050 22)"/>
+    </svg>
+  </div>
+
+
+  <!-- ================================================ -->
+  <!-- PACKAGES                                         -->
+  <!-- ================================================ -->
+  <section class="py-24 px-6 bg-beige/40">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-16">
+        <p class="text-sage-mid text-xs font-medium tracking-widest uppercase mb-3">Our Packages</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-sage-dark mb-4">
+          Every website is built with care,<br class="hidden md:block" /> strategy, and your business goals in mind.
+        </h2>
+      </div>
+
+      <!--
+        lg:grid-cols-3  → 3 columns on large screens
+        flex flex-col   → inside each card, stack content vertically
+        flex-1          → the feature list stretches to fill available space,
+                          so the monthly box and button always align at the bottom
+      -->
+      <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+
+        <!-- ── SEED ── -->
+        <div class="service-card bg-ivory rounded-3xl p-8 border border-beige shadow-sm flex flex-col">
+          <div class="text-4xl mb-5">🌱</div>
+
+          <div class="mb-6">
+            <h3 class="font-serif text-2xl font-semibold text-sage-dark mb-1">Seed</h3>
+            <p class="text-sage-mid text-sm font-medium italic mb-3">&ldquo;Plant your digital presence.&rdquo;</p>
+            <p class="text-4xl font-bold text-sage-dark mb-3">$500</p>
+            <p class="text-gray-500 text-sm leading-relaxed">Best for new businesses needing a simple online presence.</p>
+          </div>
+
+          <div class="flex-1 mb-6">
+            <p class="text-xs font-medium tracking-widest uppercase text-sage-mid mb-3">What&rsquo;s Included</p>
+            <ul class="space-y-2.5">
+              <li class="flex items-start gap-2.5 text-sm text-gray-600"><span class="text-sage-mid mt-0.5 leading-none">✦</span>1&ndash;3 page website</li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600"><span class="text-sage-mid mt-0.5 leading-none">✦</span>Mobile responsive design</li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600"><span class="text-sage-mid mt-0.5 leading-none">✦</span>Basic SEO setup</li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600"><span class="text-sage-mid mt-0.5 leading-none">✦</span>Contact form</li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600"><span class="text-sage-mid mt-0.5 leading-none">✦</span>Social media links</li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600"><span class="text-sage-mid mt-0.5 leading-none">✦</span>Branded color palette &amp; typography</li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600"><span class="text-sage-mid mt-0.5 leading-none">✦</span>Fast launch timeline</li>
+            </ul>
+          </div>
+
+          <div class="bg-beige/60 rounded-2xl p-4 mb-6">
+            <p class="text-xs font-medium tracking-widest uppercase text-sage-mid mb-2">Monthly Options</p>
+            <p class="text-sm text-gray-600 mb-1">$50/mo &mdash; Hosting only</p>
+            <p class="text-sm text-gray-500 text-xs mb-1">(changes invoiced at $75&ndash;$100 as needed)</p>
+            <p class="text-sm text-gray-600">$75/mo &mdash; Hosting + changes included</p>
+          </div>
+
+          <a href="contact.html"
+             class="block text-center border-2 border-sage-dark text-sage-dark font-medium px-6 py-3.5 rounded-full hover:bg-sage-dark hover:text-ivory transition-colors">
+            Get Started
+          </a>
+        </div>
+
+        <!-- ── SPROUT (featured) ── -->
+        <div class="service-card bg-sage-dark text-ivory rounded-3xl p-8 shadow-xl flex flex-col relative overflow-hidden">
+          <!-- Most Popular badge -->
+          <div class="absolute top-5 right-5 bg-blush-dark text-sage-dark text-xs font-semibold px-3 py-1 rounded-full">
+            &#11088; Most Popular
+          </div>
+          <!-- Soft inner glow accent -->
+          <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-sage-mid/20 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="text-4xl mb-5">🌿</div>
+
+          <div class="mb-6">
+            <h3 class="font-serif text-2xl font-semibold mb-1">Sprout</h3>
+            <p class="text-sage-light text-sm font-medium italic mb-3">&ldquo;Grow with strategy and structure.&rdquo;</p>
+            <p class="text-4xl font-bold mb-3">$800</p>
+            <p class="text-sage-light/80 text-sm leading-relaxed">Best for businesses ready to grow and look more established.</p>
+          </div>
+
+          <div class="flex-1 mb-6">
+            <p class="text-xs font-medium tracking-widest uppercase text-sage-light mb-3">What&rsquo;s Included</p>
+            <ul class="space-y-2.5">
+              <li class="flex items-start gap-2.5 text-sm text-sage-light/90"><span class="text-blush-dark mt-0.5 leading-none">✦</span>Everything in Seed, plus:</li>
+              <li class="flex items-start gap-2.5 text-sm text-sage-light/90"><span class="text-blush-dark mt-0.5 leading-none">✦</span>4&ndash;6 custom pages</li>
+              <li class="flex items-start gap-2.5 text-sm text-sage-light/90"><span class="text-blush-dark mt-0.5 leading-none">✦</span>Enhanced branding visuals</li>
+              <li class="flex items-start gap-2.5 text-sm text-sage-light/90"><span class="text-blush-dark mt-0.5 leading-none">✦</span>Service &amp; package sections</li>
+              <li class="flex items-start gap-2.5 text-sm text-sage-light/90"><span class="text-blush-dark mt-0.5 leading-none">✦</span>Basic blog or portfolio setup</li>
+              <li class="flex items-start gap-2.5 text-sm text-sage-light/90"><span class="text-blush-dark mt-0.5 leading-none">✦</span>Google Business integration</li>
+              <li class="flex items-start gap-2.5 text-sm text-sage-light/90"><span class="text-blush-dark mt-0.5 leading-none">✦</span>Conversion-focused layout</li>
+              <li class="flex items-start gap-2.5 text-sm text-sage-light/90"><span class="text-blush-dark mt-0.5 leading-none">✦</span>Expanded SEO optimization</li>
+              <li class="flex items-start gap-2.5 text-sm text-sage-light/90"><span class="text-blush-dark mt-0.5 leading-none">✦</span>Analytics integration</li>
+            </ul>
+          </div>
+
+          <div class="bg-white/10 rounded-2xl p-4 mb-6">
+            <p class="text-xs font-medium tracking-widest uppercase text-sage-light mb-2">Monthly</p>
+            <p class="text-sm text-sage-light/90">$100/mo &mdash; changes included</p>
+          </div>
+
+          <a href="contact.html"
+             class="block text-center bg-blush-dark text-sage-dark font-semibold px-6 py-3.5 rounded-full hover:bg-blush-light transition-colors">
+            Get Started
+          </a>
+        </div>
+
+        <!-- ── BLOOM ── -->
+        <div class="service-card bg-ivory rounded-3xl p-8 border border-beige shadow-sm flex flex-col">
+          <div class="text-4xl mb-5">🌸</div>
+
+          <div class="mb-6">
+            <h3 class="font-serif text-2xl font-semibold text-sage-dark mb-1">Bloom</h3>
+            <p class="text-sage-mid text-sm font-medium italic mb-3">&ldquo;Fully bloom into your brand.&rdquo;</p>
+            <p class="text-4xl font-bold text-sage-dark mb-3">Starting at $1,200</p>
+            <p class="text-gray-500 text-sm leading-relaxed">Best for businesses wanting a polished, premium online experience.</p>
+          </div>
+
+          <div class="flex-1 mb-6">
+            <p class="text-xs font-medium tracking-widest uppercase text-sage-mid mb-3">What&rsquo;s Included</p>
+            <ul class="space-y-2.5">
+              <li class="flex items-start gap-2.5 text-sm text-gray-600"><span class="text-sage-mid mt-0.5 leading-none">✦</span>Everything in Sprout, plus:</li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600"><span class="text-sage-mid mt-0.5 leading-none">✦</span>Fully custom multi-page site</li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600"><span class="text-sage-mid mt-0.5 leading-none">✦</span>Advanced animations &amp; interactions</li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600"><span class="text-sage-mid mt-0.5 leading-none">✦</span>Custom graphics or illustrations</li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600"><span class="text-sage-mid mt-0.5 leading-none">✦</span>Booking or inquiry workflows</li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600"><span class="text-sage-mid mt-0.5 leading-none">✦</span>E-commerce or memberships (optional)</li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600"><span class="text-sage-mid mt-0.5 leading-none">✦</span>Advanced SEO structure</li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600"><span class="text-sage-mid mt-0.5 leading-none">✦</span>Performance optimization</li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600"><span class="text-sage-mid mt-0.5 leading-none">✦</span>Priority support</li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-600"><span class="text-sage-mid mt-0.5 leading-none">✦</span>Strategy consultation</li>
+            </ul>
+          </div>
+
+          <div class="bg-beige/60 rounded-2xl p-4 mb-6">
+            <p class="text-xs font-medium tracking-widest uppercase text-sage-mid mb-2">Monthly</p>
+            <p class="text-sm text-gray-600">$150/mo &mdash; changes included</p>
+          </div>
+
+          <a href="contact.html"
+             class="block text-center border-2 border-sage-dark text-sage-dark font-medium px-6 py-3.5 rounded-full hover:bg-sage-dark hover:text-ivory transition-colors">
+            Get Started
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Leaf divider -->
+  <div class="leaf-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 text-blush-dark">
+      <path d="M0,30 Q200,50 400,30 T800,30 T1200,30" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
+      <ellipse cx="200"  cy="42" rx="12" ry="5"   fill="currentColor" opacity="0.3" transform="rotate(20 200 42)"/>
+      <ellipse cx="450"  cy="20" rx="10" ry="5"   fill="currentColor" opacity="0.3" transform="rotate(-15 450 20)"/>
+      <ellipse cx="700"  cy="40" rx="13" ry="6"   fill="currentColor" opacity="0.3" transform="rotate(10 700 40)"/>
+      <ellipse cx="950"  cy="22" rx="11" ry="5"   fill="currentColor" opacity="0.3" transform="rotate(-20 950 22)"/>
+    </svg>
+  </div>
+
+
+  <!-- ================================================ -->
+  <!-- ADD-ON SERVICES                                  -->
+  <!-- ================================================ -->
+  <section class="py-24 px-6 bg-ivory">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-16">
+        <p class="text-sage-mid text-xs font-medium tracking-widest uppercase mb-3">Extra Services</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-sage-dark mb-4">
+          Enhance Your Package
+        </h2>
+        <p class="text-gray-500 text-lg max-w-xl mx-auto">
+          Available as standalone offerings or added to any package &mdash; no website required to get started.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Logo & Branding -->
+        <div class="addon-card bg-ivory border border-beige rounded-2xl p-6 hover:shadow-md transition-all hover:-translate-y-1">
+          <div class="text-3xl mb-3">🎨</div>
+          <h3 class="font-serif text-lg font-semibold text-sage-dark mb-1">Logo &amp; Branding Kit</h3>
+          <p class="text-blush-dark font-semibold text-sm mb-3">$150</p>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            A complete brand starter pack including your logo, color palette, typography guide, and business card design. Delivered print-ready so you&rsquo;re set everywhere &mdash; online and off.
+          </p>
+        </div>
+
+        <!-- Social Media Setup -->
+        <div class="addon-card bg-ivory border border-beige rounded-2xl p-6 hover:shadow-md transition-all hover:-translate-y-1">
+          <div class="text-3xl mb-3">📱</div>
+          <h3 class="font-serif text-lg font-semibold text-sage-dark mb-1">Social Media Setup</h3>
+          <p class="text-blush-dark font-semibold text-sm mb-3">
+            $100 <span class="text-gray-400 font-normal">(one time)</span>
+          </p>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Get your Facebook and Instagram set up, branded, and ready to make a great first impression. Includes profile setup, branded graphics, and bio copywriting.
+          </p>
+        </div>
+
+        <!-- Social Media Management (highlighted card) -->
+        <div class="addon-card bg-blush-light/50 border border-blush-dark/25 rounded-2xl p-6 hover:shadow-md transition-all hover:-translate-y-1">
+          <div class="text-3xl mb-3">📅</div>
+          <h3 class="font-serif text-lg font-semibold text-sage-dark mb-1">Social Media Management</h3>
+          <p class="text-blush-dark font-semibold text-sm mb-3">From $150/mo</p>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">
+            Let us handle the content so you can focus on running your business. Every post is custom designed in Canva with captions crafted for your audience.
+          </p>
+          <div class="space-y-2 border-t border-blush-dark/20 pt-4">
+            <div class="flex items-center justify-between text-sm">
+              <span class="font-medium text-sage-dark">Starter</span>
+              <span class="text-gray-500">$150/mo &middot; 8 posts</span>
+            </div>
+            <div class="flex items-center justify-between text-sm">
+              <span class="font-medium text-sage-dark">Growth</span>
+              <span class="text-gray-500">$200/mo &middot; 12 posts</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flyer Design -->
+        <div class="addon-card bg-ivory border border-beige rounded-2xl p-6 hover:shadow-md transition-all hover:-translate-y-1">
+          <div class="text-3xl mb-3">🖨️</div>
+          <h3 class="font-serif text-lg font-semibold text-sage-dark mb-1">Flyer Design</h3>
+          <p class="text-blush-dark font-semibold text-sm mb-3">$50</p>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            A custom designed, print-ready flyer for promotions, events, or announcements. Delivered as a PDF ready to send straight to your printer.
+          </p>
+        </div>
+
+        <!-- Menu Design -->
+        <div class="addon-card bg-ivory border border-beige rounded-2xl p-6 hover:shadow-md transition-all hover:-translate-y-1">
+          <div class="text-3xl mb-3">🍽️</div>
+          <h3 class="font-serif text-lg font-semibold text-sage-dark mb-1">Menu Design</h3>
+          <p class="text-blush-dark font-semibold text-sm mb-3">
+            $150 <span class="text-gray-400 font-normal">&middot; updates $50/revision</span>
+          </p>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            A beautifully designed, print-ready menu that matches your brand. Perfect for restaurants, caf&eacute;s, and food businesses.
+          </p>
+        </div>
+
+        <!-- Not Sure card (dark, CTA) -->
+        <div class="addon-card bg-sage-dark text-ivory rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="text-3xl mb-3">💬</div>
+            <h3 class="font-serif text-lg font-semibold mb-2">Not sure what you need?</h3>
+            <p class="text-sage-light/80 text-sm leading-relaxed">
+              Reach out and we&rsquo;ll figure it out together. No pressure, no jargon &mdash; just a real conversation about your business.
+            </p>
+          </div>
+          <a href="contact.html"
+             class="mt-6 block text-center bg-blush-dark text-sage-dark font-medium px-6 py-3 rounded-full hover:bg-blush-light transition-colors text-sm">
+            Get Started
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Leaf divider -->
+  <div class="leaf-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 text-sage-mid">
+      <path d="M0,30 Q150,50 300,30 T600,30 T900,30 T1200,30" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.3"/>
+      <ellipse cx="100"  cy="40" rx="10" ry="5"   fill="currentColor" opacity="0.25" transform="rotate(15 100 40)"/>
+      <ellipse cx="400"  cy="22" rx="12" ry="6"   fill="currentColor" opacity="0.25" transform="rotate(-10 400 22)"/>
+      <ellipse cx="700"  cy="38" rx="11" ry="5.5" fill="currentColor" opacity="0.25" transform="rotate(20 700 38)"/>
+      <ellipse cx="1000" cy="24" rx="10" ry="5"   fill="currentColor" opacity="0.25" transform="rotate(-15 1000 24)"/>
+    </svg>
+  </div>
+
+
+  <!-- ================================================ -->
+  <!-- FAQ                                              -->
+  <!-- ================================================ -->
+  <section class="py-24 px-6 bg-beige/30">
+    <div class="max-w-3xl mx-auto">
+
+      <div class="text-center mb-16">
+        <p class="text-sage-mid text-xs font-medium tracking-widest uppercase mb-3">Got Questions?</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-sage-dark">
+          Frequently Asked Questions
+        </h2>
+      </div>
+
+      <!--
+        FAQ accordion: each item has a trigger button and a collapsible answer panel.
+        JavaScript at the bottom toggles the "hidden" class and rotates the arrow icon.
+      -->
+      <div class="space-y-3" id="faq">
+
+        <!-- Q1 -->
+        <div class="faq-item bg-ivory border border-beige rounded-2xl overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-medium text-sage-dark pr-4">How long does it take to build my website?</span>
+            <span class="faq-icon text-sage-mid flex-shrink-0 transition-transform duration-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6">
+            <p class="text-gray-600 text-sm leading-relaxed mb-3">Every build is different, but here&rsquo;s a general idea of what to expect:</p>
+            <ul class="space-y-1.5 text-sm text-gray-600 mb-3">
+              <li class="flex items-center gap-2"><span>🌱</span> Seed &mdash; 1 to 2 weeks</li>
+              <li class="flex items-center gap-2"><span>🌿</span> Sprout &mdash; 2 to 3 weeks</li>
+              <li class="flex items-center gap-2"><span>🌸</span> Bloom &mdash; 4+ weeks</li>
+            </ul>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Timeline can vary depending on how quickly we receive feedback and any special requirements your build may need.
+              We&rsquo;ll always keep you in the loop every step of the way.
+            </p>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-item bg-ivory border border-beige rounded-2xl overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-medium text-sage-dark pr-4">What do I need to provide?</span>
+            <span class="faq-icon text-sage-mid flex-shrink-0 transition-transform duration-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6">
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Not much! We handle the heavy lifting. Before we get started we&rsquo;ll ask you a few simple questions about
+              your business &mdash; things like what you do, who your customers are, and what makes you special. From there
+              we take care of the rest, including content, layout, and design.
+            </p>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-item bg-ivory border border-beige rounded-2xl overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-medium text-sage-dark pr-4">Do I pay everything upfront?</span>
+            <span class="faq-icon text-sage-mid flex-shrink-0 transition-transform duration-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6">
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Nope! We keep it simple. A 50% deposit is due before we begin and the remaining 50% is due when your
+              site is ready to launch. No surprises, no hidden fees.
+            </p>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-item bg-ivory border border-beige rounded-2xl overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-medium text-sage-dark pr-4">Will my site show up on Google?</span>
+            <span class="faq-icon text-sage-mid flex-shrink-0 transition-transform duration-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6">
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Every package includes basic SEO setup to give your site the best possible start. It&rsquo;s important to know
+              that ranking on Google takes time &mdash; SEO is a long game. But having it properly set up from day one makes a
+              big difference and puts you ahead of businesses that skip it altogether.
+            </p>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="faq-item bg-ivory border border-beige rounded-2xl overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left" aria-expanded="false">
+            <span class="font-medium text-sage-dark pr-4">Will my website work on phones?</span>
+            <span class="faq-icon text-sage-mid flex-shrink-0 transition-transform duration-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6">
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Absolutely. Every website built by Root &amp; Render is fully mobile responsive and tested across multiple
+              devices &mdash; phones, tablets, and desktops. Your customers will have a great experience no matter how they find you.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Leaf divider -->
+  <div class="leaf-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 text-sage-light">
+      <path d="M0,30 Q300,10 600,30 T1200,30" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
+      <ellipse cx="250"  cy="20" rx="11" ry="5.5" fill="currentColor" opacity="0.3" transform="rotate(-15 250 20)"/>
+      <ellipse cx="500"  cy="38" rx="12" ry="6"   fill="currentColor" opacity="0.3" transform="rotate(20 500 38)"/>
+      <ellipse cx="750"  cy="22" rx="10" ry="5"   fill="currentColor" opacity="0.3" transform="rotate(-10 750 22)"/>
+      <ellipse cx="1000" cy="40" rx="13" ry="6.5" fill="currentColor" opacity="0.3" transform="rotate(15 1000 40)"/>
+    </svg>
+  </div>
+
+
+  <!-- ================================================ -->
+  <!-- FINAL CTA                                        -->
+  <!-- ================================================ -->
+  <section class="relative overflow-hidden py-28 px-6 bg-ivory">
+    <div class="blob blob-3"></div>
+    <div class="relative z-10 max-w-3xl mx-auto text-center">
+      <p class="text-sage-mid text-xs font-medium tracking-widest uppercase mb-3">Let&rsquo;s Talk</p>
+      <h2 class="font-serif text-4xl md:text-5xl font-bold text-sage-dark mb-6 leading-tight">
+        Still Have Questions?
+      </h2>
+      <p class="text-gray-600 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+        That&rsquo;s completely okay. Choosing the right package for your business is a big deal and I want to make sure
+        you feel confident before we get started. Reach out and let&rsquo;s have a real conversation &mdash; let&rsquo;s talk through
+        your options and find the perfect fit together.
+      </p>
+      <a href="contact.html"
+         class="inline-block bg-sage-dark text-ivory font-medium px-10 py-4 rounded-full hover:bg-sage-mid transition-colors shadow-sm text-base">
+        Get Started
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ================================================ -->
+  <!-- FOOTER                                           -->
+  <!-- ================================================ -->
+  <footer class="bg-sage-dark text-ivory py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="grid md:grid-cols-3 gap-10 mb-12">
+        <div>
+          <p class="font-serif text-2xl font-semibold mb-2">Root &amp; Render</p>
+          <p class="text-sage-light text-sm leading-relaxed">Rooted in strategy.<br />Rendered beautifully.</p>
+        </div>
+        <div>
+          <p class="text-xs font-medium tracking-widest uppercase text-sage-light mb-4">Navigate</p>
+          <div class="flex flex-col gap-2">
+            <a href="index.html"           class="text-sm text-ivory/80 hover:text-ivory transition-colors">Home</a>
+            <a href="services.html"        class="text-sm text-ivory/80 hover:text-ivory transition-colors">Services</a>
+            <a href="index.html#portfolio" class="text-sm text-ivory/80 hover:text-ivory transition-colors">Portfolio</a>
+            <a href="index.html#about"     class="text-sm text-ivory/80 hover:text-ivory transition-colors">About</a>
+            <a href="contact.html"   class="text-sm text-ivory/80 hover:text-ivory transition-colors">Contact</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-medium tracking-widest uppercase text-sage-light mb-4">Get In Touch</p>
+          <p class="text-sm text-ivory/80 mb-4">&#128231; hello@rootandrender.com</p>
+          <div class="flex gap-4">
+            <a href="#" class="text-sm text-ivory/80 hover:text-ivory transition-colors">Instagram</a>
+            <a href="#" class="text-sm text-ivory/80 hover:text-ivory transition-colors">Facebook</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-sage-mid/30 pt-8 text-center">
+        <p class="text-sage-light/60 text-sm">&copy; 2025 Root &amp; Render. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+
+  <script>
+    // ── FAQ ACCORDION ──────────────────────────────────────────────────────────
+    // When a question is clicked:
+    //   1. Close any already-open answer
+    //   2. Open the clicked one (unless it was already open — then just close it)
+    // The arrow icon rotates 180° to signal open/closed state.
+
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item     = trigger.closest('.faq-item');
+        const answer   = item.querySelector('.faq-answer');
+        const icon     = trigger.querySelector('.faq-icon');
+        const isOpen   = trigger.getAttribute('aria-expanded') === 'true';
+
+        // Close all items first
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.querySelector('.faq-answer').classList.add('hidden');
+          i.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+          i.querySelector('.faq-icon').style.transform = '';
+        });
+
+        // If this one wasn't already open, open it
+        if (!isOpen) {
+          answer.classList.remove('hidden');
+          trigger.setAttribute('aria-expanded', 'true');
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

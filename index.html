@@ -3,128 +3,624 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Root & Render</title>
+  <title>Root & Render — Websites for Small Town Businesses</title>
+
+  <!-- Google Fonts: Playfair Display (elegant serif for headings) + DM Sans (clean sans for body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!--
+    TAILWIND CUSTOM CONFIG
+    Out of the box, Tailwind only knows its own color names (gray, blue, red, etc.).
+    This block extends the theme with YOUR brand colors so we can write
+    classes like bg-ivory, text-sage-dark, bg-blush-light, etc.
+    We also register the two fonts as Tailwind font families.
+  -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory:        '#FAF7F2',
+            beige:        '#E8DFD4',
+            'sage-dark':  '#5A6F5D',
+            'sage-mid':   '#8FA68F',
+            'sage-light': '#B7C9B1',
+            'blush-dark': '#EBC6C6',
+            'blush-light':'#F7E3E0',
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans:  ['DM Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="bg-[#f7f4ef] text-[#1f2937] font-sans">
+<!--
+  BODY
+  bg-ivory        → background-color: #FAF7F2
+  text-sage-dark  → color: #5A6F5D
+  font-sans       → uses our DM Sans font family
+  antialiased     → smoother font rendering on screens
+-->
+<body class="bg-ivory text-sage-dark font-sans antialiased">
 
-  <!-- HERO SECTION -->
-  <section class="min-h-screen flex items-center justify-center px-6">
 
-    <div class="text-center max-w-3xl">
+  <!-- ================================================ -->
+  <!-- NAV                                              -->
+  <!-- ================================================ -->
+  <!--
+    sticky top-0   → stays fixed at top as you scroll
+    z-50           → sits above everything else visually (z-index: 50)
+    bg-ivory/95    → our ivory color at 95% opacity (slight transparency)
+    backdrop-blur-sm → blurs what's behind the nav (frosted glass effect)
+    border-b       → a thin line on the bottom edge
+  -->
+  <nav class="sticky top-0 z-50 bg-ivory/95 backdrop-blur-sm border-b border-beige" id="navbar">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
 
-      <!-- Brand -->
-      <p class="uppercase tracking-widest text-sm text-gray-500 mb-4">
-        Root & Render
+      <!-- Logo: font-serif switches to Playfair Display -->
+      <a href="#" class="font-serif text-2xl font-semibold text-sage-dark tracking-tight">
+        Root &amp; Render
+      </a>
+
+      <!--
+        Desktop nav links
+        hidden md:flex → hidden on mobile, flex row on medium screens and up
+        gap-8          → 2rem space between each item
+      -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#"          class="text-sm font-medium hover:text-sage-mid transition-colors">Home</a>
+        <a href="services.html"  class="text-sm font-medium hover:text-sage-mid transition-colors">Services</a>
+        <a href="#portfolio" class="text-sm font-medium hover:text-sage-mid transition-colors">Portfolio</a>
+        <a href="about.html" class="text-sm font-medium hover:text-sage-mid transition-colors">About</a>
+        <a href="contact.html" class="text-sm font-medium hover:text-sage-mid transition-colors">Contact</a>
+        <a href="contact.html"
+           class="bg-sage-dark text-ivory text-sm font-medium px-5 py-2.5 rounded-full hover:bg-sage-mid transition-colors">
+          Start Growing Today
+        </a>
+      </div>
+
+      <!-- Mobile hamburger button (only visible below md breakpoint) -->
+      <button id="menu-btn" class="md:hidden text-sage-dark" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile dropdown menu (toggled by script.js) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-ivory border-t border-beige px-6 py-4 flex flex-col gap-4">
+      <a href="#"          class="text-sm font-medium">Home</a>
+      <a href="services.html"  class="text-sm font-medium">Services</a>
+      <a href="#portfolio" class="text-sm font-medium">Portfolio</a>
+      <a href="about.html" class="text-sm font-medium">About</a>
+      <a href="contact.html" class="text-sm font-medium">Contact</a>
+      <a href="contact.html"
+         class="bg-sage-dark text-ivory text-sm font-medium px-5 py-2.5 rounded-full text-center">
+        Start Growing Today
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- ================================================ -->
+  <!-- HERO                                             -->
+  <!-- ================================================ -->
+  <!--
+    relative          → lets us position the blob shapes inside this section
+    min-h-[90vh]      → at least 90% of the viewport height (square brackets = custom value)
+    overflow-hidden   → keeps blobs from spilling outside the section
+  -->
+  <section id="home" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-6 py-24">
+
+    <!-- Decorative blob shapes (styled in styles.css) -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!--
+      relative z-10 → sits above the blobs (z-index: 10)
+      max-w-4xl     → max width ~56rem, keeps text readable
+      mx-auto       → centers horizontally
+      text-center   → center-aligns all text
+    -->
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+
+      <!-- Eyebrow label: small pill above the headline -->
+      <p class="inline-block bg-blush-light text-sage-dark text-xs font-medium tracking-widest uppercase px-4 py-1.5 rounded-full mb-8">
+        Medina County, TX &mdash; Serving Small Businesses
       </p>
 
-      <!-- Headline -->
-      <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-        Websites rooted in strategy,<br />
-        designed to bloom online.
+      <!--
+        font-serif          → Playfair Display
+        text-5xl md:text-7xl → 3rem on mobile, 4.5rem on medium+
+        leading-tight       → tighter line-height for big display text
+      -->
+      <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-sage-dark mb-8">
+        Your business has roots.<br />
+        <em class="text-blush-dark not-italic">We handle the tech.</em><br />
+        Let&rsquo;s help it bloom.
       </h1>
 
-      <!-- Subtext -->
-      <p class="text-lg text-gray-600 mb-8">
-        We build clean, modern websites for small businesses that want to grow their digital presence without complexity.
+      <p class="text-lg md:text-xl text-sage-mid max-w-2xl mx-auto mb-10 leading-relaxed">
+        We help Medina County small businesses get online with websites that are beautiful,
+        simple, and built to grow with you &mdash; no tech overwhelm, no cookie-cutter templates.
       </p>
 
-      <!-- Buttons -->
-      <div class="flex gap-4 justify-center flex-wrap">
+      <a href="#contact"
+         class="inline-block bg-sage-dark text-ivory font-medium px-8 py-4 rounded-full text-base hover:bg-sage-mid transition-colors shadow-sm">
+        Start Growing Today
+      </a>
 
-        <a href="#" class="bg-[#1f2937] text-white px-6 py-3 rounded-full hover:opacity-90 transition">
-          View Work
-        </a>
+    </div>
+  </section>
 
-        <a href="#" class="border border-[#1f2937] px-6 py-3 rounded-full hover:bg-[#1f2937] hover:text-white transition">
-          Book a Project
-        </a>
+  <!-- Decorative leaf branch divider -->
+  <div class="leaf-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 text-sage-light">
+      <path d="M0,30 Q150,10 300,30 T600,30 T900,30 T1200,30" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/>
+      <ellipse cx="150" cy="22" rx="12" ry="6"   fill="currentColor" opacity="0.35" transform="rotate(-20 150 22)"/>
+      <ellipse cx="350" cy="38" rx="10" ry="5"   fill="currentColor" opacity="0.35" transform="rotate(15 350 38)"/>
+      <ellipse cx="600" cy="22" rx="14" ry="7"   fill="currentColor" opacity="0.35" transform="rotate(-10 600 22)"/>
+      <ellipse cx="850" cy="36" rx="11" ry="5.5" fill="currentColor" opacity="0.35" transform="rotate(20 850 36)"/>
+      <ellipse cx="1050" cy="22" rx="12" ry="6"  fill="currentColor" opacity="0.35" transform="rotate(-15 1050 22)"/>
+    </svg>
+  </div>
+
+
+  <!-- ================================================ -->
+  <!-- SERVICES PREVIEW                                 -->
+  <!-- ================================================ -->
+  <section id="services" class="py-24 px-6 bg-beige/40">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-16">
+        <p class="text-sage-mid text-xs font-medium tracking-widest uppercase mb-3">What We Offer</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-sage-dark">
+          A package for every stage of growth
+        </h2>
+      </div>
+
+      <!--
+        grid md:grid-cols-3 → 1 column on mobile, 3 columns on medium+
+        gap-8               → 2rem space between cards
+      -->
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+
+        <!-- SEED card -->
+        <div class="service-card bg-ivory rounded-3xl p-8 shadow-sm hover:shadow-md border border-beige">
+          <div class="text-4xl mb-4">🌱</div>
+          <h3 class="font-serif text-2xl font-semibold text-sage-dark mb-2">Seed</h3>
+          <p class="text-sage-mid font-medium text-sm mb-4">Perfect for businesses planting their first digital roots.</p>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            A clean, beautiful website that establishes your presence and gives customers a place to find you online.
+          </p>
+        </div>
+
+        <!-- SPROUT card (featured / dark background) -->
+        <div class="service-card bg-sage-dark text-ivory rounded-3xl p-8 shadow-md relative overflow-hidden">
+          <div class="absolute top-4 right-4 bg-blush-dark text-sage-dark text-xs font-medium px-3 py-1 rounded-full">
+            Most Popular
+          </div>
+          <div class="text-4xl mb-4">🌿</div>
+          <h3 class="font-serif text-2xl font-semibold mb-2">Sprout</h3>
+          <p class="text-sage-light font-medium text-sm mb-4">For growing businesses ready to branch out.</p>
+          <p class="text-sage-light/80 text-sm leading-relaxed">
+            A more developed site designed to attract, engage, and convert visitors into real customers.
+          </p>
+        </div>
+
+        <!-- BLOOM card -->
+        <div class="service-card bg-ivory rounded-3xl p-8 shadow-sm hover:shadow-md border border-beige">
+          <div class="text-4xl mb-4">🌸</div>
+          <h3 class="font-serif text-2xl font-semibold text-sage-dark mb-2">Bloom</h3>
+          <p class="text-sage-mid font-medium text-sm mb-4">A full digital experience designed to flourish.</p>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            A premium, strategic website built for growth, branding, and scalability &mdash; your full digital bloom.
+          </p>
+        </div>
 
       </div>
 
+      <div class="text-center">
+        <a href="services.html"
+           class="inline-block border-2 border-sage-dark text-sage-dark font-medium px-8 py-3.5 rounded-full hover:bg-sage-dark hover:text-ivory transition-colors">
+          View Packages
+        </a>
+      </div>
+
     </div>
-    
   </section>
-  <!-- SERVICES PREVIEW -->
-<section class="py-24 px-6 bg-white">
 
-  <div class="max-w-6xl mx-auto text-center mb-16">
-
-    <h2 class="text-4xl md:text-5xl font-bold mb-4">
-      Websites that grow with your business
-    </h2>
-
-    <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-      From first presence to full digital bloom — choose a package that matches your stage of growth.
-    </p>
-
+  <!-- Leaf divider -->
+  <div class="leaf-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 text-blush-dark">
+      <path d="M0,30 Q200,50 400,30 T800,30 T1200,30" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
+      <ellipse cx="200"  cy="42" rx="12" ry="5"   fill="currentColor" opacity="0.3" transform="rotate(20 200 42)"/>
+      <ellipse cx="450"  cy="20" rx="10" ry="5"   fill="currentColor" opacity="0.3" transform="rotate(-15 450 20)"/>
+      <ellipse cx="700"  cy="40" rx="13" ry="6"   fill="currentColor" opacity="0.3" transform="rotate(10 700 40)"/>
+      <ellipse cx="950"  cy="22" rx="11" ry="5"   fill="currentColor" opacity="0.3" transform="rotate(-20 950 22)"/>
+    </svg>
   </div>
 
-  <!-- CARDS -->
-  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
-    <!-- SEED -->
-    <div class="border rounded-2xl p-8 text-center hover:shadow-lg transition">
+  <!-- ================================================ -->
+  <!-- ABOUT SNIPPET                                    -->
+  <!-- ================================================ -->
+  <section id="about" class="py-24 px-6 bg-ivory">
+    <div class="max-w-6xl mx-auto">
 
-      <h3 class="text-2xl font-semibold mb-2">Seed</h3>
-      <p class="text-gray-500 mb-4">Get online quickly and professionally.</p>
+      <!--
+        grid md:grid-cols-2 → two equal columns on medium+
+        gap-16              → large space between photo and text
+        items-center        → vertically centers both columns relative to each other
+      -->
+      <div class="grid md:grid-cols-2 gap-16 items-center">
 
-      <p class="text-sm text-gray-600">
-        A simple, clean website to establish your presence and credibility.
-      </p>
+        <!-- Photo placeholder -->
+        <div class="relative">
+          <!--
+            aspect-[4/5] → maintains a 4:5 portrait ratio regardless of width
+          -->
+          <div class="aspect-[4/5] bg-blush-light rounded-3xl flex items-center justify-center relative overflow-hidden">
+            <!-- SVG placeholder person illustration -->
+            <div class="text-center text-sage-mid/60 p-8">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" class="w-28 h-28 mx-auto mb-4 opacity-50">
+                <circle cx="50" cy="32" r="22" fill="#8FA68F"/>
+                <path d="M8,115 Q8,68 50,68 Q92,68 92,115" fill="#8FA68F"/>
+                <path d="M64,16 Q82,2 78,28 Q62,22 64,16Z" fill="#B7C9B1"/>
+                <path d="M36,18 Q18,4 22,30 Q38,24 36,18Z" fill="#B7C9B1"/>
+              </svg>
+              <p class="text-sm font-medium text-sage-mid/70">Real photo coming soon</p>
+            </div>
+            <!-- Soft blob accent inside the photo box -->
+            <div class="absolute -bottom-6 -right-6 w-36 h-36 bg-sage-light/30 rounded-full blur-2xl"></div>
+          </div>
+          <!-- Floating accent outside the box -->
+          <div class="absolute -top-4 -left-4 w-20 h-20 bg-blush-dark/25 rounded-full blur-xl"></div>
+        </div>
 
+        <!-- Text -->
+        <div>
+          <p class="text-sage-mid text-xs font-medium tracking-widest uppercase mb-4">About Tara</p>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold text-sage-dark mb-6 leading-tight">
+            Hi, I&rsquo;m Tara.
+          </h2>
+          <p class="text-gray-600 text-lg leading-relaxed mb-5">
+            I&rsquo;ve called Hondo home for years, and I&rsquo;ve watched so many incredible local businesses
+            struggle to get noticed online. Root &amp; Render was born out of a simple belief &mdash; that
+            every small town business deserves a website they&rsquo;re proud to share.
+          </p>
+          <p class="text-gray-600 text-lg leading-relaxed mb-10">
+            I&rsquo;m here to make that happen, without the tech overwhelm.
+          </p>
+          <a href="#"
+             class="inline-block bg-blush-dark text-sage-dark font-medium px-8 py-4 rounded-full hover:bg-blush-light transition-colors">
+            More About Me &rarr;
+          </a>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <!-- SPROUT -->
-    <div class="border rounded-2xl p-8 text-center hover:shadow-lg transition">
-
-      <h3 class="text-2xl font-semibold mb-2">Sprout</h3>
-      <p class="text-gray-500 mb-4">Build momentum and visibility.</p>
-
-      <p class="text-sm text-gray-600">
-        A more developed site designed to attract, engage, and convert visitors.
-      </p>
-
-    </div>
-
-    <!-- BLOOM -->
-    <div class="border rounded-2xl p-8 text-center hover:shadow-lg transition">
-
-      <h3 class="text-2xl font-semibold mb-2">Bloom</h3>
-      <p class="text-gray-500 mb-4">A fully elevated digital presence.</p>
-
-      <p class="text-sm text-gray-600">
-        A premium, strategic website built for growth, branding, and scalability.
-      </p>
-
-    </div>
-
+  <!-- Leaf divider -->
+  <div class="leaf-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 text-sage-mid">
+      <path d="M0,30 Q150,50 300,30 T600,30 T900,30 T1200,30" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.3"/>
+      <ellipse cx="100"  cy="40" rx="10" ry="5"   fill="currentColor" opacity="0.25" transform="rotate(15 100 40)"/>
+      <ellipse cx="400"  cy="22" rx="12" ry="6"   fill="currentColor" opacity="0.25" transform="rotate(-10 400 22)"/>
+      <ellipse cx="700"  cy="38" rx="11" ry="5.5" fill="currentColor" opacity="0.25" transform="rotate(20 700 38)"/>
+      <ellipse cx="1000" cy="24" rx="10" ry="5"   fill="currentColor" opacity="0.25" transform="rotate(-15 1000 24)"/>
+    </svg>
   </div>
 
-</section>
 
-<!-- Purpose -->
-<section class="py-24 px-6 bg-[#f7f4ef]">
+  <!-- ================================================ -->
+  <!-- PORTFOLIO PREVIEW                                -->
+  <!-- ================================================ -->
+  <section id="portfolio" class="py-24 px-6 bg-blush-light/30">
+    <div class="max-w-6xl mx-auto">
 
-  <div class="max-w-4xl mx-auto text-center">
+      <div class="text-center mb-16">
+        <p class="text-sage-mid text-xs font-medium tracking-widest uppercase mb-3">Our Work</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-sage-dark mb-4">
+          Built for Businesses Just Like Yours
+        </h2>
+        <p class="text-gray-500 text-lg max-w-xl mx-auto">
+          Every business you see here started exactly where you are &mdash; ready for a real online presence.
+          Yours could be next.
+        </p>
+      </div>
 
-    <h2 class="text-4xl font-bold mb-6">
-      Built for small businesses that want to grow, not struggle.
-    </h2>
+      <!-- Portfolio cards styled as browser window mockups -->
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
 
-    <p class="text-gray-600 text-lg mb-10">
-      At Root & Render, we create websites that are clean, fast, and intentional — 
-      designed to help local businesses look credible and convert visitors into customers.
-    </p>
+        <!-- Card 1 -->
+        <div class="portfolio-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+          <!-- Browser top bar -->
+          <div class="bg-beige px-4 py-3 flex items-center gap-2">
+            <div class="w-2.5 h-2.5 rounded-full bg-blush-dark"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-sage-light"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-sage-mid"></div>
+            <div class="flex-1 bg-ivory rounded-full h-5 ml-2 flex items-center px-3">
+              <span class="text-xs text-gray-400">samplesite.com</span>
+            </div>
+          </div>
+          <!-- Content area -->
+          <div class="bg-ivory h-48 flex items-center justify-center">
+            <div class="text-center p-4">
+              <div class="w-12 h-12 rounded-full bg-beige mx-auto mb-2 flex items-center justify-center">
+                <span class="text-xl">🌿</span>
+              </div>
+              <p class="text-xs font-medium text-sage-mid/60">Portfolio site coming soon</p>
+            </div>
+          </div>
+          <div class="bg-ivory px-5 py-4 border-t border-beige">
+            <p class="font-serif text-sm font-semibold text-sage-dark">Sample Project 1</p>
+            <p class="text-xs text-gray-400 mt-0.5">Sprout Package &middot; Local Business</p>
+          </div>
+        </div>
 
+        <!-- Card 2 -->
+        <div class="portfolio-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+          <div class="bg-beige px-4 py-3 flex items-center gap-2">
+            <div class="w-2.5 h-2.5 rounded-full bg-blush-dark"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-sage-light"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-sage-mid"></div>
+            <div class="flex-1 bg-ivory rounded-full h-5 ml-2 flex items-center px-3">
+              <span class="text-xs text-gray-400">samplesite.com</span>
+            </div>
+          </div>
+          <div class="bg-blush-light/50 h-48 flex items-center justify-center">
+            <div class="text-center p-4">
+              <div class="w-12 h-12 rounded-full bg-blush-dark/40 mx-auto mb-2 flex items-center justify-center">
+                <span class="text-xl">🌸</span>
+              </div>
+              <p class="text-xs font-medium text-sage-mid/60">Portfolio site coming soon</p>
+            </div>
+          </div>
+          <div class="bg-ivory px-5 py-4 border-t border-beige">
+            <p class="font-serif text-sm font-semibold text-sage-dark">Sample Project 2</p>
+            <p class="text-xs text-gray-400 mt-0.5">Bloom Package &middot; Small Business</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="portfolio-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+          <div class="bg-beige px-4 py-3 flex items-center gap-2">
+            <div class="w-2.5 h-2.5 rounded-full bg-blush-dark"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-sage-light"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-sage-mid"></div>
+            <div class="flex-1 bg-ivory rounded-full h-5 ml-2 flex items-center px-3">
+              <span class="text-xs text-gray-400">samplesite.com</span>
+            </div>
+          </div>
+          <div class="bg-sage-light/25 h-48 flex items-center justify-center">
+            <div class="text-center p-4">
+              <div class="w-12 h-12 rounded-full bg-sage-light/60 mx-auto mb-2 flex items-center justify-center">
+                <span class="text-xl">🌱</span>
+              </div>
+              <p class="text-xs font-medium text-sage-mid/60">Portfolio site coming soon</p>
+            </div>
+          </div>
+          <div class="bg-ivory px-5 py-4 border-t border-beige">
+            <p class="font-serif text-sm font-semibold text-sage-dark">Sample Project 3</p>
+            <p class="text-xs text-gray-400 mt-0.5">Seed Package &middot; Startup</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center">
+        <a href="#"
+           class="inline-block border-2 border-sage-dark text-sage-dark font-medium px-8 py-3.5 rounded-full hover:bg-sage-dark hover:text-ivory transition-colors">
+          View All Work
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================ -->
+  <!-- TESTIMONIALS — hidden until first client lands   -->
+  <!-- ================================================ -->
+  <!--
+  <section id="testimonials" class="py-24 px-6 bg-ivory">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="font-serif text-4xl font-bold text-sage-dark mb-4">What Our Clients Say</h2>
+      <p class="text-gray-500">Coming soon after our first project launch!</p>
+    </div>
+  </section>
+  -->
+
+
+  <!-- Leaf divider -->
+  <div class="leaf-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 text-sage-light">
+      <path d="M0,30 Q300,10 600,30 T1200,30" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
+      <ellipse cx="250"  cy="20" rx="11" ry="5.5" fill="currentColor" opacity="0.3" transform="rotate(-15 250 20)"/>
+      <ellipse cx="500"  cy="38" rx="12" ry="6"   fill="currentColor" opacity="0.3" transform="rotate(20 500 38)"/>
+      <ellipse cx="750"  cy="22" rx="10" ry="5"   fill="currentColor" opacity="0.3" transform="rotate(-10 750 22)"/>
+      <ellipse cx="1000" cy="40" rx="13" ry="6.5" fill="currentColor" opacity="0.3" transform="rotate(15 1000 40)"/>
+    </svg>
   </div>
 
-</section>
 
+  <!-- ================================================ -->
+  <!-- CTA + CONTACT FORM                               -->
+  <!-- ================================================ -->
+  <section id="contact" class="py-24 px-6 bg-ivory">
+    <div class="max-w-3xl mx-auto">
+
+      <div class="text-center mb-16">
+        <p class="text-sage-mid text-xs font-medium tracking-widest uppercase mb-3">Let&rsquo;s Connect</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-sage-dark mb-6 leading-tight">
+          Ready to Put Your Business on the Map?
+        </h2>
+        <p class="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
+          You&rsquo;ve built something worth sharing &mdash; let&rsquo;s make sure the rest of Medina County knows it.
+          Fill out the form below and Tara will be in touch within 1&ndash;2 business days. No tech jargon,
+          no pressure. Just a real conversation about your business and where you want it to go.
+        </p>
+      </div>
+
+      <!--
+        Form: action="#" keeps it local for now.
+        When we're ready to go live, we'll wire this to a service like Formspree
+        so submissions arrive in your inbox without needing a server.
+      -->
+      <form action="#" class="bg-beige/30 rounded-3xl p-8 md:p-12 border border-beige space-y-6">
+
+        <!-- Business Name -->
+        <div>
+          <label class="block text-sm font-medium text-sage-dark mb-2">Business Name</label>
+          <input type="text" placeholder="Your Business Name"
+            class="w-full bg-ivory border border-beige rounded-xl px-4 py-3 text-sage-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sage-mid transition" />
+        </div>
+
+        <!-- Business Address -->
+        <div>
+          <label class="block text-sm font-medium text-sage-dark mb-2">Business Address</label>
+          <input type="text" placeholder="123 Main St, Hondo, TX 78861"
+            class="w-full bg-ivory border border-beige rounded-xl px-4 py-3 text-sage-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sage-mid transition" />
+        </div>
+
+        <!-- First + Last Name (two columns on sm+) -->
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-sage-dark mb-2">First Name</label>
+            <input type="text" placeholder="First"
+              class="w-full bg-ivory border border-beige rounded-xl px-4 py-3 text-sage-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sage-mid transition" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-sage-dark mb-2">Last Name</label>
+            <input type="text" placeholder="Last"
+              class="w-full bg-ivory border border-beige rounded-xl px-4 py-3 text-sage-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sage-mid transition" />
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label class="block text-sm font-medium text-sage-dark mb-2">Email Address</label>
+          <input type="email" placeholder="you@yourbusiness.com"
+            class="w-full bg-ivory border border-beige rounded-xl px-4 py-3 text-sage-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sage-mid transition" />
+        </div>
+
+        <!-- Phone (optional) -->
+        <div>
+          <label class="block text-sm font-medium text-sage-dark mb-2">
+            Phone Number <span class="text-gray-400 font-normal">(optional)</span>
+          </label>
+          <input type="tel" placeholder="(830) 555-1234"
+            class="w-full bg-ivory border border-beige rounded-xl px-4 py-3 text-sage-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sage-mid transition" />
+        </div>
+
+        <!-- Package dropdown -->
+        <div>
+          <label class="block text-sm font-medium text-sage-dark mb-2">Package Interested In</label>
+          <select class="w-full bg-ivory border border-beige rounded-xl px-4 py-3 text-sage-dark focus:outline-none focus:ring-2 focus:ring-sage-mid transition">
+            <option value="" disabled selected>Select a package...</option>
+            <option>🌱 Seed &mdash; Getting started</option>
+            <option>🌿 Sprout &mdash; Ready to grow</option>
+            <option>🌸 Bloom &mdash; Full digital presence</option>
+            <option>Not Sure Yet!</option>
+          </select>
+        </div>
+
+        <!-- How did you hear about us -->
+        <div>
+          <label class="block text-sm font-medium text-sage-dark mb-2">How did you hear about us?</label>
+          <select class="w-full bg-ivory border border-beige rounded-xl px-4 py-3 text-sage-dark focus:outline-none focus:ring-2 focus:ring-sage-mid transition">
+            <option value="" disabled selected>Select one...</option>
+            <option>Word of mouth</option>
+            <option>Google</option>
+            <option>Social media</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label class="block text-sm font-medium text-sage-dark mb-2">
+            Tell me about your business and what you need
+          </label>
+          <textarea rows="5"
+            placeholder="Share a bit about your business, what you're looking for, and any questions you have..."
+            class="w-full bg-ivory border border-beige rounded-xl px-4 py-3 text-sage-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sage-mid transition resize-none"></textarea>
+        </div>
+
+        <!-- Submit -->
+        <div class="text-center pt-2">
+          <button type="submit"
+            class="bg-sage-dark text-ivory font-medium px-10 py-4 rounded-full hover:bg-sage-mid transition-colors shadow-sm text-base w-full sm:w-auto">
+            Start Growing Today 🌱
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+
+  <!-- ================================================ -->
+  <!-- FOOTER                                           -->
+  <!-- ================================================ -->
+  <footer class="bg-sage-dark text-ivory py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="grid md:grid-cols-3 gap-10 mb-12">
+
+        <!-- Brand -->
+        <div>
+          <p class="font-serif text-2xl font-semibold mb-2">Root &amp; Render</p>
+          <p class="text-sage-light text-sm leading-relaxed">
+            Rooted in strategy.<br />Rendered beautifully.
+          </p>
+        </div>
+
+        <!-- Nav links -->
+        <div>
+          <p class="text-xs font-medium tracking-widest uppercase text-sage-light mb-4">Navigate</p>
+          <div class="flex flex-col gap-2">
+            <a href="#"          class="text-sm text-ivory/80 hover:text-ivory transition-colors">Home</a>
+            <a href="#services"  class="text-sm text-ivory/80 hover:text-ivory transition-colors">Services</a>
+            <a href="#portfolio" class="text-sm text-ivory/80 hover:text-ivory transition-colors">Portfolio</a>
+            <a href="#about"     class="text-sm text-ivory/80 hover:text-ivory transition-colors">About</a>
+            <a href="#contact"   class="text-sm text-ivory/80 hover:text-ivory transition-colors">Contact</a>
+          </div>
+        </div>
+
+        <!-- Contact info -->
+        <div>
+          <p class="text-xs font-medium tracking-widest uppercase text-sage-light mb-4">Get In Touch</p>
+          <p class="text-sm text-ivory/80 mb-4">&#128231; hello@rootandrender.com</p>
+          <div class="flex gap-4">
+            <a href="#" class="text-sm text-ivory/80 hover:text-ivory transition-colors">Instagram</a>
+            <a href="#" class="text-sm text-ivory/80 hover:text-ivory transition-colors">Facebook</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="border-t border-sage-mid/30 pt-8 text-center">
+        <p class="text-sage-light/60 text-sm">&copy; 2025 Root &amp; Render. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
