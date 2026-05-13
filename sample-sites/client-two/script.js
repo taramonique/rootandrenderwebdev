@@ -16,7 +16,7 @@ const navbar = document.getElementById('navbar');
 if (navbar) {
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
-      navbar.style.boxShadow = '0 1px 0 rgba(184,148,31,0.15)';
+      navbar.style.boxShadow = '0 1px 0 rgba(74,23,40,0.08), 0 2px 12px rgba(74,23,40,0.04)';
     } else {
       navbar.style.boxShadow = 'none';
     }
@@ -34,14 +34,11 @@ if (tabs.length && sections.length) {
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const target = tab.dataset.category;
-
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
-
       sections.forEach(s => s.classList.remove('active'));
       const targetSection = document.getElementById(target);
       if (targetSection) targetSection.classList.add('active');
-
       const menuContent = document.getElementById('menu-content');
       if (menuContent) {
         const offset = menuContent.getBoundingClientRect().top + window.scrollY - 130;
@@ -58,8 +55,9 @@ if (form) {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
     btn.textContent = '✓ Request received — we\'ll confirm by phone shortly.';
-    btn.style.borderColor = '#2A4A2E';
-    btn.style.color = '#2A4A2E';
+    btn.style.background = '#4A1728';
+    btn.style.color = '#FAF7F0';
+    btn.style.borderColor = '#4A1728';
     btn.disabled = true;
   });
 }

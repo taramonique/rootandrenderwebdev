@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Main Street Grille — Hondo, TX</title>
-  <meta name="description" content="Learn the story behind Main Street Grille — a family-owned American restaurant that's been serving Hondo, TX with scratch-made food since 2009." />
+  <meta name="description" content="Learn the story behind Main Street Grille — a family-owned American restaurant serving Hondo, TX with scratch-made food since 2009." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -16,14 +16,14 @@
       theme: {
         extend: {
           colors: {
-            pit:   '#0F0D0B',
-            grove: '#2A4A2E',
-            gold:  '#B8941F',
-            ivory: '#F5F0E8',
+            linen: '#FAF7F0',
+            plum:  '#4A1728',
+            brass: '#A07840',
+            stone: '#6B6560',
           },
           fontFamily: {
-            display: ['Cormorant Garamond', 'Georgia', 'serif'],
-            sans:    ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Libre Baskerville', 'Georgia', 'serif'],
+            sans:    ['Nunito Sans', 'system-ui', 'sans-serif'],
           }
         }
       }
@@ -32,240 +32,196 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="bg-pit text-ivory font-sans antialiased">
+<body class="bg-linen text-plum font-sans antialiased">
 
-
-  <!-- ======================== NAV ======================== -->
-  <nav class="sticky top-0 z-50 bg-pit border-b border-ivory/10" id="navbar">
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 bg-linen border-b border-plum/10" id="navbar">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
         <span class="text-xl">🍽️</span>
         <div>
-          <p class="font-display font-semibold text-ivory leading-none text-xl tracking-wide">Main Street Grille</p>
-          <p class="text-xs text-gold/70 tracking-[0.2em] uppercase leading-none font-sans font-light">Hondo, Texas</p>
+          <p class="font-display font-bold text-plum leading-none text-lg">Main Street Grille</p>
+          <p class="text-xs text-brass/80 tracking-[0.2em] uppercase leading-none font-sans">Hondo, Texas</p>
         </div>
       </a>
       <div class="hidden md:flex items-center gap-8">
-        <a href="index.html"   class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60 hover:text-ivory transition-colors">Home</a>
-        <a href="menu.html"    class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60 hover:text-ivory transition-colors">Menu</a>
-        <a href="about.html"   class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-gold">About</a>
-        <a href="contact.html" class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60 hover:text-ivory transition-colors">Contact</a>
+        <a href="index.html"   class="text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone hover:text-plum transition-colors">Home</a>
+        <a href="menu.html"    class="text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone hover:text-plum transition-colors">Menu</a>
+        <a href="about.html"   class="text-xs font-sans font-semibold tracking-[0.15em] uppercase text-plum border-b border-brass pb-0.5">About</a>
+        <a href="contact.html" class="text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone hover:text-plum transition-colors">Contact</a>
         <a href="contact.html" class="btn-primary">Reserve a Table</a>
       </div>
-      <button id="menu-btn" class="md:hidden text-ivory/70" aria-label="Toggle menu">
+      <button id="menu-btn" class="md:hidden text-plum/60" aria-label="Toggle menu">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-pit border-t border-ivory/10 px-6 py-5 flex flex-col gap-5">
-      <a href="index.html"   class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60">Home</a>
-      <a href="menu.html"    class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60">Menu</a>
-      <a href="about.html"   class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-gold">About</a>
-      <a href="contact.html" class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60">Contact</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-linen border-t border-plum/10 px-6 py-5 flex flex-col gap-5">
+      <a href="index.html"   class="text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone">Home</a>
+      <a href="menu.html"    class="text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone">Menu</a>
+      <a href="about.html"   class="text-xs font-sans font-semibold tracking-[0.15em] uppercase text-plum">About</a>
+      <a href="contact.html" class="text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone">Contact</a>
       <a href="contact.html" class="btn-primary text-center">Reserve a Table</a>
     </div>
   </nav>
 
-
-  <!-- ======================== HERO ======================== -->
-  <section class="bg-pit px-6 py-24 md:py-32 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-[0.03]"
-         style="background-image: linear-gradient(rgba(245,240,232,1) 1px, transparent 1px), linear-gradient(90deg, rgba(245,240,232,1) 1px, transparent 1px); background-size: 48px 48px;"></div>
-    <div class="absolute top-0 left-0 bottom-0 w-px bg-gold/20"></div>
+  <!-- HERO -->
+  <section class="bg-plum px-6 py-24 md:py-32 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04]"
+         style="background-image: linear-gradient(rgba(250,247,240,1) 1px, transparent 1px), linear-gradient(90deg, rgba(250,247,240,1) 1px, transparent 1px); background-size: 48px 48px;"></div>
+    <div class="absolute top-0 left-0 bottom-0 w-px bg-brass/30"></div>
     <div class="relative z-10 max-w-6xl mx-auto">
-      <p class="text-gold text-xs font-sans tracking-[0.3em] uppercase font-light mb-6">Our Story</p>
-      <h1 class="font-display text-6xl sm:text-7xl md:text-8xl font-light text-ivory leading-none mb-6">
-        More Than<br /><em class="text-gold">a Meal.</em>
+      <p class="text-brass text-xs font-sans tracking-[0.3em] uppercase font-semibold mb-6">Our Story</p>
+      <h1 class="font-display text-6xl sm:text-7xl md:text-8xl text-linen leading-tight mb-6">
+        More Than<br /><em class="text-brass">a Meal.</em>
       </h1>
-      <p class="text-ivory/40 text-lg font-sans font-light leading-relaxed max-w-md">
-        For fifteen years, Main Street Grille has been the place Hondo comes together —
-        for lunch with coworkers, dinner with family, and everything in between.
+      <p class="text-linen/50 text-lg font-sans leading-relaxed max-w-md">
+        For fifteen years, Main Street Grille has been the place Hondo comes together.
       </p>
     </div>
   </section>
 
-
-  <!-- ======================== THE STORY ======================== -->
-  <section class="py-20 md:py-28 px-6 bg-[#141210]">
+  <!-- THE STORY -->
+  <section class="py-20 md:py-28 px-6 bg-white">
     <div class="max-w-6xl mx-auto">
       <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-
-        <!-- Photo placeholder -->
-        <div class="aspect-[4/5] bg-pit border border-ivory/10 flex items-center justify-center relative">
+        <div class="aspect-[4/5] bg-linen border border-plum/10 flex items-center justify-center relative">
           <div class="text-center p-8">
             <span class="text-7xl block mb-4">👨‍👩‍👧‍👦</span>
-            <p class="font-display text-xl font-light text-ivory/70 italic">Jim, Linda &amp; Kayla</p>
-            <p class="text-xs text-ivory/25 font-sans tracking-widest uppercase mt-2">The Caldwell Family</p>
+            <p class="font-display text-xl text-plum italic">Jim, Linda &amp; Kayla</p>
+            <p class="text-xs text-stone font-sans tracking-widest uppercase mt-2">The Caldwell Family</p>
           </div>
-          <div class="absolute top-0 left-0 w-8 h-px bg-gold/50"></div>
-          <div class="absolute top-0 left-0 h-8 w-px bg-gold/50"></div>
-          <div class="absolute bottom-0 right-0 w-8 h-px bg-gold/50"></div>
-          <div class="absolute bottom-0 right-0 h-8 w-px bg-gold/50"></div>
+          <div class="absolute top-0 left-0 w-8 h-px bg-brass/50"></div>
+          <div class="absolute top-0 left-0 h-8 w-px bg-brass/50"></div>
+          <div class="absolute bottom-0 right-0 w-8 h-px bg-brass/50"></div>
+          <div class="absolute bottom-0 right-0 h-8 w-px bg-brass/50"></div>
         </div>
-
-        <!-- Story -->
         <div>
-          <p class="text-gold text-xs font-sans tracking-[0.3em] uppercase font-light mb-6">How It Started</p>
-          <h2 class="font-display text-4xl md:text-5xl font-light text-ivory mb-8 leading-tight">
+          <p class="text-brass text-xs font-sans tracking-[0.3em] uppercase font-semibold mb-6">How It Started</p>
+          <h2 class="font-display text-4xl md:text-5xl text-plum mb-8 leading-tight">
             Jim &amp; Linda<br /><em>Caldwell, Owners.</em>
           </h2>
-          <div class="space-y-5 text-ivory/45 text-base font-sans font-light leading-relaxed">
-            <p>
-              In 2009, Jim Caldwell quit his oil-field job and Linda left her teaching career to open a
-              restaurant in the building where Jim's father used to run a hardware store. They called it
-              Main Street Grille — because that's exactly what it is.
-            </p>
-            <p>
-              Everything you eat here comes out of a scratch kitchen. Jim handles the grill and the
-              smoker. Linda runs the front of the house and still bakes every dessert herself. Their
-              daughter Kayla joined the team in 2019 as general manager.
-            </p>
-            <p>
-              We're not a chain, and we never want to be. We know our regulars by name, and we like it
-              that way.
-            </p>
+          <div class="space-y-4 text-stone text-base font-sans leading-relaxed">
+            <p>In 2009, Jim Caldwell quit his oil-field job and Linda left her teaching career to open a restaurant in the building where Jim's father used to run a hardware store. They called it Main Street Grille — because that's exactly what it is.</p>
+            <p>Everything you eat here comes out of a scratch kitchen. Jim handles the grill and the smoker. Linda runs the front of the house and still bakes every dessert herself. Their daughter Kayla joined the team in 2019 as general manager.</p>
+            <p>We're not a chain, and we never want to be. We know our regulars by name, and we like it that way.</p>
           </div>
           <div class="mt-10 flex flex-wrap gap-5">
             <a href="menu.html"    class="btn-primary">See the Menu</a>
-            <a href="contact.html" class="btn-ghost-dark">Reserve a Table</a>
+            <a href="contact.html" class="btn-secondary">Reserve a Table</a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-
-  <!-- ======================== HOW WE COOK ======================== -->
-  <section class="py-20 md:py-28 px-6 bg-pit">
+  <!-- HOW WE COOK -->
+  <section class="py-20 md:py-28 px-6 bg-linen">
     <div class="max-w-6xl mx-auto">
-
       <div class="grid md:grid-cols-2 gap-16 md:gap-24">
-
         <div>
-          <p class="text-gold text-xs font-sans tracking-[0.3em] uppercase font-light mb-6">How We Do It</p>
-          <h2 class="font-display text-4xl md:text-5xl font-light text-ivory leading-tight">
+          <p class="text-brass text-xs font-sans tracking-[0.3em] uppercase font-semibold mb-6">How We Do It</p>
+          <h2 class="font-display text-4xl md:text-5xl text-plum leading-tight">
             The Way<br /><em>We Cook.</em>
           </h2>
         </div>
-
         <div class="space-y-10">
-
-          <div class="border-l border-gold/40 pl-7">
-            <p class="font-display text-2xl font-light text-ivory italic mb-2">Everything From Scratch</p>
-            <p class="text-ivory/40 text-sm font-sans font-light leading-relaxed">
-              Sauces, soups, desserts, and breads — made in-house every day. If we can make it ourselves, we do.
-            </p>
+          <div class="border-l-2 border-brass pl-7">
+            <p class="font-display text-2xl text-plum italic mb-2">Everything From Scratch</p>
+            <p class="text-stone text-sm font-sans leading-relaxed">Sauces, soups, desserts, and breads — made in-house every day. If we can make it ourselves, we do.</p>
           </div>
-
-          <div class="border-l border-ivory/15 pl-7">
-            <p class="font-display text-2xl font-light text-ivory italic mb-2">Texas Raised Ingredients</p>
-            <p class="text-ivory/40 text-sm font-sans font-light leading-relaxed">
-              Beef from Texas ranches, peaches from a farm two counties over, and produce from local growers when it's in season.
-            </p>
+          <div class="border-l-2 border-plum/15 pl-7">
+            <p class="font-display text-2xl text-plum italic mb-2">Texas Raised Ingredients</p>
+            <p class="text-stone text-sm font-sans leading-relaxed">Beef from Texas ranches, peaches from a farm two counties over, and produce from local growers when it's in season.</p>
           </div>
-
-          <div class="border-l border-gold/40 pl-7">
-            <p class="font-display text-2xl font-light text-ivory italic mb-2">Low and Slow on the Smoker</p>
-            <p class="text-ivory/40 text-sm font-sans font-light leading-relaxed">
-              Our ribs and brisket go on the pit at 5am. By the time lunch rolls around, they've been cooking for six hours. That's not a shortcut — that's the only way.
-            </p>
+          <div class="border-l-2 border-brass pl-7">
+            <p class="font-display text-2xl text-plum italic mb-2">Low and Slow on the Smoker</p>
+            <p class="text-stone text-sm font-sans leading-relaxed">Our ribs and brisket go on the pit at 5am. By the time lunch rolls around, they've been cooking for six hours. That's not a shortcut — that's the only way.</p>
           </div>
-
-          <div class="border-l border-ivory/15 pl-7">
-            <p class="font-display text-2xl font-light text-ivory italic mb-2">Family Service, Every Time</p>
-            <p class="text-ivory/40 text-sm font-sans font-light leading-relaxed">
-              Our staff has been with us an average of six years. They're not just employees — they're part of the family.
-            </p>
+          <div class="border-l-2 border-plum/15 pl-7">
+            <p class="font-display text-2xl text-plum italic mb-2">Family Service, Every Time</p>
+            <p class="text-stone text-sm font-sans leading-relaxed">Our staff has been with us an average of six years. They're not just employees — they're part of the family.</p>
           </div>
-
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ======================== AWARDS ======================== -->
-  <section class="py-16 px-6 bg-grove">
+  <!-- AWARDS -->
+  <section class="py-14 px-6 bg-plum">
     <div class="max-w-6xl mx-auto">
-      <div class="grid sm:grid-cols-3 gap-10 text-center sm:text-left">
+      <div class="grid sm:grid-cols-3 gap-10">
         <div>
-          <p class="font-display text-5xl font-light text-ivory">3<span class="text-gold text-3xl">×</span></p>
-          <p class="text-gold text-xs font-sans tracking-[0.2em] uppercase font-light mt-2 mb-1">Winner</p>
-          <p class="text-ivory/50 text-sm font-sans font-light">Best Restaurant, Medina County</p>
+          <p class="font-display text-5xl text-linen">3<span class="text-brass text-3xl">×</span></p>
+          <p class="text-brass text-xs font-sans tracking-[0.2em] uppercase font-semibold mt-2 mb-1">Winner</p>
+          <p class="text-linen/50 text-sm font-sans">Best Restaurant, Medina County</p>
         </div>
-        <div class="sm:border-l border-ivory/10 sm:pl-10">
-          <p class="font-display text-5xl font-light text-ivory">15<span class="text-gold text-3xl">+</span></p>
-          <p class="text-gold text-xs font-sans tracking-[0.2em] uppercase font-light mt-2 mb-1">Years</p>
-          <p class="text-ivory/50 text-sm font-sans font-light">Serving Hondo &amp; Medina County</p>
+        <div class="sm:border-l border-linen/10 sm:pl-10">
+          <p class="font-display text-5xl text-linen">15<span class="text-brass text-3xl">+</span></p>
+          <p class="text-brass text-xs font-sans tracking-[0.2em] uppercase font-semibold mt-2 mb-1">Years</p>
+          <p class="text-linen/50 text-sm font-sans">Serving Hondo &amp; Medina County</p>
         </div>
-        <div class="sm:border-l border-ivory/10 sm:pl-10">
-          <p class="font-display text-5xl font-light text-ivory">100<span class="text-gold text-3xl">%</span></p>
-          <p class="text-gold text-xs font-sans tracking-[0.2em] uppercase font-light mt-2 mb-1">Scratch</p>
-          <p class="text-ivory/50 text-sm font-sans font-light">Every sauce, dessert &amp; side</p>
+        <div class="sm:border-l border-linen/10 sm:pl-10">
+          <p class="font-display text-5xl text-linen">100<span class="text-brass text-3xl">%</span></p>
+          <p class="text-brass text-xs font-sans tracking-[0.2em] uppercase font-semibold mt-2 mb-1">Scratch</p>
+          <p class="text-linen/50 text-sm font-sans">Every sauce, dessert &amp; side</p>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ======================== CTA ======================== -->
-  <section class="py-24 px-6 bg-pit">
+  <!-- CTA -->
+  <section class="py-24 px-6 bg-linen">
     <div class="max-w-6xl mx-auto">
-      <div class="border border-ivory/10 p-12 md:p-16 flex flex-col md:flex-row md:items-center justify-between gap-10">
+      <div class="border border-plum/15 p-12 md:p-16 flex flex-col md:flex-row md:items-center justify-between gap-10">
         <div>
-          <p class="text-gold text-xs font-sans tracking-[0.3em] uppercase font-light mb-4">Come Find Us</p>
-          <h2 class="font-display text-4xl md:text-5xl font-light text-ivory">
-            We&rsquo;d Love to Feed You.
-          </h2>
-          <p class="text-ivory/35 text-sm font-sans font-light mt-3">112 Main Street, Hondo, TX — Walk-ins always welcome.</p>
+          <p class="text-brass text-xs font-sans tracking-[0.3em] uppercase font-semibold mb-4">Come Find Us</p>
+          <h2 class="font-display text-4xl md:text-5xl text-plum">We&rsquo;d Love to Feed You.</h2>
+          <p class="text-stone text-sm font-sans mt-3">112 Main Street, Hondo, TX — Walk-ins always welcome.</p>
         </div>
         <div class="flex flex-wrap gap-5 flex-shrink-0">
           <a href="contact.html" class="btn-primary">Reserve a Table</a>
-          <a href="menu.html"    class="btn-ghost-dark">View the Menu</a>
+          <a href="menu.html"    class="btn-secondary">View the Menu</a>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ======================== FOOTER ======================== -->
-  <footer class="bg-[#080706] text-ivory py-14 px-6 border-t border-ivory/5">
+  <!-- FOOTER -->
+  <footer class="bg-plum text-linen py-14 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="grid md:grid-cols-3 gap-10 mb-12">
         <div>
-          <p class="font-display text-2xl font-light text-ivory mb-1">Main Street Grille</p>
-          <p class="text-gold/60 text-xs font-sans tracking-[0.2em] uppercase mb-4">Hondo, Texas</p>
-          <p class="text-ivory/30 text-sm font-sans font-light leading-relaxed">
-            Scratch-made American comfort food.<br />Family owned and operated since 2009.
-          </p>
+          <p class="font-display text-2xl text-linen mb-1">Main Street Grille</p>
+          <p class="text-brass/70 text-xs font-sans tracking-[0.2em] uppercase mb-4">Hondo, Texas</p>
+          <p class="text-linen/40 text-sm font-sans leading-relaxed">Scratch-made American comfort food.<br />Family owned and operated since 2009.</p>
           <div class="flex gap-3 mt-5">
-            <a href="#" aria-label="Facebook" class="w-8 h-8 border border-ivory/10 hover:border-gold/40 flex items-center justify-center transition-colors text-ivory/30 hover:text-gold/60 text-xs">f</a>
-            <a href="#" aria-label="Instagram" class="w-8 h-8 border border-ivory/10 hover:border-gold/40 flex items-center justify-center transition-colors text-ivory/30 hover:text-gold/60 text-xs">ig</a>
+            <a href="#" aria-label="Facebook" class="w-8 h-8 border border-linen/15 hover:border-brass/50 flex items-center justify-center transition-colors text-linen/30 hover:text-brass/70 text-xs font-sans">f</a>
+            <a href="#" aria-label="Instagram" class="w-8 h-8 border border-linen/15 hover:border-brass/50 flex items-center justify-center transition-colors text-linen/30 hover:text-brass/70 text-xs font-sans">ig</a>
           </div>
         </div>
         <div>
-          <p class="text-xs font-sans tracking-[0.2em] uppercase text-ivory/30 mb-5">Navigate</p>
+          <p class="text-xs font-sans tracking-[0.2em] uppercase text-linen/30 mb-5">Navigate</p>
           <div class="flex flex-col gap-3">
-            <a href="index.html"   class="text-sm text-ivory/40 hover:text-ivory font-sans font-light transition-colors">Home</a>
-            <a href="menu.html"    class="text-sm text-ivory/40 hover:text-ivory font-sans font-light transition-colors">Menu</a>
-            <a href="about.html"   class="text-sm text-ivory/40 hover:text-ivory font-sans font-light transition-colors">About Us</a>
-            <a href="contact.html" class="text-sm text-ivory/40 hover:text-ivory font-sans font-light transition-colors">Contact / Reserve</a>
+            <a href="index.html"   class="text-sm text-linen/50 hover:text-linen font-sans transition-colors">Home</a>
+            <a href="menu.html"    class="text-sm text-linen/50 hover:text-linen font-sans transition-colors">Menu</a>
+            <a href="about.html"   class="text-sm text-linen/50 hover:text-linen font-sans transition-colors">About Us</a>
+            <a href="contact.html" class="text-sm text-linen/50 hover:text-linen font-sans transition-colors">Contact / Reserve</a>
           </div>
         </div>
         <div>
-          <p class="text-xs font-sans tracking-[0.2em] uppercase text-ivory/30 mb-5">Visit Us</p>
+          <p class="text-xs font-sans tracking-[0.2em] uppercase text-linen/30 mb-5">Visit Us</p>
           <div class="space-y-3">
-            <p class="text-sm text-ivory/40 font-sans font-light">112 Main Street, Hondo, TX 78861</p>
-            <p class="text-sm text-ivory/40 font-sans font-light"><a href="tel:+18305550183" class="hover:text-ivory transition-colors">(830) 555-0183</a></p>
-            <p class="text-sm text-ivory/40 font-sans font-light">Mon–Sat 11am–10pm &nbsp;|&nbsp; Sun 11am–8pm</p>
+            <p class="text-sm text-linen/50 font-sans">112 Main Street, Hondo, TX 78861</p>
+            <p class="text-sm text-linen/50 font-sans"><a href="tel:+18305550183" class="hover:text-linen transition-colors">(830) 555-0183</a></p>
+            <p class="text-sm text-linen/50 font-sans">Mon–Sat 11am–10pm &nbsp;|&nbsp; Sun 11am–8pm</p>
           </div>
         </div>
       </div>
-      <div class="border-t border-ivory/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3">
-        <p class="text-ivory/20 text-xs font-sans font-light">&copy; 2025 Main Street Grille. All rights reserved.</p>
-        <p class="text-ivory/20 text-xs font-sans font-light">Website by <a href="../../index.html" class="text-gold/40 hover:text-gold transition-colors">Root &amp; Render</a></p>
+      <div class="border-t border-linen/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <p class="text-linen/25 text-xs font-sans">&copy; 2025 Main Street Grille. All rights reserved.</p>
+        <p class="text-linen/25 text-xs font-sans">Website by <a href="../../index.html" class="text-brass/50 hover:text-brass transition-colors">Root &amp; Render</a></p>
       </div>
     </div>
   </footer>

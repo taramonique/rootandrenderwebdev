@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -16,14 +16,14 @@
       theme: {
         extend: {
           colors: {
-            pit:   '#0F0D0B',
-            grove: '#2A4A2E',
-            gold:  '#B8941F',
-            ivory: '#F5F0E8',
+            linen: '#FAF7F0',
+            plum:  '#4A1728',
+            brass: '#A07840',
+            stone: '#6B6560',
           },
           fontFamily: {
-            display: ['Cormorant Garamond', 'Georgia', 'serif'],
-            sans:    ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Libre Baskerville', 'Georgia', 'serif'],
+            sans:    ['Nunito Sans', 'system-ui', 'sans-serif'],
           }
         }
       }
@@ -32,254 +32,222 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="bg-pit text-ivory font-sans antialiased">
+<body class="bg-linen text-plum font-sans antialiased">
 
-
-  <!-- ======================== NAV ======================== -->
-  <nav class="sticky top-0 z-50 bg-pit border-b border-ivory/10" id="navbar">
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 bg-linen border-b border-plum/10" id="navbar">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
         <span class="text-xl">🍽️</span>
         <div>
-          <p class="font-display font-semibold text-ivory leading-none text-xl tracking-wide">Main Street Grille</p>
-          <p class="text-xs text-gold/70 tracking-[0.2em] uppercase leading-none font-sans font-light">Hondo, Texas</p>
+          <p class="font-display font-bold text-plum leading-none text-lg">Main Street Grille</p>
+          <p class="text-xs text-brass/80 tracking-[0.2em] uppercase leading-none font-sans">Hondo, Texas</p>
         </div>
       </a>
       <div class="hidden md:flex items-center gap-8">
-        <a href="index.html"   class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60 hover:text-ivory transition-colors">Home</a>
-        <a href="menu.html"    class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60 hover:text-ivory transition-colors">Menu</a>
-        <a href="about.html"   class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60 hover:text-ivory transition-colors">About</a>
-        <a href="contact.html" class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-gold">Contact</a>
+        <a href="index.html"   class="text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone hover:text-plum transition-colors">Home</a>
+        <a href="menu.html"    class="text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone hover:text-plum transition-colors">Menu</a>
+        <a href="about.html"   class="text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone hover:text-plum transition-colors">About</a>
+        <a href="contact.html" class="text-xs font-sans font-semibold tracking-[0.15em] uppercase text-plum border-b border-brass pb-0.5">Contact</a>
         <a href="contact.html" class="btn-primary">Reserve a Table</a>
       </div>
-      <button id="menu-btn" class="md:hidden text-ivory/70" aria-label="Toggle menu">
+      <button id="menu-btn" class="md:hidden text-plum/60" aria-label="Toggle menu">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-pit border-t border-ivory/10 px-6 py-5 flex flex-col gap-5">
-      <a href="index.html"   class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60">Home</a>
-      <a href="menu.html"    class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60">Menu</a>
-      <a href="about.html"   class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60">About</a>
-      <a href="contact.html" class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-gold">Contact</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-linen border-t border-plum/10 px-6 py-5 flex flex-col gap-5">
+      <a href="index.html"   class="text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone">Home</a>
+      <a href="menu.html"    class="text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone">Menu</a>
+      <a href="about.html"   class="text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone">About</a>
+      <a href="contact.html" class="text-xs font-sans font-semibold tracking-[0.15em] uppercase text-plum">Contact</a>
       <a href="contact.html" class="btn-primary text-center">Reserve a Table</a>
     </div>
   </nav>
 
-
-  <!-- ======================== HERO ======================== -->
-  <section class="bg-pit px-6 py-24 md:py-32 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-[0.03]"
-         style="background-image: linear-gradient(rgba(245,240,232,1) 1px, transparent 1px), linear-gradient(90deg, rgba(245,240,232,1) 1px, transparent 1px); background-size: 48px 48px;"></div>
-    <div class="absolute top-0 left-0 bottom-0 w-px bg-gold/20"></div>
+  <!-- HERO -->
+  <section class="bg-plum px-6 py-24 md:py-32 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04]"
+         style="background-image: linear-gradient(rgba(250,247,240,1) 1px, transparent 1px), linear-gradient(90deg, rgba(250,247,240,1) 1px, transparent 1px); background-size: 48px 48px;"></div>
+    <div class="absolute top-0 left-0 bottom-0 w-px bg-brass/30"></div>
     <div class="relative z-10 max-w-6xl mx-auto">
-      <p class="text-gold text-xs font-sans tracking-[0.3em] uppercase font-light mb-6">Reservations</p>
-      <h1 class="font-display text-6xl sm:text-7xl md:text-8xl font-light text-ivory leading-none mb-6">
-        Save Your Seat<br /><em class="text-gold">at the Table.</em>
+      <p class="text-brass text-xs font-sans tracking-[0.3em] uppercase font-semibold mb-6">Reservations</p>
+      <h1 class="font-display text-6xl sm:text-7xl md:text-8xl text-linen leading-tight mb-6">
+        Save Your Seat<br /><em class="text-brass">at the Table.</em>
       </h1>
-      <p class="text-ivory/40 text-lg font-sans font-light leading-relaxed max-w-md">
-        Request a reservation below or give us a call. Walk-ins are always welcome — we recommend
-        booking ahead for parties of 6 or more.
+      <p class="text-linen/50 text-lg font-sans leading-relaxed max-w-md">
+        Request a reservation below or give us a call. Walk-ins always welcome — we recommend booking ahead for parties of 6 or more.
       </p>
     </div>
   </section>
 
-
-  <!-- ======================== FORM + INFO ======================== -->
-  <section class="py-20 md:py-28 px-6 bg-[#141210]">
+  <!-- FORM + INFO -->
+  <section class="py-20 md:py-28 px-6 bg-white">
     <div class="max-w-6xl mx-auto">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
         <!-- Info -->
         <div>
-          <p class="text-gold text-xs font-sans tracking-[0.3em] uppercase font-light mb-8">Visit &amp; Contact</p>
+          <p class="text-brass text-xs font-sans tracking-[0.3em] uppercase font-semibold mb-8">Visit &amp; Contact</p>
 
-          <div class="space-y-8">
-
-            <div class="flex items-start gap-6">
-              <span class="text-gold/50 text-xl w-6 flex-shrink-0 pt-0.5">📞</span>
+          <div class="space-y-7">
+            <div class="flex items-start gap-5">
+              <span class="text-brass/60 text-lg w-6 flex-shrink-0 pt-0.5">📞</span>
               <div>
-                <p class="font-display text-xl font-light text-ivory italic mb-1">Phone</p>
-                <a href="tel:+18305550183" class="text-ivory/40 text-sm font-sans font-light hover:text-ivory transition-colors">(830) 555-0183</a>
+                <p class="font-display text-xl text-plum italic mb-1">Phone</p>
+                <a href="tel:+18305550183" class="text-stone text-sm font-sans hover:text-plum transition-colors">(830) 555-0183</a>
               </div>
             </div>
-
-            <div class="border-t border-ivory/5"></div>
-
-            <div class="flex items-start gap-6">
-              <span class="text-gold/50 text-xl w-6 flex-shrink-0 pt-0.5">📍</span>
+            <div class="h-px bg-plum/6"></div>
+            <div class="flex items-start gap-5">
+              <span class="text-brass/60 text-lg w-6 flex-shrink-0 pt-0.5">📍</span>
               <div>
-                <p class="font-display text-xl font-light text-ivory italic mb-1">Address</p>
-                <p class="text-ivory/40 text-sm font-sans font-light">112 Main Street<br />Hondo, TX 78861</p>
+                <p class="font-display text-xl text-plum italic mb-1">Address</p>
+                <p class="text-stone text-sm font-sans">112 Main Street<br />Hondo, TX 78861</p>
               </div>
             </div>
-
-            <div class="border-t border-ivory/5"></div>
-
-            <div class="flex items-start gap-6">
-              <span class="text-gold/50 text-xl w-6 flex-shrink-0 pt-0.5">🕐</span>
+            <div class="h-px bg-plum/6"></div>
+            <div class="flex items-start gap-5">
+              <span class="text-brass/60 text-lg w-6 flex-shrink-0 pt-0.5">🕐</span>
               <div>
-                <p class="font-display text-xl font-light text-ivory italic mb-1">Hours</p>
-                <p class="text-ivory/40 text-sm font-sans font-light leading-relaxed">
+                <p class="font-display text-xl text-plum italic mb-1">Hours</p>
+                <p class="text-stone text-sm font-sans leading-relaxed">
                   Mon – Thu &nbsp;&nbsp; 11am – 9pm<br />
                   Fri – Sat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11am – 10pm<br />
                   Sunday &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11am – 8pm
                 </p>
               </div>
             </div>
-
-            <div class="border-t border-ivory/5"></div>
-
-            <div class="flex items-start gap-6">
-              <span class="text-gold/50 text-xl w-6 flex-shrink-0 pt-0.5">🎉</span>
+            <div class="h-px bg-plum/6"></div>
+            <div class="flex items-start gap-5">
+              <span class="text-brass/60 text-lg w-6 flex-shrink-0 pt-0.5">🎉</span>
               <div>
-                <p class="font-display text-xl font-light text-ivory italic mb-1">Private Events</p>
-                <p class="text-ivory/40 text-sm font-sans font-light leading-relaxed">
-                  We accommodate private dining and catering for parties, corporate events, and
-                  family gatherings. Mention it in your request and we&rsquo;ll follow up with details.
+                <p class="font-display text-xl text-plum italic mb-1">Private Events</p>
+                <p class="text-stone text-sm font-sans leading-relaxed">
+                  We accommodate private dining and catering for parties, corporate events, and family gatherings. Mention it in your request and we&rsquo;ll follow up with details.
                 </p>
               </div>
             </div>
-
           </div>
 
           <!-- Map placeholder -->
-          <div class="mt-10 border border-ivory/10 aspect-video flex items-center justify-center">
+          <div class="mt-10 border border-plum/10 aspect-video flex items-center justify-center bg-linen">
             <div class="text-center">
               <p class="text-3xl mb-2">🗺️</p>
-              <p class="text-ivory/25 text-xs font-sans font-light tracking-widest uppercase">Map — 112 Main St, Hondo TX</p>
+              <p class="text-stone text-xs font-sans tracking-widest uppercase">Map — 112 Main St, Hondo TX</p>
             </div>
           </div>
         </div>
 
         <!-- Form -->
         <div>
-          <form id="contact-form" class="border border-ivory/10 p-8 md:p-10 space-y-6">
+          <form id="contact-form" class="border border-plum/12 bg-linen p-8 md:p-10 space-y-6">
 
             <div class="grid sm:grid-cols-2 gap-5">
               <div>
-                <label class="block text-xs font-sans tracking-[0.15em] uppercase text-ivory/40 mb-2">First Name</label>
+                <label class="block text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone mb-2">First Name</label>
                 <input type="text" name="first_name" placeholder="First" required
-                  class="w-full bg-transparent border-b border-ivory/15 py-3 text-ivory text-sm font-sans font-light placeholder-ivory/20 focus:outline-none focus:border-gold/50 transition-colors" />
+                  class="w-full bg-transparent border-b border-plum/20 py-3 text-plum text-sm font-sans placeholder-stone/30 focus:outline-none focus:border-brass transition-colors" />
               </div>
               <div>
-                <label class="block text-xs font-sans tracking-[0.15em] uppercase text-ivory/40 mb-2">Last Name</label>
+                <label class="block text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone mb-2">Last Name</label>
                 <input type="text" name="last_name" placeholder="Last" required
-                  class="w-full bg-transparent border-b border-ivory/15 py-3 text-ivory text-sm font-sans font-light placeholder-ivory/20 focus:outline-none focus:border-gold/50 transition-colors" />
+                  class="w-full bg-transparent border-b border-plum/20 py-3 text-plum text-sm font-sans placeholder-stone/30 focus:outline-none focus:border-brass transition-colors" />
               </div>
             </div>
 
             <div>
-              <label class="block text-xs font-sans tracking-[0.15em] uppercase text-ivory/40 mb-2">Phone Number</label>
+              <label class="block text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone mb-2">Phone Number</label>
               <input type="tel" name="phone" placeholder="(830) 555-0000" required
-                class="w-full bg-transparent border-b border-ivory/15 py-3 text-ivory text-sm font-sans font-light placeholder-ivory/20 focus:outline-none focus:border-gold/50 transition-colors" />
+                class="w-full bg-transparent border-b border-plum/20 py-3 text-plum text-sm font-sans placeholder-stone/30 focus:outline-none focus:border-brass transition-colors" />
             </div>
 
             <div>
-              <label class="block text-xs font-sans tracking-[0.15em] uppercase text-ivory/40 mb-2">Email <span class="text-ivory/20 normal-case tracking-normal">(optional)</span></label>
+              <label class="block text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone mb-2">Email <span class="text-stone/40 normal-case tracking-normal">(optional)</span></label>
               <input type="email" name="email" placeholder="you@email.com"
-                class="w-full bg-transparent border-b border-ivory/15 py-3 text-ivory text-sm font-sans font-light placeholder-ivory/20 focus:outline-none focus:border-gold/50 transition-colors" />
+                class="w-full bg-transparent border-b border-plum/20 py-3 text-plum text-sm font-sans placeholder-stone/30 focus:outline-none focus:border-brass transition-colors" />
             </div>
 
             <div class="grid sm:grid-cols-2 gap-5">
               <div>
-                <label class="block text-xs font-sans tracking-[0.15em] uppercase text-ivory/40 mb-2">Preferred Date</label>
+                <label class="block text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone mb-2">Preferred Date</label>
                 <input type="date" name="date" required
-                  class="w-full bg-transparent border-b border-ivory/15 py-3 text-ivory text-sm font-sans font-light focus:outline-none focus:border-gold/50 transition-colors" />
+                  class="w-full bg-transparent border-b border-plum/20 py-3 text-plum text-sm font-sans focus:outline-none focus:border-brass transition-colors" />
               </div>
               <div>
-                <label class="block text-xs font-sans tracking-[0.15em] uppercase text-ivory/40 mb-2">Preferred Time</label>
-                <select name="time"
-                  class="w-full bg-transparent border-b border-ivory/15 py-3 text-ivory text-sm font-sans font-light focus:outline-none focus:border-gold/50 transition-colors">
-                  <option value="" disabled selected class="bg-pit">Select time…</option>
-                  <option class="bg-pit">11:00 AM</option>
-                  <option class="bg-pit">12:00 PM</option>
-                  <option class="bg-pit">12:30 PM</option>
-                  <option class="bg-pit">1:00 PM</option>
-                  <option class="bg-pit">5:00 PM</option>
-                  <option class="bg-pit">5:30 PM</option>
-                  <option class="bg-pit">6:00 PM</option>
-                  <option class="bg-pit">6:30 PM</option>
-                  <option class="bg-pit">7:00 PM</option>
-                  <option class="bg-pit">7:30 PM</option>
-                  <option class="bg-pit">8:00 PM</option>
+                <label class="block text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone mb-2">Preferred Time</label>
+                <select name="time" class="w-full bg-transparent border-b border-plum/20 py-3 text-plum text-sm font-sans focus:outline-none focus:border-brass transition-colors">
+                  <option value="" disabled selected>Select time…</option>
+                  <option>11:00 AM</option><option>12:00 PM</option><option>12:30 PM</option>
+                  <option>1:00 PM</option><option>5:00 PM</option><option>5:30 PM</option>
+                  <option>6:00 PM</option><option>6:30 PM</option><option>7:00 PM</option>
+                  <option>7:30 PM</option><option>8:00 PM</option>
                 </select>
               </div>
             </div>
 
             <div>
-              <label class="block text-xs font-sans tracking-[0.15em] uppercase text-ivory/40 mb-2">Party Size</label>
-              <select name="party_size"
-                class="w-full bg-transparent border-b border-ivory/15 py-3 text-ivory text-sm font-sans font-light focus:outline-none focus:border-gold/50 transition-colors">
-                <option value="" disabled selected class="bg-pit">How many guests?</option>
-                <option class="bg-pit">1–2 guests</option>
-                <option class="bg-pit">3–4 guests</option>
-                <option class="bg-pit">5–6 guests</option>
-                <option class="bg-pit">7–10 guests</option>
-                <option class="bg-pit">11+ guests (large party)</option>
+              <label class="block text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone mb-2">Party Size</label>
+              <select name="party_size" class="w-full bg-transparent border-b border-plum/20 py-3 text-plum text-sm font-sans focus:outline-none focus:border-brass transition-colors">
+                <option value="" disabled selected>How many guests?</option>
+                <option>1–2 guests</option><option>3–4 guests</option><option>5–6 guests</option>
+                <option>7–10 guests</option><option>11+ guests (large party)</option>
               </select>
             </div>
 
             <div>
-              <label class="block text-xs font-sans tracking-[0.15em] uppercase text-ivory/40 mb-2">Special Requests <span class="text-ivory/20 normal-case tracking-normal">(optional)</span></label>
-              <textarea rows="3" name="message"
-                placeholder="Occasion, dietary needs, catering inquiry…"
-                class="w-full bg-transparent border-b border-ivory/15 py-3 text-ivory text-sm font-sans font-light placeholder-ivory/20 focus:outline-none focus:border-gold/50 transition-colors resize-none"></textarea>
+              <label class="block text-xs font-sans font-semibold tracking-[0.15em] uppercase text-stone mb-2">Special Requests <span class="text-stone/40 normal-case tracking-normal">(optional)</span></label>
+              <textarea rows="3" name="message" placeholder="Occasion, dietary needs, catering inquiry…"
+                class="w-full bg-transparent border-b border-plum/20 py-3 text-plum text-sm font-sans placeholder-stone/30 focus:outline-none focus:border-brass transition-colors resize-none"></textarea>
             </div>
 
-            <button type="submit" class="btn-primary w-full text-center mt-4">
-              Request Reservation
-            </button>
+            <button type="submit" class="btn-primary w-full text-center mt-2">Request Reservation</button>
 
-            <p class="text-xs text-ivory/20 font-sans font-light text-center">
+            <p class="text-xs text-stone/50 font-sans text-center">
               We confirm by phone within a few hours. Walk-ins always welcome.
             </p>
 
           </form>
         </div>
-
       </div>
     </div>
   </section>
 
-
-  <!-- ======================== FOOTER ======================== -->
-  <footer class="bg-[#080706] text-ivory py-14 px-6 border-t border-ivory/5">
+  <!-- FOOTER -->
+  <footer class="bg-plum text-linen py-14 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="grid md:grid-cols-3 gap-10 mb-12">
         <div>
-          <p class="font-display text-2xl font-light text-ivory mb-1">Main Street Grille</p>
-          <p class="text-gold/60 text-xs font-sans tracking-[0.2em] uppercase mb-4">Hondo, Texas</p>
-          <p class="text-ivory/30 text-sm font-sans font-light leading-relaxed">
-            Scratch-made American comfort food.<br />Family owned and operated since 2009.
-          </p>
+          <p class="font-display text-2xl text-linen mb-1">Main Street Grille</p>
+          <p class="text-brass/70 text-xs font-sans tracking-[0.2em] uppercase mb-4">Hondo, Texas</p>
+          <p class="text-linen/40 text-sm font-sans leading-relaxed">Scratch-made American comfort food.<br />Family owned and operated since 2009.</p>
           <div class="flex gap-3 mt-5">
-            <a href="#" aria-label="Facebook" class="w-8 h-8 border border-ivory/10 hover:border-gold/40 flex items-center justify-center transition-colors text-ivory/30 hover:text-gold/60 text-xs">f</a>
-            <a href="#" aria-label="Instagram" class="w-8 h-8 border border-ivory/10 hover:border-gold/40 flex items-center justify-center transition-colors text-ivory/30 hover:text-gold/60 text-xs">ig</a>
+            <a href="#" aria-label="Facebook" class="w-8 h-8 border border-linen/15 hover:border-brass/50 flex items-center justify-center transition-colors text-linen/30 hover:text-brass/70 text-xs font-sans">f</a>
+            <a href="#" aria-label="Instagram" class="w-8 h-8 border border-linen/15 hover:border-brass/50 flex items-center justify-center transition-colors text-linen/30 hover:text-brass/70 text-xs font-sans">ig</a>
           </div>
         </div>
         <div>
-          <p class="text-xs font-sans tracking-[0.2em] uppercase text-ivory/30 mb-5">Navigate</p>
+          <p class="text-xs font-sans tracking-[0.2em] uppercase text-linen/30 mb-5">Navigate</p>
           <div class="flex flex-col gap-3">
-            <a href="index.html"   class="text-sm text-ivory/40 hover:text-ivory font-sans font-light transition-colors">Home</a>
-            <a href="menu.html"    class="text-sm text-ivory/40 hover:text-ivory font-sans font-light transition-colors">Menu</a>
-            <a href="about.html"   class="text-sm text-ivory/40 hover:text-ivory font-sans font-light transition-colors">About Us</a>
-            <a href="contact.html" class="text-sm text-ivory/40 hover:text-ivory font-sans font-light transition-colors">Contact / Reserve</a>
+            <a href="index.html"   class="text-sm text-linen/50 hover:text-linen font-sans transition-colors">Home</a>
+            <a href="menu.html"    class="text-sm text-linen/50 hover:text-linen font-sans transition-colors">Menu</a>
+            <a href="about.html"   class="text-sm text-linen/50 hover:text-linen font-sans transition-colors">About Us</a>
+            <a href="contact.html" class="text-sm text-linen/50 hover:text-linen font-sans transition-colors">Contact / Reserve</a>
           </div>
         </div>
         <div>
-          <p class="text-xs font-sans tracking-[0.2em] uppercase text-ivory/30 mb-5">Visit Us</p>
+          <p class="text-xs font-sans tracking-[0.2em] uppercase text-linen/30 mb-5">Visit Us</p>
           <div class="space-y-3">
-            <p class="text-sm text-ivory/40 font-sans font-light">112 Main Street, Hondo, TX 78861</p>
-            <p class="text-sm text-ivory/40 font-sans font-light"><a href="tel:+18305550183" class="hover:text-ivory transition-colors">(830) 555-0183</a></p>
-            <p class="text-sm text-ivory/40 font-sans font-light">Mon–Sat 11am–10pm &nbsp;|&nbsp; Sun 11am–8pm</p>
+            <p class="text-sm text-linen/50 font-sans">112 Main Street, Hondo, TX 78861</p>
+            <p class="text-sm text-linen/50 font-sans"><a href="tel:+18305550183" class="hover:text-linen transition-colors">(830) 555-0183</a></p>
+            <p class="text-sm text-linen/50 font-sans">Mon–Sat 11am–10pm &nbsp;|&nbsp; Sun 11am–8pm</p>
           </div>
         </div>
       </div>
-      <div class="border-t border-ivory/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3">
-        <p class="text-ivory/20 text-xs font-sans font-light">&copy; 2025 Main Street Grille. All rights reserved.</p>
-        <p class="text-ivory/20 text-xs font-sans font-light">Website by <a href="../../index.html" class="text-gold/40 hover:text-gold transition-colors">Root &amp; Render</a></p>
+      <div class="border-t border-linen/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <p class="text-linen/25 text-xs font-sans">&copy; 2025 Main Street Grille. All rights reserved.</p>
+        <p class="text-linen/25 text-xs font-sans">Website by <a href="../../index.html" class="text-brass/50 hover:text-brass transition-colors">Root &amp; Render</a></p>
       </div>
     </div>
   </footer>

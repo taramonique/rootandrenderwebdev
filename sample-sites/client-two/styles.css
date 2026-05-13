@@ -1,15 +1,15 @@
-/* Main Street Grille — Dark Steakhouse */
+/* Main Street Grille — Upscale Bistro */
 
 html { scroll-behavior: smooth; }
 
-/* Noise texture overlay */
+/* Subtle warm linen texture */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 100;
-  opacity: 0.03;
+  opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-size: 200px 200px;
 }
@@ -17,21 +17,22 @@ body::before {
 /* Nav shadow on scroll */
 #navbar { transition: box-shadow 0.2s ease; }
 
-/* Feature card hover — green lift */
+/* Feature card hover */
 .card {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(184, 148, 31, 0.08);
+  box-shadow: 0 16px 40px rgba(74, 23, 40, 0.08);
 }
 
 /* Menu item row hover */
 .menu-item {
   transition: background 0.15s ease;
+  border-radius: 4px;
 }
 .menu-item:hover {
-  background-color: rgba(245, 240, 232, 0.04);
+  background-color: rgba(74, 23, 40, 0.03);
 }
 
 /* Menu category tab */
@@ -40,14 +41,15 @@ body::before {
   cursor: pointer;
 }
 .menu-tab.active {
-  color: #B8941F;
-  border-bottom-color: #B8941F;
+  color: #4A1728;
+  border-bottom-color: #A07840;
 }
 .menu-tab:not(.active) {
   border-bottom-color: transparent;
+  color: #6B6560;
 }
 .menu-tab:not(.active):hover {
-  color: #F5F0E8;
+  color: #4A1728;
 }
 
 /* Menu section visibility */
@@ -61,58 +63,83 @@ body::before {
   z-index: 40;
 }
 
-/* CTA buttons — thin border, all caps, no radius */
-.btn-primary {
+/* ── Buttons — thin border, all-caps, no radius ── */
+
+/* On dark (plum) sections — brass outline */
+.btn-brass {
   display: inline-block;
-  border: 1px solid #B8941F;
-  color: #B8941F;
+  border: 1px solid #A07840;
+  color: #A07840;
   font-size: 0.7rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   padding: 0.875rem 2rem;
   transition: background 0.2s ease, color 0.2s ease;
+  font-family: 'Nunito Sans', system-ui, sans-serif;
 }
-.btn-primary:hover {
-  background-color: #B8941F;
-  color: #0F0D0B;
+.btn-brass:hover {
+  background-color: #A07840;
+  color: #FAF7F0;
 }
 
+/* On dark sections — ghost linen */
 .btn-ghost {
   display: inline-block;
-  border: 1px solid rgba(245, 240, 232, 0.3);
-  color: rgba(245, 240, 232, 0.7);
+  border: 1px solid rgba(250, 247, 240, 0.3);
+  color: rgba(250, 247, 240, 0.7);
   font-size: 0.7rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   padding: 0.875rem 2rem;
   transition: border-color 0.2s ease, color 0.2s ease;
+  font-family: 'Nunito Sans', system-ui, sans-serif;
 }
 .btn-ghost:hover {
-  border-color: #F5F0E8;
-  color: #F5F0E8;
+  border-color: #FAF7F0;
+  color: #FAF7F0;
 }
 
-.btn-ghost-dark {
+/* On light (linen) sections — plum outline */
+.btn-primary {
   display: inline-block;
-  border: 1px solid rgba(245, 240, 232, 0.2);
-  color: rgba(245, 240, 232, 0.6);
+  border: 1px solid #4A1728;
+  color: #4A1728;
   font-size: 0.7rem;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.875rem 2rem;
+  transition: background 0.2s ease, color 0.2s ease;
+  font-family: 'Nunito Sans', system-ui, sans-serif;
+}
+.btn-primary:hover {
+  background-color: #4A1728;
+  color: #FAF7F0;
+}
+
+/* On light sections — brass outline */
+.btn-secondary {
+  display: inline-block;
+  border: 1px solid rgba(74, 23, 40, 0.25);
+  color: #6B6560;
+  font-size: 0.7rem;
+  font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   padding: 0.875rem 2rem;
   transition: border-color 0.2s ease, color 0.2s ease;
+  font-family: 'Nunito Sans', system-ui, sans-serif;
 }
-.btn-ghost-dark:hover {
-  border-color: rgba(245, 240, 232, 0.5);
-  color: #F5F0E8;
+.btn-secondary:hover {
+  border-color: #4A1728;
+  color: #4A1728;
 }
 
-/* Select custom arrow */
+/* Custom select arrow */
 select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23B8941F'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23A07840'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
   background-size: 1.2em;
