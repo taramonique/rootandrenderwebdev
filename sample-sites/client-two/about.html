@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Main Street Grille — Hondo, TX</title>
+  <meta name="description" content="Learn the story behind Main Street Grille — a family-owned American restaurant that's been serving Hondo, TX with scratch-made food since 2009." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            crimson: '#8B2635',
+            wheat:   '#C9A84C',
+            cream:   '#FBF6EE',
+            charcoal:'#1E1A14',
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'Georgia', 'serif'],
+            sans:    ['DM Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-cream text-charcoal font-sans antialiased">
+
+
+  <!-- ======================== NAV ======================== -->
+  <nav class="sticky top-0 z-50 bg-cream border-b border-amber-100" id="navbar">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="text-2xl">🍽️</span>
+        <div>
+          <p class="font-display font-bold text-crimson leading-none text-lg">Main Street Grille</p>
+          <p class="text-xs text-gray-400 tracking-widest uppercase leading-none">Hondo, TX</p>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"   class="text-sm font-medium text-charcoal hover:text-crimson transition-colors">Home</a>
+        <a href="menu.html"    class="text-sm font-medium text-charcoal hover:text-crimson transition-colors">Menu</a>
+        <a href="about.html"   class="text-sm font-medium text-crimson border-b-2 border-crimson pb-0.5">About</a>
+        <a href="contact.html" class="text-sm font-medium text-charcoal hover:text-crimson transition-colors">Contact</a>
+        <a href="contact.html" class="bg-crimson text-cream text-sm font-semibold px-5 py-2.5 rounded hover:bg-red-900 transition-colors">
+          Reserve a Table
+        </a>
+      </div>
+      <button id="menu-btn" class="md:hidden text-charcoal" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-amber-100 px-6 py-4 flex flex-col gap-4">
+      <a href="index.html"   class="text-sm font-medium text-charcoal">Home</a>
+      <a href="menu.html"    class="text-sm font-medium text-charcoal">Menu</a>
+      <a href="about.html"   class="text-sm font-medium text-crimson">About</a>
+      <a href="contact.html" class="text-sm font-medium text-charcoal">Contact</a>
+      <a href="contact.html" class="bg-crimson text-cream text-sm font-semibold px-5 py-2.5 rounded text-center">Reserve a Table</a>
+    </div>
+  </nav>
+
+
+  <!-- ======================== HERO ======================== -->
+  <section class="bg-charcoal px-6 py-20 md:py-28 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5"
+         style="background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%); background-size: 16px 16px;"></div>
+    <div class="absolute top-0 left-0 right-0 h-1 bg-wheat"></div>
+    <div class="relative z-10 max-w-6xl mx-auto">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="h-px bg-wheat/50 w-8"></div>
+        <span class="text-wheat/80 text-xs font-sans font-semibold tracking-widest uppercase">Our Story</span>
+      </div>
+      <h1 class="font-display text-5xl sm:text-6xl md:text-7xl font-bold text-cream mb-5 leading-tight">
+        More Than a<br /><em class="text-wheat not-italic">Meal.</em>
+      </h1>
+      <p class="text-cream/65 text-lg max-w-xl leading-relaxed">
+        For fifteen years, Main Street Grille has been the place Hondo comes together — for lunch with coworkers,
+        dinner with family, and everything in between.
+      </p>
+    </div>
+  </section>
+  <div class="h-1.5 bg-wheat"></div>
+
+
+  <!-- ======================== THE STORY ======================== -->
+  <section class="py-16 md:py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+
+        <!-- Photo placeholder -->
+        <div class="bg-amber-50 rounded-lg aspect-[4/5] flex items-center justify-center relative overflow-hidden">
+          <div class="text-center p-8">
+            <span class="text-8xl block mb-4">👨‍👩‍👧‍👦</span>
+            <p class="font-display text-xl font-semibold text-charcoal">The Caldwell Family</p>
+            <p class="text-sm text-gray-500 mt-1">Jim, Linda &amp; the crew</p>
+          </div>
+          <div class="absolute left-0 top-8 bottom-8 w-1.5 bg-crimson rounded-full"></div>
+        </div>
+
+        <!-- Story text -->
+        <div>
+          <p class="text-crimson text-xs font-sans font-semibold tracking-widest uppercase mb-3">
+            — How It Started
+          </p>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-charcoal mb-6 leading-tight">
+            Jim &amp; Linda<br />Caldwell, Owners.
+          </h2>
+          <div class="space-y-4 text-gray-600 text-base leading-relaxed">
+            <p>
+              In 2009, Jim Caldwell quit his oil-field job and Linda left her teaching career to open a
+              restaurant in the building where Jim's father used to run a hardware store. They called it
+              Main Street Grille — because that's exactly what it is.
+            </p>
+            <p>
+              Everything you eat here comes out of a scratch kitchen. Jim handles the grill and the
+              smoker. Linda runs the front of the house and still bakes every dessert herself. Their
+              daughter Kayla joined the team in 2019 as general manager.
+            </p>
+            <p>
+              We're not a chain, and we never want to be. We know our regulars by name, and we like it
+              that way.
+            </p>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="menu.html"
+               class="bg-crimson text-cream font-semibold px-7 py-3.5 rounded hover:bg-red-900 transition-colors">
+              See the Menu
+            </a>
+            <a href="contact.html"
+               class="border-2 border-charcoal/20 text-charcoal font-semibold px-7 py-3.5 rounded hover:border-charcoal/40 transition-colors">
+              Reserve a Table
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Decorative divider -->
+  <div class="flex items-center gap-4 px-6 py-2 max-w-6xl mx-auto">
+    <div class="flex-1 h-px bg-wheat/30"></div>
+    <span class="text-wheat text-sm">✦</span>
+    <div class="flex-1 h-px bg-wheat/30"></div>
+  </div>
+
+
+  <!-- ======================== HOW WE DO IT ======================== -->
+  <section class="py-16 md:py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-12">
+        <p class="text-crimson text-xs font-sans font-semibold tracking-widest uppercase mb-3">
+          — How We Do It
+        </p>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-charcoal">
+          The Way We Cook
+        </h2>
+      </div>
+
+      <div class="space-y-6 max-w-2xl">
+
+        <div class="flex items-start gap-5">
+          <div class="w-10 h-10 rounded bg-crimson flex items-center justify-center flex-shrink-0">
+            <span class="text-cream font-display font-bold text-sm">01</span>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-charcoal text-lg mb-1">Everything From Scratch</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Our sauces, soups, desserts, and breads are made in-house every day.
+              If we can make it ourselves, we do.
+            </p>
+          </div>
+        </div>
+
+        <div class="h-px bg-amber-100"></div>
+
+        <div class="flex items-start gap-5">
+          <div class="w-10 h-10 rounded bg-wheat flex items-center justify-center flex-shrink-0">
+            <span class="text-white font-display font-bold text-sm">02</span>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-charcoal text-lg mb-1">Texas Raised Ingredients</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              We source beef from Texas ranches, our peaches come from a farm two counties over,
+              and we buy produce from local growers whenever it's in season.
+            </p>
+          </div>
+        </div>
+
+        <div class="h-px bg-amber-100"></div>
+
+        <div class="flex items-start gap-5">
+          <div class="w-10 h-10 rounded bg-crimson flex items-center justify-center flex-shrink-0">
+            <span class="text-cream font-display font-bold text-sm">03</span>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-charcoal text-lg mb-1">Low and Slow on the Smoker</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Our ribs and brisket go on the pit at 5am. By the time lunch rolls around, they've been
+              cooking for six hours. That's not a shortcut — that's the only way.
+            </p>
+          </div>
+        </div>
+
+        <div class="h-px bg-amber-100"></div>
+
+        <div class="flex items-start gap-5">
+          <div class="w-10 h-10 rounded bg-wheat flex items-center justify-center flex-shrink-0">
+            <span class="text-white font-display font-bold text-sm">04</span>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-charcoal text-lg mb-1">Family Service, Every Time</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Every table gets our full attention. Our staff has been with us an average of
+              six years — they're not just employees, they're part of the family.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================== AWARDS STRIP ======================== -->
+  <div class="h-1.5 bg-wheat"></div>
+  <section class="bg-charcoal py-12 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid sm:grid-cols-3 gap-8 text-center">
+        <div>
+          <p class="font-display text-4xl font-bold text-cream mb-1">3<span class="text-wheat">×</span></p>
+          <p class="text-wheat text-xs font-sans font-semibold tracking-widest uppercase mb-1">Winner</p>
+          <p class="text-gray-400 text-sm">Best Restaurant<br />Medina County</p>
+        </div>
+        <div>
+          <p class="font-display text-4xl font-bold text-cream mb-1">15<span class="text-wheat">+</span></p>
+          <p class="text-wheat text-xs font-sans font-semibold tracking-widest uppercase mb-1">Years</p>
+          <p class="text-gray-400 text-sm">Serving Hondo<br />&amp; Medina County</p>
+        </div>
+        <div>
+          <p class="font-display text-4xl font-bold text-cream mb-1">100<span class="text-wheat">%</span></p>
+          <p class="text-wheat text-xs font-sans font-semibold tracking-widest uppercase mb-1">Scratch</p>
+          <p class="text-gray-400 text-sm">Sauces, desserts &amp;<br />sides — all in-house</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="h-1.5 bg-wheat"></div>
+
+
+  <!-- ======================== CTA STRIP ======================== -->
+  <section class="py-16 md:py-20 px-6 bg-cream">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+        <div>
+          <p class="text-crimson text-xs font-sans font-semibold tracking-widest uppercase mb-2">— Come Find Us</p>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-charcoal">
+            We&rsquo;d Love to Feed You.
+          </h2>
+          <p class="text-gray-500 mt-3 text-base">112 Main Street, Hondo, TX — Walk-ins always welcome.</p>
+        </div>
+        <div class="flex flex-wrap gap-4 flex-shrink-0">
+          <a href="contact.html"
+             class="bg-crimson text-cream font-semibold px-7 py-3.5 rounded hover:bg-red-900 transition-colors shadow-sm whitespace-nowrap">
+            Reserve a Table
+          </a>
+          <a href="menu.html"
+             class="border-2 border-crimson text-crimson font-semibold px-7 py-3.5 rounded hover:bg-crimson hover:text-cream transition-colors whitespace-nowrap">
+            View the Menu
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="bg-charcoal text-cream py-12 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 mb-10">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-xl">🍽️</span>
+            <div>
+              <p class="font-display font-bold text-wheat leading-none">Main Street Grille</p>
+              <p class="text-xs text-gray-500 tracking-widest uppercase leading-none">Hondo, TX</p>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Scratch-made American comfort food in the heart of Hondo, TX. Family owned since 2009.
+          </p>
+          <div class="flex gap-3 mt-4">
+            <a href="#" aria-label="Facebook"
+               class="w-8 h-8 rounded bg-cream/10 hover:bg-wheat/20 flex items-center justify-center transition-colors text-sm">f</a>
+            <a href="#" aria-label="Instagram"
+               class="w-8 h-8 rounded bg-cream/10 hover:bg-wheat/20 flex items-center justify-center transition-colors text-sm">ig</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-sans font-semibold tracking-widest uppercase text-gray-500 mb-4">Navigate</p>
+          <div class="flex flex-col gap-2">
+            <a href="index.html"   class="text-sm text-gray-400 hover:text-cream transition-colors">Home</a>
+            <a href="menu.html"    class="text-sm text-gray-400 hover:text-cream transition-colors">Menu</a>
+            <a href="about.html"   class="text-sm text-gray-400 hover:text-cream transition-colors">About Us</a>
+            <a href="contact.html" class="text-sm text-gray-400 hover:text-cream transition-colors">Contact / Reserve</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-sans font-semibold tracking-widest uppercase text-gray-500 mb-4">Visit Us</p>
+          <div class="space-y-2">
+            <p class="text-sm text-gray-400">📍 112 Main Street, Hondo, TX 78861</p>
+            <p class="text-sm text-gray-400">📞 <a href="tel:+18305550183" class="hover:text-cream transition-colors">(830) 555-0183</a></p>
+            <p class="text-sm text-gray-400">🕐 Mon–Sat 11am–10pm, Sun 11am–8pm</p>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <p class="text-gray-600 text-sm">&copy; 2025 Main Street Grille. All rights reserved.</p>
+        <p class="text-gray-600 text-xs">Website by <a href="../../index.html" class="text-wheat/70 hover:text-wheat transition-colors">Root &amp; Render</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

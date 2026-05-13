@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reserve a Table | Main Street Grille — Hondo, TX</title>
+  <meta name="description" content="Reserve a table or inquire about private dining and catering at Main Street Grille in Hondo, TX. Walk-ins welcome. Call (830) 555-0183." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            crimson: '#8B2635',
+            wheat:   '#C9A84C',
+            cream:   '#FBF6EE',
+            charcoal:'#1E1A14',
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'Georgia', 'serif'],
+            sans:    ['DM Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-cream text-charcoal font-sans antialiased">
+
+
+  <!-- ======================== NAV ======================== -->
+  <nav class="sticky top-0 z-50 bg-cream border-b border-amber-100" id="navbar">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="text-2xl">🍽️</span>
+        <div>
+          <p class="font-display font-bold text-crimson leading-none text-lg">Main Street Grille</p>
+          <p class="text-xs text-gray-400 tracking-widest uppercase leading-none">Hondo, TX</p>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"   class="text-sm font-medium text-charcoal hover:text-crimson transition-colors">Home</a>
+        <a href="menu.html"    class="text-sm font-medium text-charcoal hover:text-crimson transition-colors">Menu</a>
+        <a href="about.html"   class="text-sm font-medium text-charcoal hover:text-crimson transition-colors">About</a>
+        <a href="contact.html" class="text-sm font-medium text-crimson border-b-2 border-crimson pb-0.5">Contact</a>
+        <a href="contact.html" class="bg-crimson text-cream text-sm font-semibold px-5 py-2.5 rounded hover:bg-red-900 transition-colors">
+          Reserve a Table
+        </a>
+      </div>
+      <button id="menu-btn" class="md:hidden text-charcoal" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-amber-100 px-6 py-4 flex flex-col gap-4">
+      <a href="index.html"   class="text-sm font-medium text-charcoal">Home</a>
+      <a href="menu.html"    class="text-sm font-medium text-charcoal">Menu</a>
+      <a href="about.html"   class="text-sm font-medium text-charcoal">About</a>
+      <a href="contact.html" class="text-sm font-medium text-crimson">Contact</a>
+      <a href="contact.html" class="bg-crimson text-cream text-sm font-semibold px-5 py-2.5 rounded text-center">Reserve a Table</a>
+    </div>
+  </nav>
+
+
+  <!-- ======================== HERO ======================== -->
+  <section class="bg-charcoal px-6 py-20 md:py-28 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5"
+         style="background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%); background-size: 16px 16px;"></div>
+    <div class="absolute top-0 left-0 right-0 h-1 bg-wheat"></div>
+    <div class="relative z-10 max-w-6xl mx-auto">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="h-px bg-wheat/50 w-8"></div>
+        <span class="text-wheat/80 text-xs font-sans font-semibold tracking-widest uppercase">Reservations</span>
+      </div>
+      <h1 class="font-display text-5xl sm:text-6xl md:text-7xl font-bold text-cream mb-5 leading-tight">
+        Save Your Seat<br /><em class="text-wheat not-italic">at the Table.</em>
+      </h1>
+      <p class="text-cream/65 text-lg max-w-xl leading-relaxed">
+        Request a reservation below or give us a call. Walk-ins are always welcome, but we recommend
+        booking ahead for parties of 6 or more.
+      </p>
+    </div>
+  </section>
+  <div class="h-1.5 bg-wheat"></div>
+
+
+  <!-- ======================== FORM + INFO ======================== -->
+  <section class="py-16 md:py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+
+        <!-- Info side -->
+        <div>
+          <p class="text-crimson text-xs font-sans font-semibold tracking-widest uppercase mb-3">
+            — Visit &amp; Contact
+          </p>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-charcoal mb-5 leading-tight">
+            We&rsquo;d love to have you.
+          </h2>
+          <p class="text-gray-500 text-base leading-relaxed mb-8">
+            Have a question? Call the restaurant directly — a real person will pick up.
+            We&rsquo;re small-town folks; we like talking to people.
+          </p>
+
+          <div class="space-y-6">
+
+            <div class="flex items-start gap-5">
+              <div class="w-10 h-10 rounded bg-crimson flex items-center justify-center flex-shrink-0 text-lg">📞</div>
+              <div>
+                <p class="font-display font-semibold text-charcoal mb-0.5">Phone</p>
+                <a href="tel:+18305550183" class="text-crimson hover:underline text-sm">(830) 555-0183</a>
+              </div>
+            </div>
+
+            <div class="h-px bg-amber-50"></div>
+
+            <div class="flex items-start gap-5">
+              <div class="w-10 h-10 rounded bg-wheat flex items-center justify-center flex-shrink-0 text-lg">📍</div>
+              <div>
+                <p class="font-display font-semibold text-charcoal mb-0.5">Address</p>
+                <p class="text-gray-500 text-sm">112 Main Street<br />Hondo, TX 78861</p>
+              </div>
+            </div>
+
+            <div class="h-px bg-amber-50"></div>
+
+            <div class="flex items-start gap-5">
+              <div class="w-10 h-10 rounded bg-crimson flex items-center justify-center flex-shrink-0 text-lg">🕐</div>
+              <div>
+                <p class="font-display font-semibold text-charcoal mb-0.5">Hours</p>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                  Mon – Thu: 11am – 9pm<br />
+                  Fri – Sat: 11am – 10pm<br />
+                  Sunday: 11am – 8pm
+                </p>
+              </div>
+            </div>
+
+            <div class="h-px bg-amber-50"></div>
+
+            <div class="flex items-start gap-5">
+              <div class="w-10 h-10 rounded bg-wheat flex items-center justify-center flex-shrink-0 text-lg">🎉</div>
+              <div>
+                <p class="font-display font-semibold text-charcoal mb-0.5">Private Events &amp; Catering</p>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                  We offer private dining and on-site catering for parties, corporate events,
+                  and family gatherings. Mention it in the form and we&rsquo;ll reach out with details.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Map placeholder -->
+          <div class="mt-8 bg-amber-50 rounded-lg aspect-video flex items-center justify-center border border-amber-100">
+            <div class="text-center">
+              <p class="text-4xl mb-2">🗺️</p>
+              <p class="text-gray-500 text-sm">Map embed — 112 Main St, Hondo TX</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reservation form -->
+        <div>
+          <form id="contact-form" class="bg-cream rounded-lg p-7 md:p-10 border border-amber-100 space-y-5">
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-semibold text-charcoal mb-2">First Name</label>
+                <input type="text" name="first_name" placeholder="First" required
+                  class="w-full bg-white border border-amber-100 rounded px-4 py-3 text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-crimson/20 transition" />
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-charcoal mb-2">Last Name</label>
+                <input type="text" name="last_name" placeholder="Last" required
+                  class="w-full bg-white border border-amber-100 rounded px-4 py-3 text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-crimson/20 transition" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-charcoal mb-2">Phone Number</label>
+              <input type="tel" name="phone" placeholder="(830) 555-0000" required
+                class="w-full bg-white border border-amber-100 rounded px-4 py-3 text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-crimson/20 transition" />
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-charcoal mb-2">Email Address <span class="text-gray-400 font-normal">(optional)</span></label>
+              <input type="email" name="email" placeholder="you@email.com"
+                class="w-full bg-white border border-amber-100 rounded px-4 py-3 text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-crimson/20 transition" />
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-semibold text-charcoal mb-2">Preferred Date</label>
+                <input type="date" name="date" required
+                  class="w-full bg-white border border-amber-100 rounded px-4 py-3 text-charcoal focus:outline-none focus:ring-2 focus:ring-crimson/20 transition" />
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-charcoal mb-2">Preferred Time</label>
+                <select name="time"
+                  class="w-full bg-white border border-amber-100 rounded px-4 py-3 text-charcoal focus:outline-none focus:ring-2 focus:ring-crimson/20 transition">
+                  <option value="" disabled selected>Select time...</option>
+                  <option>11:00 AM</option>
+                  <option>11:30 AM</option>
+                  <option>12:00 PM</option>
+                  <option>12:30 PM</option>
+                  <option>1:00 PM</option>
+                  <option>5:00 PM</option>
+                  <option>5:30 PM</option>
+                  <option>6:00 PM</option>
+                  <option>6:30 PM</option>
+                  <option>7:00 PM</option>
+                  <option>7:30 PM</option>
+                  <option>8:00 PM</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-charcoal mb-2">Party Size</label>
+              <select name="party_size"
+                class="w-full bg-white border border-amber-100 rounded px-4 py-3 text-charcoal focus:outline-none focus:ring-2 focus:ring-crimson/20 transition">
+                <option value="" disabled selected>How many guests?</option>
+                <option>1–2 guests</option>
+                <option>3–4 guests</option>
+                <option>5–6 guests</option>
+                <option>7–10 guests</option>
+                <option>11+ guests (large party)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-charcoal mb-2">
+                Occasion or special requests? <span class="text-gray-400 font-normal">(optional)</span>
+              </label>
+              <textarea rows="3" name="message"
+                placeholder="Birthday, anniversary, dietary restrictions, catering inquiry..."
+                class="w-full bg-white border border-amber-100 rounded px-4 py-3 text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-crimson/20 transition resize-none"></textarea>
+            </div>
+
+            <button type="submit"
+              class="w-full bg-crimson text-cream font-semibold py-4 rounded hover:bg-red-900 transition-colors shadow-sm text-base">
+              Request Reservation 🍽️
+            </button>
+
+            <p class="text-xs text-gray-400 text-center">
+              We&rsquo;ll confirm by phone within a few hours. Walk-ins always welcome.
+            </p>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="bg-charcoal text-cream py-12 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 mb-10">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-xl">🍽️</span>
+            <div>
+              <p class="font-display font-bold text-wheat leading-none">Main Street Grille</p>
+              <p class="text-xs text-gray-500 tracking-widest uppercase leading-none">Hondo, TX</p>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Scratch-made American comfort food in the heart of Hondo, TX. Family owned since 2009.
+          </p>
+          <div class="flex gap-3 mt-4">
+            <a href="#" aria-label="Facebook"
+               class="w-8 h-8 rounded bg-cream/10 hover:bg-wheat/20 flex items-center justify-center transition-colors text-sm">f</a>
+            <a href="#" aria-label="Instagram"
+               class="w-8 h-8 rounded bg-cream/10 hover:bg-wheat/20 flex items-center justify-center transition-colors text-sm">ig</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-sans font-semibold tracking-widest uppercase text-gray-500 mb-4">Navigate</p>
+          <div class="flex flex-col gap-2">
+            <a href="index.html"   class="text-sm text-gray-400 hover:text-cream transition-colors">Home</a>
+            <a href="menu.html"    class="text-sm text-gray-400 hover:text-cream transition-colors">Menu</a>
+            <a href="about.html"   class="text-sm text-gray-400 hover:text-cream transition-colors">About Us</a>
+            <a href="contact.html" class="text-sm text-gray-400 hover:text-cream transition-colors">Contact / Reserve</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-sans font-semibold tracking-widest uppercase text-gray-500 mb-4">Visit Us</p>
+          <div class="space-y-2">
+            <p class="text-sm text-gray-400">📍 112 Main Street, Hondo, TX 78861</p>
+            <p class="text-sm text-gray-400">📞 <a href="tel:+18305550183" class="hover:text-cream transition-colors">(830) 555-0183</a></p>
+            <p class="text-sm text-gray-400">🕐 Mon–Sat 11am–10pm, Sun 11am–8pm</p>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <p class="text-gray-600 text-sm">&copy; 2025 Main Street Grille. All rights reserved.</p>
+        <p class="text-gray-600 text-xs">Website by <a href="../../index.html" class="text-wheat/70 hover:text-wheat transition-colors">Root &amp; Render</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

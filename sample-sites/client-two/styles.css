@@ -1,0 +1,75 @@
+/* Main Street Grille — custom styles */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Subtle warm paper texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* Nav shadow on scroll */
+#navbar { transition: box-shadow 0.2s ease; }
+
+/* Feature card hover lift */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(139, 38, 53, 0.1);
+}
+
+/* Menu item row hover */
+.menu-item {
+  transition: background 0.15s ease;
+  border-radius: 0.5rem;
+}
+.menu-item:hover {
+  background-color: rgba(251, 246, 238, 0.7);
+}
+
+/* Menu category tab active state */
+.menu-tab {
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+.menu-tab.active {
+  background-color: #8B2635;
+  color: #fff;
+}
+.menu-tab:not(.active):hover {
+  background-color: #f3ede6;
+}
+
+/* Menu category section — hidden by default, shown via JS */
+.menu-section { display: none; }
+.menu-section.active { display: block; }
+
+/* Sticky menu nav */
+#menu-nav {
+  position: sticky;
+  top: 64px;
+  z-index: 40;
+  transition: box-shadow 0.2s ease;
+}
+
+/* Custom select arrow */
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%238B2635'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.2em;
+  padding-right: 3rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
