@@ -1,17 +1,15 @@
-/* Main Street Grille — custom styles */
+/* Main Street Grille — Dark Steakhouse */
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
-/* Subtle warm paper texture */
+/* Noise texture overlay */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 100;
-  opacity: 0.025;
+  opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-size: 200px 200px;
 }
@@ -19,52 +17,102 @@ body::before {
 /* Nav shadow on scroll */
 #navbar { transition: box-shadow 0.2s ease; }
 
-/* Feature card hover lift */
+/* Feature card hover — green lift */
 .card {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(139, 38, 53, 0.1);
+  box-shadow: 0 16px 40px rgba(184, 148, 31, 0.08);
 }
 
 /* Menu item row hover */
 .menu-item {
   transition: background 0.15s ease;
-  border-radius: 0.5rem;
 }
 .menu-item:hover {
-  background-color: rgba(251, 246, 238, 0.7);
+  background-color: rgba(245, 240, 232, 0.04);
 }
 
-/* Menu category tab active state */
+/* Menu category tab */
 .menu-tab {
   transition: all 0.15s ease;
   cursor: pointer;
 }
 .menu-tab.active {
-  background-color: #8B2635;
-  color: #fff;
+  color: #B8941F;
+  border-bottom-color: #B8941F;
+}
+.menu-tab:not(.active) {
+  border-bottom-color: transparent;
 }
 .menu-tab:not(.active):hover {
-  background-color: #f3ede6;
+  color: #F5F0E8;
 }
 
-/* Menu category section — hidden by default, shown via JS */
+/* Menu section visibility */
 .menu-section { display: none; }
 .menu-section.active { display: block; }
 
 /* Sticky menu nav */
 #menu-nav {
   position: sticky;
-  top: 64px;
+  top: 61px;
   z-index: 40;
-  transition: box-shadow 0.2s ease;
 }
 
-/* Custom select arrow */
+/* CTA buttons — thin border, all caps, no radius */
+.btn-primary {
+  display: inline-block;
+  border: 1px solid #B8941F;
+  color: #B8941F;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.875rem 2rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.btn-primary:hover {
+  background-color: #B8941F;
+  color: #0F0D0B;
+}
+
+.btn-ghost {
+  display: inline-block;
+  border: 1px solid rgba(245, 240, 232, 0.3);
+  color: rgba(245, 240, 232, 0.7);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.875rem 2rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.btn-ghost:hover {
+  border-color: #F5F0E8;
+  color: #F5F0E8;
+}
+
+.btn-ghost-dark {
+  display: inline-block;
+  border: 1px solid rgba(245, 240, 232, 0.2);
+  color: rgba(245, 240, 232, 0.6);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.875rem 2rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.btn-ghost-dark:hover {
+  border-color: rgba(245, 240, 232, 0.5);
+  color: #F5F0E8;
+}
+
+/* Select custom arrow */
 select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%238B2635'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23B8941F'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
   background-size: 1.2em;

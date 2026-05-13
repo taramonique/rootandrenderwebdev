@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -16,14 +16,14 @@
       theme: {
         extend: {
           colors: {
-            crimson: '#8B2635',
-            wheat:   '#C9A84C',
-            cream:   '#FBF6EE',
-            charcoal:'#1E1A14',
+            pit:   '#0F0D0B',
+            grove: '#2A4A2E',
+            gold:  '#B8941F',
+            ivory: '#F5F0E8',
           },
           fontFamily: {
-            display: ['Playfair Display', 'Georgia', 'serif'],
-            sans:    ['DM Sans', 'system-ui', 'sans-serif'],
+            display: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans:    ['Inter', 'system-ui', 'sans-serif'],
           }
         }
       }
@@ -32,95 +32,79 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="bg-cream text-charcoal font-sans antialiased">
+<body class="bg-pit text-ivory font-sans antialiased">
 
 
   <!-- ======================== NAV ======================== -->
-  <nav class="sticky top-0 z-50 bg-cream border-b border-amber-100" id="navbar">
+  <nav class="sticky top-0 z-50 bg-pit border-b border-ivory/10" id="navbar">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
-        <span class="text-2xl">🍽️</span>
+        <span class="text-xl">🍽️</span>
         <div>
-          <p class="font-display font-bold text-crimson leading-none text-lg">Main Street Grille</p>
-          <p class="text-xs text-gray-400 tracking-widest uppercase leading-none">Hondo, TX</p>
+          <p class="font-display font-semibold text-ivory leading-none text-xl tracking-wide">Main Street Grille</p>
+          <p class="text-xs text-gold/70 tracking-[0.2em] uppercase leading-none font-sans font-light">Hondo, Texas</p>
         </div>
       </a>
       <div class="hidden md:flex items-center gap-8">
-        <a href="index.html"   class="text-sm font-medium text-charcoal hover:text-crimson transition-colors">Home</a>
-        <a href="menu.html"    class="text-sm font-medium text-crimson border-b-2 border-crimson pb-0.5">Menu</a>
-        <a href="about.html"   class="text-sm font-medium text-charcoal hover:text-crimson transition-colors">About</a>
-        <a href="contact.html" class="text-sm font-medium text-charcoal hover:text-crimson transition-colors">Contact</a>
-        <a href="contact.html" class="bg-crimson text-cream text-sm font-semibold px-5 py-2.5 rounded hover:bg-red-900 transition-colors">
-          Reserve a Table
-        </a>
+        <a href="index.html"   class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60 hover:text-ivory transition-colors">Home</a>
+        <a href="menu.html"    class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-gold">Menu</a>
+        <a href="about.html"   class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60 hover:text-ivory transition-colors">About</a>
+        <a href="contact.html" class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60 hover:text-ivory transition-colors">Contact</a>
+        <a href="contact.html" class="btn-primary">Reserve a Table</a>
       </div>
-      <button id="menu-btn" class="md:hidden text-charcoal" aria-label="Toggle menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      <button id="menu-btn" class="md:hidden text-ivory/70" aria-label="Toggle menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-amber-100 px-6 py-4 flex flex-col gap-4">
-      <a href="index.html"   class="text-sm font-medium text-charcoal">Home</a>
-      <a href="menu.html"    class="text-sm font-medium text-crimson">Menu</a>
-      <a href="about.html"   class="text-sm font-medium text-charcoal">About</a>
-      <a href="contact.html" class="text-sm font-medium text-charcoal">Contact</a>
-      <a href="contact.html" class="bg-crimson text-cream text-sm font-semibold px-5 py-2.5 rounded text-center">Reserve a Table</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-pit border-t border-ivory/10 px-6 py-5 flex flex-col gap-5">
+      <a href="index.html"   class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60">Home</a>
+      <a href="menu.html"    class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-gold">Menu</a>
+      <a href="about.html"   class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60">About</a>
+      <a href="contact.html" class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60">Contact</a>
+      <a href="contact.html" class="btn-primary text-center">Reserve a Table</a>
     </div>
   </nav>
 
 
   <!-- ======================== HERO ======================== -->
-  <section class="bg-charcoal px-6 py-16 md:py-20 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-5"
-         style="background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%); background-size: 16px 16px;"></div>
-    <div class="absolute top-0 left-0 right-0 h-1 bg-wheat"></div>
+  <section class="bg-pit px-6 py-16 md:py-20 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]"
+         style="background-image: linear-gradient(rgba(245,240,232,1) 1px, transparent 1px), linear-gradient(90deg, rgba(245,240,232,1) 1px, transparent 1px); background-size: 48px 48px;"></div>
+    <div class="absolute top-0 left-0 bottom-0 w-px bg-gold/20"></div>
     <div class="relative z-10 max-w-6xl mx-auto">
-      <div class="flex items-center gap-3 mb-6">
-        <div class="h-px bg-wheat/50 w-8"></div>
-        <span class="text-wheat/80 text-xs font-sans font-semibold tracking-widest uppercase">Scratch Kitchen</span>
-      </div>
-      <h1 class="font-display text-5xl sm:text-6xl font-bold text-cream mb-4">
-        Our Menu
-      </h1>
-      <p class="text-cream/65 text-lg max-w-xl">
-        Everything made in-house, every day. Prices subject to change with the seasons.
+      <p class="text-gold text-xs font-sans tracking-[0.3em] uppercase font-light mb-6">Scratch Kitchen</p>
+      <h1 class="font-display text-5xl sm:text-6xl font-light text-ivory mb-4">Our Menu</h1>
+      <p class="text-ivory/40 text-base font-sans font-light max-w-lg">
+        Everything made in-house, every day. Prices may vary seasonally.
       </p>
-      <!-- Badge legend -->
-      <div class="flex flex-wrap gap-3 mt-6">
-        <span class="inline-flex items-center gap-1.5 bg-crimson/20 text-cream text-xs font-semibold px-3 py-1.5 rounded">
-          ⭐ House Favorite
-        </span>
-        <span class="inline-flex items-center gap-1.5 bg-wheat/20 text-wheat text-xs font-semibold px-3 py-1.5 rounded">
-          👨‍🍳 Chef's Pick
-        </span>
-        <span class="inline-flex items-center gap-1.5 bg-green-900/30 text-green-300 text-xs font-semibold px-3 py-1.5 rounded">
-          🌿 GF Friendly
-        </span>
-        <span class="inline-flex items-center gap-1.5 bg-emerald-900/30 text-emerald-300 text-xs font-semibold px-3 py-1.5 rounded">
-          🥦 Vegetarian
-        </span>
+      <!-- Key legend — minimal -->
+      <div class="flex flex-wrap gap-6 mt-6 text-xs font-sans font-light">
+        <span class="text-gold/80"><span class="text-gold">★</span> House Favorite</span>
+        <span class="text-ivory/40"><span class="text-ivory/60">◆</span> Chef&rsquo;s Recommendation</span>
+        <span class="text-ivory/40"><span class="text-green-400/70">●</span> Gluten Friendly</span>
+        <span class="text-ivory/40"><span class="text-emerald-400/70">○</span> Vegetarian</span>
       </div>
     </div>
   </section>
-  <div class="h-1.5 bg-wheat"></div>
 
 
   <!-- ======================== STICKY CATEGORY TABS ======================== -->
-  <div id="menu-nav" class="bg-white border-b border-amber-100 shadow-sm">
+  <div id="menu-nav" class="bg-[#0A0908] border-b border-ivory/10">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="flex gap-1 overflow-x-auto py-3 scrollbar-hide" style="-ms-overflow-style:none; scrollbar-width:none;">
-        <button class="menu-tab text-sm font-semibold px-5 py-2 rounded whitespace-nowrap text-gray-600"
+      <div class="flex gap-0 overflow-x-auto" style="-ms-overflow-style:none; scrollbar-width:none;">
+        <button class="menu-tab text-xs font-sans tracking-[0.15em] uppercase px-6 py-4 border-b-2 text-ivory/40 whitespace-nowrap"
                 data-category="starters">Starters</button>
-        <button class="menu-tab text-sm font-semibold px-5 py-2 rounded whitespace-nowrap text-gray-600"
+        <button class="menu-tab text-xs font-sans tracking-[0.15em] uppercase px-6 py-4 border-b-2 text-ivory/40 whitespace-nowrap"
                 data-category="entrees">Entrées</button>
-        <button class="menu-tab text-sm font-semibold px-5 py-2 rounded whitespace-nowrap text-gray-600"
+        <button class="menu-tab text-xs font-sans tracking-[0.15em] uppercase px-6 py-4 border-b-2 text-ivory/40 whitespace-nowrap"
                 data-category="burgers">Burgers &amp; Sandwiches</button>
-        <button class="menu-tab text-sm font-semibold px-5 py-2 rounded whitespace-nowrap text-gray-600"
+        <button class="menu-tab text-xs font-sans tracking-[0.15em] uppercase px-6 py-4 border-b-2 text-ivory/40 whitespace-nowrap"
                 data-category="sides">Sides</button>
-        <button class="menu-tab text-sm font-semibold px-5 py-2 rounded whitespace-nowrap text-gray-600"
+        <button class="menu-tab text-xs font-sans tracking-[0.15em] uppercase px-6 py-4 border-b-2 text-ivory/40 whitespace-nowrap"
                 data-category="desserts">Desserts</button>
-        <button class="menu-tab text-sm font-semibold px-5 py-2 rounded whitespace-nowrap text-gray-600"
+        <button class="menu-tab text-xs font-sans tracking-[0.15em] uppercase px-6 py-4 border-b-2 text-ivory/40 whitespace-nowrap"
                 data-category="drinks">Drinks</button>
       </div>
     </div>
@@ -128,448 +112,372 @@
 
 
   <!-- ======================== MENU CONTENT ======================== -->
-  <section class="py-12 md:py-16 px-6 bg-white" id="menu-content">
+  <section class="py-14 md:py-20 px-6 bg-pit" id="menu-content">
     <div class="max-w-3xl mx-auto">
 
 
       <!-- ── STARTERS ── -->
       <div class="menu-section" id="starters">
-        <h2 class="font-display text-3xl font-bold text-charcoal mb-2">Starters</h2>
-        <p class="text-gray-400 text-sm mb-8">To get things going.</p>
 
-        <!-- Featured item callout -->
-        <div class="bg-crimson rounded-lg p-5 mb-8 flex items-start gap-4">
-          <span class="text-3xl">🧀</span>
-          <div>
-            <div class="flex items-center gap-2 mb-1">
-              <h3 class="font-display text-lg font-bold text-cream">Queso Fundido</h3>
-              <span class="bg-wheat text-charcoal text-xs font-bold px-2 py-0.5 rounded">Chef's Pick</span>
-            </div>
-            <p class="text-cream/75 text-sm leading-relaxed">
-              Melted pepper jack &amp; white cheddar blend, roasted poblanos, chorizo crumbles, served with warm flour tortillas.
-            </p>
-            <p class="text-wheat font-semibold mt-2">$10</p>
-          </div>
+        <div class="mb-12">
+          <h2 class="font-display text-4xl font-light text-ivory italic mb-1">Starters</h2>
+          <p class="text-ivory/30 text-xs font-sans tracking-widest uppercase font-light">To get things going</p>
         </div>
 
-        <div class="space-y-2">
-
-          <div class="menu-item flex items-start justify-between gap-4 px-4 py-4 border-b border-amber-50">
-            <div class="flex-1">
-              <div class="flex items-center gap-2 flex-wrap mb-1">
-                <h3 class="font-display font-semibold text-charcoal">Loaded Potato Skins</h3>
-                <span class="bg-crimson/10 text-crimson text-xs font-semibold px-2 py-0.5 rounded">⭐ House Favorite</span>
-              </div>
-              <p class="text-gray-500 text-sm">Cheddar, bacon, green onion, house sour cream.</p>
-            </div>
-            <span class="font-semibold text-charcoal whitespace-nowrap">$9</span>
+        <!-- Featured -->
+        <div class="bg-grove p-7 mb-10 relative">
+          <p class="text-gold/80 text-xs font-sans tracking-[0.25em] uppercase font-light mb-4">◆ Chef&rsquo;s Recommendation</p>
+          <div class="flex justify-between items-baseline mb-3">
+            <h3 class="font-display text-2xl font-light text-ivory italic">Queso Fundido</h3>
+            <span class="text-gold font-sans text-sm font-light ml-4">$10</span>
           </div>
+          <p class="text-ivory/60 text-sm font-sans font-light leading-relaxed">
+            Melted pepper jack &amp; white cheddar, roasted poblanos, chorizo crumbles. Served with warm flour tortillas.
+          </p>
+        </div>
 
-          <div class="menu-item flex items-start justify-between gap-4 px-4 py-4 border-b border-amber-50">
-            <div class="flex-1">
-              <div class="flex items-center gap-2 flex-wrap mb-1">
-                <h3 class="font-display font-semibold text-charcoal">Onion Ring Tower</h3>
-              </div>
-              <p class="text-gray-500 text-sm">Hand-battered with a crispy panko crust. Served with chipotle ranch.</p>
+        <div class="space-y-0">
+          <div class="menu-item flex items-start justify-between gap-6 px-2 py-5 border-b border-ivory/8">
+            <div>
+              <p class="font-display text-xl font-light text-ivory mb-1">
+                <span class="text-gold text-base">★</span> Loaded Potato Skins
+              </p>
+              <p class="text-ivory/35 text-sm font-sans font-light">Cheddar, bacon, green onion, house sour cream.</p>
             </div>
-            <span class="font-semibold text-charcoal whitespace-nowrap">$8</span>
+            <span class="text-ivory/60 font-sans text-sm font-light whitespace-nowrap pt-1">$9</span>
           </div>
-
-          <div class="menu-item flex items-start justify-between gap-4 px-4 py-4 border-b border-amber-50">
-            <div class="flex-1">
-              <div class="flex items-center gap-2 flex-wrap mb-1">
-                <h3 class="font-display font-semibold text-charcoal">House Salad</h3>
-                <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-0.5 rounded">🌿 GF Friendly</span>
-                <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-0.5 rounded">🥦 Vegetarian</span>
-              </div>
-              <p class="text-gray-500 text-sm">Mixed greens, cherry tomato, cucumber, red onion, croutons, choice of dressing.</p>
+          <div class="menu-item flex items-start justify-between gap-6 px-2 py-5 border-b border-ivory/8">
+            <div>
+              <p class="font-display text-xl font-light text-ivory mb-1">Onion Ring Tower</p>
+              <p class="text-ivory/35 text-sm font-sans font-light">Hand-battered with panko crust. Chipotle ranch.</p>
             </div>
-            <span class="font-semibold text-charcoal whitespace-nowrap">$7</span>
+            <span class="text-ivory/60 font-sans text-sm font-light whitespace-nowrap pt-1">$8</span>
           </div>
-
-          <div class="menu-item flex items-start justify-between gap-4 px-4 py-4 border-b border-amber-50">
-            <div class="flex-1">
-              <div class="flex items-center gap-2 flex-wrap mb-1">
-                <h3 class="font-display font-semibold text-charcoal">Chicken Tenders (4 pc.)</h3>
-              </div>
-              <p class="text-gray-500 text-sm">Hand-breaded, served with honey mustard or ranch.</p>
+          <div class="menu-item flex items-start justify-between gap-6 px-2 py-5 border-b border-ivory/8">
+            <div>
+              <p class="font-display text-xl font-light text-ivory mb-1">
+                House Salad &nbsp;<span class="text-green-400/60 text-sm">●</span><span class="text-emerald-400/60 text-sm ml-1">○</span>
+              </p>
+              <p class="text-ivory/35 text-sm font-sans font-light">Mixed greens, cherry tomato, cucumber, red onion, croutons, choice of dressing.</p>
             </div>
-            <span class="font-semibold text-charcoal whitespace-nowrap">$10</span>
+            <span class="text-ivory/60 font-sans text-sm font-light whitespace-nowrap pt-1">$7</span>
           </div>
-
-          <div class="menu-item flex items-start justify-between gap-4 px-4 py-4">
-            <div class="flex-1">
-              <div class="flex items-center gap-2 flex-wrap mb-1">
-                <h3 class="font-display font-semibold text-charcoal">Shrimp Cocktail</h3>
-                <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-0.5 rounded">🌿 GF Friendly</span>
-              </div>
-              <p class="text-gray-500 text-sm">Six jumbo shrimp, house cocktail sauce, fresh lemon.</p>
+          <div class="menu-item flex items-start justify-between gap-6 px-2 py-5 border-b border-ivory/8">
+            <div>
+              <p class="font-display text-xl font-light text-ivory mb-1">Chicken Tenders <span class="text-ivory/30 text-sm font-sans">(4 pc.)</span></p>
+              <p class="text-ivory/35 text-sm font-sans font-light">Hand-breaded. Honey mustard or ranch.</p>
             </div>
-            <span class="font-semibold text-charcoal whitespace-nowrap">$13</span>
+            <span class="text-ivory/60 font-sans text-sm font-light whitespace-nowrap pt-1">$10</span>
           </div>
-
+          <div class="menu-item flex items-start justify-between gap-6 px-2 py-5">
+            <div>
+              <p class="font-display text-xl font-light text-ivory mb-1">Shrimp Cocktail &nbsp;<span class="text-green-400/60 text-sm">●</span></p>
+              <p class="text-ivory/35 text-sm font-sans font-light">Six jumbo shrimp, house cocktail sauce, fresh lemon.</p>
+            </div>
+            <span class="text-ivory/60 font-sans text-sm font-light whitespace-nowrap pt-1">$13</span>
+          </div>
         </div>
       </div>
 
 
       <!-- ── ENTRÉES ── -->
       <div class="menu-section" id="entrees">
-        <h2 class="font-display text-3xl font-bold text-charcoal mb-2">Entrées</h2>
-        <p class="text-gray-400 text-sm mb-8">All entrées served with choice of two sides.</p>
 
-        <!-- Featured item callout -->
-        <div class="bg-crimson rounded-lg p-5 mb-8 flex items-start gap-4">
-          <span class="text-3xl">🥩</span>
-          <div>
-            <div class="flex items-center gap-2 mb-1">
-              <h3 class="font-display text-lg font-bold text-cream">12oz Ribeye</h3>
-              <span class="bg-crimson/40 text-cream text-xs font-bold px-2 py-0.5 rounded border border-cream/20">⭐ House Favorite</span>
-            </div>
-            <p class="text-cream/75 text-sm leading-relaxed">
-              USDA Choice, hand-cut and seasoned daily. Cooked to your exact preference.
-              <span class="text-cream/50 text-xs block mt-1">Add sautéed mushrooms or onions +$2</span>
-            </p>
-            <p class="text-wheat font-semibold mt-2">$32</p>
-          </div>
+        <div class="mb-12">
+          <h2 class="font-display text-4xl font-light text-ivory italic mb-1">Entrées</h2>
+          <p class="text-ivory/30 text-xs font-sans tracking-widest uppercase font-light">Served with choice of two sides</p>
         </div>
 
-        <div class="space-y-2">
-
-          <div class="menu-item flex items-start justify-between gap-4 px-4 py-4 border-b border-amber-50">
-            <div class="flex-1">
-              <div class="flex items-center gap-2 flex-wrap mb-1">
-                <h3 class="font-display font-semibold text-charcoal">Half Rack Baby Back Ribs</h3>
-                <span class="bg-crimson/10 text-crimson text-xs font-semibold px-2 py-0.5 rounded">⭐ House Favorite</span>
-              </div>
-              <p class="text-gray-500 text-sm">Slow-smoked, house BBQ glaze, served with coleslaw &amp; choice of one side.</p>
-            </div>
-            <span class="font-semibold text-charcoal whitespace-nowrap">$24</span>
+        <!-- Featured -->
+        <div class="bg-grove p-7 mb-10">
+          <p class="text-gold/80 text-xs font-sans tracking-[0.25em] uppercase font-light mb-4">★ House Favorite</p>
+          <div class="flex justify-between items-baseline mb-3">
+            <h3 class="font-display text-2xl font-light text-ivory italic">12oz Ribeye</h3>
+            <span class="text-gold font-sans text-sm font-light ml-4">$32</span>
           </div>
+          <p class="text-ivory/60 text-sm font-sans font-light leading-relaxed">
+            USDA Choice, hand-cut and seasoned daily. Cooked to your exact preference.
+          </p>
+          <p class="text-ivory/30 text-xs font-sans font-light mt-3">Add sautéed mushrooms or onions +$2</p>
+        </div>
 
-          <div class="menu-item flex items-start justify-between gap-4 px-4 py-4 border-b border-amber-50">
-            <div class="flex-1">
-              <div class="flex items-center gap-2 flex-wrap mb-1">
-                <h3 class="font-display font-semibold text-charcoal">Chicken Fried Steak</h3>
-                <span class="bg-crimson/10 text-crimson text-xs font-semibold px-2 py-0.5 rounded">⭐ House Favorite</span>
-              </div>
-              <p class="text-gray-500 text-sm">Hand-breaded sirloin, cream gravy, two eggs any style.</p>
+        <div class="space-y-0">
+          <div class="menu-item flex items-start justify-between gap-6 px-2 py-5 border-b border-ivory/8">
+            <div>
+              <p class="font-display text-xl font-light text-ivory mb-1"><span class="text-gold text-base">★</span> Half Rack Baby Back Ribs</p>
+              <p class="text-ivory/35 text-sm font-sans font-light">Slow-smoked, house BBQ glaze. Served with coleslaw &amp; choice of one side.</p>
             </div>
-            <span class="font-semibold text-charcoal whitespace-nowrap">$18</span>
+            <span class="text-ivory/60 font-sans text-sm font-light whitespace-nowrap pt-1">$24</span>
           </div>
-
-          <div class="menu-item flex items-start justify-between gap-4 px-4 py-4 border-b border-amber-50">
-            <div class="flex-1">
-              <div class="flex items-center gap-2 flex-wrap mb-1">
-                <h3 class="font-display font-semibold text-charcoal">Grilled Salmon</h3>
-                <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-0.5 rounded">🌿 GF Friendly</span>
-              </div>
-              <p class="text-gray-500 text-sm">Fresh fillet, lemon butter, seasonal vegetables.</p>
+          <div class="menu-item flex items-start justify-between gap-6 px-2 py-5 border-b border-ivory/8">
+            <div>
+              <p class="font-display text-xl font-light text-ivory mb-1"><span class="text-gold text-base">★</span> Chicken Fried Steak</p>
+              <p class="text-ivory/35 text-sm font-sans font-light">Hand-breaded sirloin, cream gravy, two eggs any style.</p>
             </div>
-            <span class="font-semibold text-charcoal whitespace-nowrap">$22</span>
+            <span class="text-ivory/60 font-sans text-sm font-light whitespace-nowrap pt-1">$18</span>
           </div>
-
-          <div class="menu-item flex items-start justify-between gap-4 px-4 py-4 border-b border-amber-50">
-            <div class="flex-1">
-              <div class="flex items-center gap-2 flex-wrap mb-1">
-                <h3 class="font-display font-semibold text-charcoal">BBQ Pulled Pork Platter</h3>
-              </div>
-              <p class="text-gray-500 text-sm">Slow-cooked 12 hours, house BBQ sauce, jalapeño cornbread.</p>
+          <div class="menu-item flex items-start justify-between gap-6 px-2 py-5 border-b border-ivory/8">
+            <div>
+              <p class="font-display text-xl font-light text-ivory mb-1">Grilled Salmon &nbsp;<span class="text-green-400/60 text-sm">●</span></p>
+              <p class="text-ivory/35 text-sm font-sans font-light">Fresh fillet, lemon butter, seasonal vegetables.</p>
             </div>
-            <span class="font-semibold text-charcoal whitespace-nowrap">$19</span>
+            <span class="text-ivory/60 font-sans text-sm font-light whitespace-nowrap pt-1">$22</span>
           </div>
-
-          <div class="menu-item flex items-start justify-between gap-4 px-4 py-4">
-            <div class="flex-1">
-              <div class="flex items-center gap-2 flex-wrap mb-1">
-                <h3 class="font-display font-semibold text-charcoal">8oz Sirloin</h3>
-                <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-0.5 rounded">🌿 GF Friendly</span>
-              </div>
-              <p class="text-gray-500 text-sm">Lean cut, seasoned simply. A classic done right.</p>
+          <div class="menu-item flex items-start justify-between gap-6 px-2 py-5 border-b border-ivory/8">
+            <div>
+              <p class="font-display text-xl font-light text-ivory mb-1">BBQ Pulled Pork Platter</p>
+              <p class="text-ivory/35 text-sm font-sans font-light">Slow-cooked 12 hours, house BBQ sauce, jalapeño cornbread.</p>
             </div>
-            <span class="font-semibold text-charcoal whitespace-nowrap">$24</span>
+            <span class="text-ivory/60 font-sans text-sm font-light whitespace-nowrap pt-1">$19</span>
           </div>
-
+          <div class="menu-item flex items-start justify-between gap-6 px-2 py-5">
+            <div>
+              <p class="font-display text-xl font-light text-ivory mb-1">8oz Sirloin &nbsp;<span class="text-green-400/60 text-sm">●</span></p>
+              <p class="text-ivory/35 text-sm font-sans font-light">Lean cut, seasoned simply. A classic done right.</p>
+            </div>
+            <span class="text-ivory/60 font-sans text-sm font-light whitespace-nowrap pt-1">$24</span>
+          </div>
         </div>
       </div>
 
 
       <!-- ── BURGERS & SANDWICHES ── -->
       <div class="menu-section" id="burgers">
-        <h2 class="font-display text-3xl font-bold text-charcoal mb-2">Burgers &amp; Sandwiches</h2>
-        <p class="text-gray-400 text-sm mb-8">All served with hand-cut fries. Substitute sweet potato fries +$1.</p>
 
-        <!-- Featured item callout -->
-        <div class="bg-crimson rounded-lg p-5 mb-8 flex items-start gap-4">
-          <span class="text-3xl">🍔</span>
-          <div>
-            <div class="flex items-center gap-2 mb-1">
-              <h3 class="font-display text-lg font-bold text-cream">The Main Street Smash</h3>
-              <span class="bg-wheat text-charcoal text-xs font-bold px-2 py-0.5 rounded">👨‍🍳 Chef's Pick</span>
-            </div>
-            <p class="text-cream/75 text-sm leading-relaxed">
-              Double smashed beef patty, American cheese, caramelized onions, pickles, house sauce, toasted brioche bun.
-            </p>
-            <p class="text-wheat font-semibold mt-2">$14</p>
-          </div>
+        <div class="mb-12">
+          <h2 class="font-display text-4xl font-light text-ivory italic mb-1">Burgers &amp; Sandwiches</h2>
+          <p class="text-ivory/30 text-xs font-sans tracking-widest uppercase font-light">All served with hand-cut fries &nbsp;· &nbsp;Sub sweet potato fries +$1</p>
         </div>
 
-        <div class="space-y-2">
-
-          <div class="menu-item flex items-start justify-between gap-4 px-4 py-4 border-b border-amber-50">
-            <div class="flex-1">
-              <div class="flex items-center gap-2 flex-wrap mb-1">
-                <h3 class="font-display font-semibold text-charcoal">Bacon Smash Burger</h3>
-              </div>
-              <p class="text-gray-500 text-sm">Double smash, thick-cut bacon, pepper jack, chipotle mayo.</p>
-            </div>
-            <span class="font-semibold text-charcoal whitespace-nowrap">$15</span>
+        <!-- Featured -->
+        <div class="bg-grove p-7 mb-10">
+          <p class="text-gold/80 text-xs font-sans tracking-[0.25em] uppercase font-light mb-4">◆ Chef&rsquo;s Recommendation</p>
+          <div class="flex justify-between items-baseline mb-3">
+            <h3 class="font-display text-2xl font-light text-ivory italic">The Main Street Smash</h3>
+            <span class="text-gold font-sans text-sm font-light ml-4">$14</span>
           </div>
+          <p class="text-ivory/60 text-sm font-sans font-light leading-relaxed">
+            Double smashed beef patty, American cheese, caramelized onions, pickles, house sauce, toasted brioche bun.
+          </p>
+        </div>
 
-          <div class="menu-item flex items-start justify-between gap-4 px-4 py-4 border-b border-amber-50">
-            <div class="flex-1">
-              <div class="flex items-center gap-2 flex-wrap mb-1">
-                <h3 class="font-display font-semibold text-charcoal">BBQ Brisket Sandwich</h3>
-                <span class="bg-amber-100 text-amber-700 text-xs font-semibold px-2 py-0.5 rounded">👨‍🍳 Chef's Pick</span>
-              </div>
-              <p class="text-gray-500 text-sm">Sliced brisket, house BBQ, pickled jalapeños, brioche hoagie.</p>
+        <div class="space-y-0">
+          <div class="menu-item flex items-start justify-between gap-6 px-2 py-5 border-b border-ivory/8">
+            <div>
+              <p class="font-display text-xl font-light text-ivory mb-1">Bacon Smash Burger</p>
+              <p class="text-ivory/35 text-sm font-sans font-light">Double smash, thick-cut bacon, pepper jack, chipotle mayo.</p>
             </div>
-            <span class="font-semibold text-charcoal whitespace-nowrap">$16</span>
+            <span class="text-ivory/60 font-sans text-sm font-light whitespace-nowrap pt-1">$15</span>
           </div>
-
-          <div class="menu-item flex items-start justify-between gap-4 px-4 py-4 border-b border-amber-50">
-            <div class="flex-1">
-              <div class="flex items-center gap-2 flex-wrap mb-1">
-                <h3 class="font-display font-semibold text-charcoal">Crispy Chicken Sandwich</h3>
-              </div>
-              <p class="text-gray-500 text-sm">Hand-breaded chicken breast, house pickles, honey butter, brioche bun.</p>
+          <div class="menu-item flex items-start justify-between gap-6 px-2 py-5 border-b border-ivory/8">
+            <div>
+              <p class="font-display text-xl font-light text-ivory mb-1">◆ BBQ Brisket Sandwich</p>
+              <p class="text-ivory/35 text-sm font-sans font-light">Sliced brisket, house BBQ, pickled jalapeños, brioche hoagie.</p>
             </div>
-            <span class="font-semibold text-charcoal whitespace-nowrap">$13</span>
+            <span class="text-ivory/60 font-sans text-sm font-light whitespace-nowrap pt-1">$16</span>
           </div>
-
-          <div class="menu-item flex items-start justify-between gap-4 px-4 py-4">
-            <div class="flex-1">
-              <div class="flex items-center gap-2 flex-wrap mb-1">
-                <h3 class="font-display font-semibold text-charcoal">Grilled Portobello Burger</h3>
-                <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-0.5 rounded">🥦 Vegetarian</span>
-              </div>
-              <p class="text-gray-500 text-sm">Marinated mushroom cap, provolone, roasted red pepper, arugula, garlic aioli.</p>
+          <div class="menu-item flex items-start justify-between gap-6 px-2 py-5 border-b border-ivory/8">
+            <div>
+              <p class="font-display text-xl font-light text-ivory mb-1">Crispy Chicken Sandwich</p>
+              <p class="text-ivory/35 text-sm font-sans font-light">Hand-breaded breast, house pickles, honey butter, brioche bun.</p>
             </div>
-            <span class="font-semibold text-charcoal whitespace-nowrap">$13</span>
+            <span class="text-ivory/60 font-sans text-sm font-light whitespace-nowrap pt-1">$13</span>
           </div>
-
+          <div class="menu-item flex items-start justify-between gap-6 px-2 py-5">
+            <div>
+              <p class="font-display text-xl font-light text-ivory mb-1">Grilled Portobello Burger &nbsp;<span class="text-emerald-400/60 text-sm">○</span></p>
+              <p class="text-ivory/35 text-sm font-sans font-light">Marinated cap, provolone, roasted red pepper, arugula, garlic aioli.</p>
+            </div>
+            <span class="text-ivory/60 font-sans text-sm font-light whitespace-nowrap pt-1">$13</span>
+          </div>
         </div>
       </div>
 
 
       <!-- ── SIDES ── -->
       <div class="menu-section" id="sides">
-        <h2 class="font-display text-3xl font-bold text-charcoal mb-2">Sides</h2>
-        <p class="text-gray-400 text-sm mb-8">Choose two with any entrée. Available à la carte too.</p>
 
-        <div class="grid sm:grid-cols-2 gap-3">
+        <div class="mb-12">
+          <h2 class="font-display text-4xl font-light text-ivory italic mb-1">Sides</h2>
+          <p class="text-ivory/30 text-xs font-sans tracking-widest uppercase font-light">Two included with every entrée &nbsp;· &nbsp;Available à la carte</p>
+        </div>
 
-          <div class="menu-item px-4 py-4 border border-amber-100 rounded-lg">
-            <div class="flex justify-between items-start mb-1">
-              <h3 class="font-display font-semibold text-charcoal">Hand-Cut Fries</h3>
-              <span class="font-semibold text-charcoal text-sm">$4</span>
+        <div class="grid sm:grid-cols-2 gap-px bg-ivory/5">
+          <div class="menu-item bg-pit px-5 py-5">
+            <div class="flex justify-between items-baseline mb-1">
+              <p class="font-display text-xl font-light text-ivory">Hand-Cut Fries</p>
+              <span class="text-ivory/50 font-sans text-sm font-light">$4</span>
             </div>
-            <p class="text-gray-500 text-xs">Seasoned with house spice blend.</p>
+            <p class="text-ivory/30 text-xs font-sans font-light">House spice blend.</p>
           </div>
-
-          <div class="menu-item px-4 py-4 border border-amber-100 rounded-lg">
-            <div class="flex justify-between items-start mb-1">
-              <h3 class="font-display font-semibold text-charcoal">Sweet Potato Fries</h3>
-              <span class="font-semibold text-charcoal text-sm">$5</span>
+          <div class="menu-item bg-pit px-5 py-5">
+            <div class="flex justify-between items-baseline mb-1">
+              <p class="font-display text-xl font-light text-ivory">Sweet Potato Fries</p>
+              <span class="text-ivory/50 font-sans text-sm font-light">$5</span>
             </div>
-            <p class="text-gray-500 text-xs">With cinnamon honey butter dipping sauce.</p>
+            <p class="text-ivory/30 text-xs font-sans font-light">Cinnamon honey butter dipping sauce.</p>
           </div>
-
-          <div class="menu-item px-4 py-4 border border-amber-100 rounded-lg">
-            <div class="flex justify-between items-start mb-1">
-              <div class="flex items-center gap-2">
-                <h3 class="font-display font-semibold text-charcoal">House Coleslaw</h3>
-                <span class="bg-green-100 text-green-700 text-xs font-semibold px-1.5 py-0.5 rounded">GF</span>
-              </div>
-              <span class="font-semibold text-charcoal text-sm">$3</span>
+          <div class="menu-item bg-pit px-5 py-5">
+            <div class="flex justify-between items-baseline mb-1">
+              <p class="font-display text-xl font-light text-ivory">House Coleslaw &nbsp;<span class="text-green-400/50 text-sm">●</span></p>
+              <span class="text-ivory/50 font-sans text-sm font-light">$3</span>
             </div>
-            <p class="text-gray-500 text-xs">Classic creamy style, made fresh daily.</p>
+            <p class="text-ivory/30 text-xs font-sans font-light">Classic creamy, made fresh daily.</p>
           </div>
-
-          <div class="menu-item px-4 py-4 border border-amber-100 rounded-lg">
-            <div class="flex justify-between items-start mb-1">
-              <h3 class="font-display font-semibold text-charcoal">Scratch Mac &amp; Cheese</h3>
-              <span class="font-semibold text-charcoal text-sm">$5</span>
+          <div class="menu-item bg-pit px-5 py-5">
+            <div class="flex justify-between items-baseline mb-1">
+              <p class="font-display text-xl font-light text-ivory">Scratch Mac &amp; Cheese</p>
+              <span class="text-ivory/50 font-sans text-sm font-light">$5</span>
             </div>
-            <p class="text-gray-500 text-xs">Three-cheese sauce, toasted breadcrumb top.</p>
+            <p class="text-ivory/30 text-xs font-sans font-light">Three-cheese sauce, toasted breadcrumb top.</p>
           </div>
-
-          <div class="menu-item px-4 py-4 border border-amber-100 rounded-lg">
-            <div class="flex justify-between items-start mb-1">
-              <div class="flex items-center gap-2">
-                <h3 class="font-display font-semibold text-charcoal">Seasonal Vegetables</h3>
-                <span class="bg-green-100 text-green-700 text-xs font-semibold px-1.5 py-0.5 rounded">GF</span>
-              </div>
-              <span class="font-semibold text-charcoal text-sm">$4</span>
+          <div class="menu-item bg-pit px-5 py-5">
+            <div class="flex justify-between items-baseline mb-1">
+              <p class="font-display text-xl font-light text-ivory">Seasonal Vegetables &nbsp;<span class="text-green-400/50 text-sm">●</span><span class="text-emerald-400/50 text-sm ml-0.5">○</span></p>
+              <span class="text-ivory/50 font-sans text-sm font-light">$4</span>
             </div>
-            <p class="text-gray-500 text-xs">Roasted with herbs and olive oil.</p>
+            <p class="text-ivory/30 text-xs font-sans font-light">Roasted with herbs and olive oil.</p>
           </div>
-
-          <div class="menu-item px-4 py-4 border border-amber-100 rounded-lg">
-            <div class="flex justify-between items-start mb-1">
-              <h3 class="font-display font-semibold text-charcoal">Jalapeño Cornbread</h3>
-              <span class="font-semibold text-charcoal text-sm">$4</span>
+          <div class="menu-item bg-pit px-5 py-5">
+            <div class="flex justify-between items-baseline mb-1">
+              <p class="font-display text-xl font-light text-ivory">Jalapeño Cornbread</p>
+              <span class="text-ivory/50 font-sans text-sm font-light">$4</span>
             </div>
-            <p class="text-gray-500 text-xs">Cast-iron baked, served with honey butter.</p>
+            <p class="text-ivory/30 text-xs font-sans font-light">Cast-iron baked, honey butter.</p>
           </div>
-
-          <div class="menu-item px-4 py-4 border border-amber-100 rounded-lg">
-            <div class="flex justify-between items-start mb-1">
-              <div class="flex items-center gap-2">
-                <h3 class="font-display font-semibold text-charcoal">Pinto Beans</h3>
-                <span class="bg-green-100 text-green-700 text-xs font-semibold px-1.5 py-0.5 rounded">GF</span>
-              </div>
-              <span class="font-semibold text-charcoal text-sm">$3</span>
+          <div class="menu-item bg-pit px-5 py-5">
+            <div class="flex justify-between items-baseline mb-1">
+              <p class="font-display text-xl font-light text-ivory">Pinto Beans &nbsp;<span class="text-green-400/50 text-sm">●</span></p>
+              <span class="text-ivory/50 font-sans text-sm font-light">$3</span>
             </div>
-            <p class="text-gray-500 text-xs">Slow-cooked with smoked ham hock.</p>
+            <p class="text-ivory/30 text-xs font-sans font-light">Slow-cooked with smoked ham hock.</p>
           </div>
-
-          <div class="menu-item px-4 py-4 border border-amber-100 rounded-lg">
-            <div class="flex justify-between items-start mb-1">
-              <h3 class="font-display font-semibold text-charcoal">Side Salad</h3>
-              <span class="font-semibold text-charcoal text-sm">$4</span>
+          <div class="menu-item bg-pit px-5 py-5">
+            <div class="flex justify-between items-baseline mb-1">
+              <p class="font-display text-xl font-light text-ivory">Side Salad</p>
+              <span class="text-ivory/50 font-sans text-sm font-light">$4</span>
             </div>
-            <p class="text-gray-500 text-xs">Mixed greens, tomato, choice of dressing.</p>
+            <p class="text-ivory/30 text-xs font-sans font-light">Mixed greens, tomato, choice of dressing.</p>
           </div>
-
         </div>
       </div>
 
 
       <!-- ── DESSERTS ── -->
       <div class="menu-section" id="desserts">
-        <h2 class="font-display text-3xl font-bold text-charcoal mb-2">Desserts</h2>
-        <p class="text-gray-400 text-sm mb-8">Made fresh in-house every morning.</p>
 
-        <!-- Featured item callout -->
-        <div class="bg-crimson rounded-lg p-5 mb-8 flex items-start gap-4">
-          <span class="text-3xl">🍑</span>
-          <div>
-            <div class="flex items-center gap-2 mb-1">
-              <h3 class="font-display text-lg font-bold text-cream">Warm Peach Cobbler</h3>
-              <span class="bg-crimson/40 text-cream text-xs font-bold px-2 py-0.5 rounded border border-cream/20">⭐ House Favorite</span>
-            </div>
-            <p class="text-cream/75 text-sm leading-relaxed">
-              Texas peaches, buttery biscuit top, served warm with a scoop of vanilla bean ice cream.
-            </p>
-            <p class="text-wheat font-semibold mt-2">$8</p>
-          </div>
+        <div class="mb-12">
+          <h2 class="font-display text-4xl font-light text-ivory italic mb-1">Desserts</h2>
+          <p class="text-ivory/30 text-xs font-sans tracking-widest uppercase font-light">Baked fresh in-house every morning</p>
         </div>
 
-        <div class="space-y-2">
-
-          <div class="menu-item flex items-start justify-between gap-4 px-4 py-4 border-b border-amber-50">
-            <div class="flex-1">
-              <h3 class="font-display font-semibold text-charcoal mb-1">Brownie Sundae</h3>
-              <p class="text-gray-500 text-sm">Warm fudge brownie, vanilla ice cream, chocolate sauce, whipped cream.</p>
-            </div>
-            <span class="font-semibold text-charcoal whitespace-nowrap">$7</span>
+        <!-- Featured -->
+        <div class="bg-grove p-7 mb-10">
+          <p class="text-gold/80 text-xs font-sans tracking-[0.25em] uppercase font-light mb-4">★ House Favorite</p>
+          <div class="flex justify-between items-baseline mb-3">
+            <h3 class="font-display text-2xl font-light text-ivory italic">Warm Peach Cobbler</h3>
+            <span class="text-gold font-sans text-sm font-light ml-4">$8</span>
           </div>
+          <p class="text-ivory/60 text-sm font-sans font-light leading-relaxed">
+            Texas peaches, buttery biscuit top, served warm with a scoop of vanilla bean ice cream.
+          </p>
+        </div>
 
-          <div class="menu-item flex items-start justify-between gap-4 px-4 py-4 border-b border-amber-50">
-            <div class="flex-1">
-              <div class="flex items-center gap-2 mb-1">
-                <h3 class="font-display font-semibold text-charcoal">Tres Leches Cake</h3>
-                <span class="bg-amber-100 text-amber-700 text-xs font-semibold px-2 py-0.5 rounded">👨‍🍳 Chef's Pick</span>
-              </div>
-              <p class="text-gray-500 text-sm">House recipe, topped with fresh whipped cream and a dusting of cinnamon.</p>
+        <div class="space-y-0">
+          <div class="menu-item flex items-start justify-between gap-6 px-2 py-5 border-b border-ivory/8">
+            <div>
+              <p class="font-display text-xl font-light text-ivory mb-1">Brownie Sundae</p>
+              <p class="text-ivory/35 text-sm font-sans font-light">Warm fudge brownie, vanilla ice cream, chocolate sauce, whipped cream.</p>
             </div>
-            <span class="font-semibold text-charcoal whitespace-nowrap">$7</span>
+            <span class="text-ivory/60 font-sans text-sm font-light whitespace-nowrap pt-1">$7</span>
           </div>
-
-          <div class="menu-item flex items-start justify-between gap-4 px-4 py-4">
-            <div class="flex-1">
-              <div class="flex items-center gap-2 mb-1">
-                <h3 class="font-display font-semibold text-charcoal">Banana Pudding</h3>
-                <span class="bg-crimson/10 text-crimson text-xs font-semibold px-2 py-0.5 rounded">⭐ House Favorite</span>
-              </div>
-              <p class="text-gray-500 text-sm">Layered nilla wafers, fresh bananas, house vanilla pudding, whipped cream.</p>
+          <div class="menu-item flex items-start justify-between gap-6 px-2 py-5 border-b border-ivory/8">
+            <div>
+              <p class="font-display text-xl font-light text-ivory mb-1">◆ Tres Leches Cake</p>
+              <p class="text-ivory/35 text-sm font-sans font-light">House recipe, fresh whipped cream, cinnamon.</p>
             </div>
-            <span class="font-semibold text-charcoal whitespace-nowrap">$6</span>
+            <span class="text-ivory/60 font-sans text-sm font-light whitespace-nowrap pt-1">$7</span>
           </div>
-
+          <div class="menu-item flex items-start justify-between gap-6 px-2 py-5">
+            <div>
+              <p class="font-display text-xl font-light text-ivory mb-1"><span class="text-gold text-base">★</span> Banana Pudding</p>
+              <p class="text-ivory/35 text-sm font-sans font-light">Layered nilla wafers, fresh bananas, house vanilla pudding, whipped cream.</p>
+            </div>
+            <span class="text-ivory/60 font-sans text-sm font-light whitespace-nowrap pt-1">$6</span>
+          </div>
         </div>
       </div>
 
 
       <!-- ── DRINKS ── -->
       <div class="menu-section" id="drinks">
-        <h2 class="font-display text-3xl font-bold text-charcoal mb-2">Drinks</h2>
-        <p class="text-gray-400 text-sm mb-8">Free refills on fountain drinks, tea, and lemonade.</p>
 
-        <div class="grid sm:grid-cols-2 gap-6 mb-10">
+        <div class="mb-12">
+          <h2 class="font-display text-4xl font-light text-ivory italic mb-1">Drinks</h2>
+          <p class="text-ivory/30 text-xs font-sans tracking-widest uppercase font-light">Free refills on fountain drinks, tea &amp; lemonade</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-12">
 
           <div>
-            <p class="text-crimson text-xs font-sans font-semibold tracking-widest uppercase mb-4 border-b border-amber-100 pb-2">
+            <p class="text-gold text-xs font-sans tracking-[0.25em] uppercase font-light mb-6 pb-3 border-b border-ivory/10">
               Non-Alcoholic
             </p>
-            <div class="space-y-3">
-              <div class="flex justify-between">
-                <span class="font-display font-semibold text-charcoal">Fresh Brewed Sweet Tea</span>
-                <span class="text-charcoal font-semibold">$3</span>
+            <div class="space-y-4">
+              <div class="flex justify-between items-baseline">
+                <span class="font-display text-xl font-light text-ivory">Fresh Brewed Sweet Tea</span>
+                <span class="text-ivory/50 font-sans text-sm font-light">$3</span>
               </div>
-              <div class="flex justify-between">
-                <span class="font-display font-semibold text-charcoal">House Lemonade</span>
-                <span class="text-charcoal font-semibold">$3</span>
+              <div class="flex justify-between items-baseline">
+                <span class="font-display text-xl font-light text-ivory">House Lemonade</span>
+                <span class="text-ivory/50 font-sans text-sm font-light">$3</span>
               </div>
-              <div class="flex justify-between">
-                <span class="font-display font-semibold text-charcoal">Fountain Soft Drinks</span>
-                <span class="text-charcoal font-semibold">$2.50</span>
+              <div class="flex justify-between items-baseline">
+                <span class="font-display text-xl font-light text-ivory">Fountain Soft Drinks</span>
+                <span class="text-ivory/50 font-sans text-sm font-light">$2.50</span>
               </div>
-              <div class="flex justify-between">
-                <span class="font-display font-semibold text-charcoal">Coffee or Hot Tea</span>
-                <span class="text-charcoal font-semibold">$2.50</span>
+              <div class="flex justify-between items-baseline">
+                <span class="font-display text-xl font-light text-ivory">Coffee or Hot Tea</span>
+                <span class="text-ivory/50 font-sans text-sm font-light">$2.50</span>
               </div>
-              <div class="flex justify-between">
-                <span class="font-display font-semibold text-charcoal">Milk or Chocolate Milk</span>
-                <span class="text-charcoal font-semibold">$2</span>
+              <div class="flex justify-between items-baseline">
+                <span class="font-display text-xl font-light text-ivory">Milk</span>
+                <span class="text-ivory/50 font-sans text-sm font-light">$2</span>
               </div>
             </div>
           </div>
 
           <div>
-            <p class="text-crimson text-xs font-sans font-semibold tracking-widest uppercase mb-4 border-b border-amber-100 pb-2">
+            <p class="text-gold text-xs font-sans tracking-[0.25em] uppercase font-light mb-6 pb-3 border-b border-ivory/10">
               Beer &amp; Wine
             </p>
-            <div class="space-y-3">
-              <div class="flex justify-between">
-                <span class="font-display font-semibold text-charcoal">Local Draft Beer</span>
-                <span class="text-charcoal font-semibold">$5</span>
+            <div class="space-y-4">
+              <div class="flex justify-between items-baseline">
+                <span class="font-display text-xl font-light text-ivory">Local Draft Beer</span>
+                <span class="text-ivory/50 font-sans text-sm font-light">$5</span>
               </div>
-              <div class="flex justify-between">
-                <span class="font-display font-semibold text-charcoal">Bottled Beer</span>
-                <span class="text-charcoal font-semibold">$4</span>
+              <div class="flex justify-between items-baseline">
+                <span class="font-display text-xl font-light text-ivory">Bottled Beer</span>
+                <span class="text-ivory/50 font-sans text-sm font-light">$4</span>
               </div>
-              <div class="flex justify-between">
-                <span class="font-display font-semibold text-charcoal">House Red Wine</span>
-                <span class="text-charcoal font-semibold">$7</span>
+              <div class="flex justify-between items-baseline">
+                <span class="font-display text-xl font-light text-ivory">House Red Wine</span>
+                <span class="text-ivory/50 font-sans text-sm font-light">$7</span>
               </div>
-              <div class="flex justify-between">
-                <span class="font-display font-semibold text-charcoal">House White Wine</span>
-                <span class="text-charcoal font-semibold">$7</span>
+              <div class="flex justify-between items-baseline">
+                <span class="font-display text-xl font-light text-ivory">House White Wine</span>
+                <span class="text-ivory/50 font-sans text-sm font-light">$7</span>
               </div>
             </div>
-            <p class="text-gray-400 text-xs mt-4">Must be 21+ with valid ID. Please drink responsibly.</p>
+            <p class="text-ivory/20 text-xs font-sans font-light mt-6">Must be 21+ with valid ID.</p>
           </div>
 
         </div>
 
         <!-- Seasonal note -->
-        <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 flex gap-3">
-          <span class="text-xl flex-shrink-0">🍹</span>
-          <div>
-            <p class="font-display font-semibold text-charcoal mb-1">Seasonal Specials</p>
-            <p class="text-gray-600 text-sm">We rotate seasonal cocktails and mocktails throughout the year. Ask your server what's on the board today!</p>
-          </div>
+        <div class="mt-12 border border-ivory/10 p-6">
+          <p class="font-display text-xl font-light text-ivory italic mb-1">Seasonal Cocktails &amp; Mocktails</p>
+          <p class="text-ivory/40 text-sm font-sans font-light">We rotate seasonal specials throughout the year. Ask your server what&rsquo;s on the board today.</p>
         </div>
 
       </div>
@@ -580,43 +488,37 @@
 
 
   <!-- ======================== FOOTER ======================== -->
-  <div class="h-1.5 bg-wheat"></div>
-  <footer class="bg-charcoal text-cream py-12 px-6">
+  <footer class="bg-[#080706] text-ivory py-14 px-6 border-t border-ivory/5">
     <div class="max-w-6xl mx-auto">
-      <div class="grid md:grid-cols-3 gap-8 mb-10">
+      <div class="grid md:grid-cols-3 gap-10 mb-12">
         <div>
-          <div class="flex items-center gap-3 mb-4">
-            <span class="text-xl">🍽️</span>
-            <div>
-              <p class="font-display font-bold text-wheat leading-none">Main Street Grille</p>
-              <p class="text-xs text-gray-500 tracking-widest uppercase leading-none">Hondo, TX</p>
-            </div>
-          </div>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            Scratch-made American comfort food in the heart of Hondo, TX. Family owned since 2009.
+          <p class="font-display text-2xl font-light text-ivory mb-1">Main Street Grille</p>
+          <p class="text-gold/60 text-xs font-sans tracking-[0.2em] uppercase mb-4">Hondo, Texas</p>
+          <p class="text-ivory/30 text-sm font-sans font-light leading-relaxed">
+            Scratch-made American comfort food.<br />Family owned and operated since 2009.
           </p>
         </div>
         <div>
-          <p class="text-xs font-sans font-semibold tracking-widest uppercase text-gray-500 mb-4">Navigate</p>
-          <div class="flex flex-col gap-2">
-            <a href="index.html"   class="text-sm text-gray-400 hover:text-cream transition-colors">Home</a>
-            <a href="menu.html"    class="text-sm text-gray-400 hover:text-cream transition-colors">Menu</a>
-            <a href="about.html"   class="text-sm text-gray-400 hover:text-cream transition-colors">About Us</a>
-            <a href="contact.html" class="text-sm text-gray-400 hover:text-cream transition-colors">Contact / Reserve</a>
+          <p class="text-xs font-sans tracking-[0.2em] uppercase text-ivory/30 mb-5">Navigate</p>
+          <div class="flex flex-col gap-3">
+            <a href="index.html"   class="text-sm text-ivory/40 hover:text-ivory font-sans font-light transition-colors">Home</a>
+            <a href="menu.html"    class="text-sm text-ivory/40 hover:text-ivory font-sans font-light transition-colors">Menu</a>
+            <a href="about.html"   class="text-sm text-ivory/40 hover:text-ivory font-sans font-light transition-colors">About Us</a>
+            <a href="contact.html" class="text-sm text-ivory/40 hover:text-ivory font-sans font-light transition-colors">Contact / Reserve</a>
           </div>
         </div>
         <div>
-          <p class="text-xs font-sans font-semibold tracking-widest uppercase text-gray-500 mb-4">Visit Us</p>
-          <div class="space-y-2">
-            <p class="text-sm text-gray-400">📍 112 Main Street, Hondo, TX 78861</p>
-            <p class="text-sm text-gray-400">📞 <a href="tel:+18305550183" class="hover:text-cream transition-colors">(830) 555-0183</a></p>
-            <p class="text-sm text-gray-400">🕐 Mon–Sat 11am–10pm, Sun 11am–8pm</p>
+          <p class="text-xs font-sans tracking-[0.2em] uppercase text-ivory/30 mb-5">Visit Us</p>
+          <div class="space-y-3">
+            <p class="text-sm text-ivory/40 font-sans font-light">112 Main Street, Hondo, TX 78861</p>
+            <p class="text-sm text-ivory/40 font-sans font-light"><a href="tel:+18305550183" class="hover:text-ivory transition-colors">(830) 555-0183</a></p>
+            <p class="text-sm text-ivory/40 font-sans font-light">Mon–Sat 11am–10pm &nbsp;|&nbsp; Sun 11am–8pm</p>
           </div>
         </div>
       </div>
-      <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3">
-        <p class="text-gray-600 text-sm">&copy; 2025 Main Street Grille. All rights reserved.</p>
-        <p class="text-gray-600 text-xs">Website by <a href="../../index.html" class="text-wheat/70 hover:text-wheat transition-colors">Root &amp; Render</a></p>
+      <div class="border-t border-ivory/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <p class="text-ivory/20 text-xs font-sans font-light">&copy; 2025 Main Street Grille. All rights reserved.</p>
+        <p class="text-ivory/20 text-xs font-sans font-light">Website by <a href="../../index.html" class="text-gold/40 hover:text-gold transition-colors">Root &amp; Render</a></p>
       </div>
     </div>
   </footer>

@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -16,14 +16,14 @@
       theme: {
         extend: {
           colors: {
-            crimson: '#8B2635',
-            wheat:   '#C9A84C',
-            cream:   '#FBF6EE',
-            charcoal:'#1E1A14',
+            pit:   '#0F0D0B',
+            grove: '#2A4A2E',
+            gold:  '#B8941F',
+            ivory: '#F5F0E8',
           },
           fontFamily: {
-            display: ['Playfair Display', 'Georgia', 'serif'],
-            sans:    ['DM Sans', 'system-ui', 'sans-serif'],
+            display: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans:    ['Inter', 'system-ui', 'sans-serif'],
           }
         }
       }
@@ -32,120 +32,90 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="bg-cream text-charcoal font-sans antialiased">
+<body class="bg-pit text-ivory font-sans antialiased">
 
 
   <!-- ======================== NAV ======================== -->
-  <nav class="sticky top-0 z-50 bg-cream border-b border-amber-100" id="navbar">
+  <nav class="sticky top-0 z-50 bg-pit border-b border-ivory/10" id="navbar">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
 
       <a href="index.html" class="flex items-center gap-3">
-        <span class="text-2xl">🍽️</span>
+        <span class="text-xl">🍽️</span>
         <div>
-          <p class="font-display font-bold text-crimson leading-none text-lg">Main Street Grille</p>
-          <p class="text-xs text-gray-400 tracking-widest uppercase leading-none">Hondo, TX</p>
+          <p class="font-display font-semibold text-ivory leading-none text-xl tracking-wide">Main Street Grille</p>
+          <p class="text-xs text-gold/70 tracking-[0.2em] uppercase leading-none font-sans font-light">Hondo, Texas</p>
         </div>
       </a>
 
       <div class="hidden md:flex items-center gap-8">
-        <a href="index.html"   class="text-sm font-medium text-charcoal hover:text-crimson transition-colors">Home</a>
-        <a href="menu.html"    class="text-sm font-medium text-charcoal hover:text-crimson transition-colors">Menu</a>
-        <a href="about.html"   class="text-sm font-medium text-charcoal hover:text-crimson transition-colors">About</a>
-        <a href="contact.html" class="text-sm font-medium text-charcoal hover:text-crimson transition-colors">Contact</a>
-        <a href="contact.html"
-           class="bg-crimson text-cream text-sm font-semibold px-5 py-2.5 rounded hover:bg-red-900 transition-colors">
-          Reserve a Table
-        </a>
+        <a href="index.html"   class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60 hover:text-ivory transition-colors">Home</a>
+        <a href="menu.html"    class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60 hover:text-ivory transition-colors">Menu</a>
+        <a href="about.html"   class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60 hover:text-ivory transition-colors">About</a>
+        <a href="contact.html" class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60 hover:text-ivory transition-colors">Contact</a>
+        <a href="contact.html" class="btn-primary">Reserve a Table</a>
       </div>
 
-      <button id="menu-btn" class="md:hidden text-charcoal" aria-label="Toggle menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      <button id="menu-btn" class="md:hidden text-ivory/70" aria-label="Toggle menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
     </div>
 
-    <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-amber-100 px-6 py-4 flex flex-col gap-4">
-      <a href="index.html"   class="text-sm font-medium text-charcoal">Home</a>
-      <a href="menu.html"    class="text-sm font-medium text-charcoal">Menu</a>
-      <a href="about.html"   class="text-sm font-medium text-charcoal">About</a>
-      <a href="contact.html" class="text-sm font-medium text-charcoal">Contact</a>
-      <a href="contact.html" class="bg-crimson text-cream text-sm font-semibold px-5 py-2.5 rounded text-center">
-        Reserve a Table
-      </a>
+    <div id="mobile-menu" class="hidden md:hidden bg-pit border-t border-ivory/10 px-6 py-5 flex flex-col gap-5">
+      <a href="index.html"   class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60">Home</a>
+      <a href="menu.html"    class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60">Menu</a>
+      <a href="about.html"   class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60">About</a>
+      <a href="contact.html" class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-ivory/60">Contact</a>
+      <a href="contact.html" class="btn-primary text-center">Reserve a Table</a>
     </div>
   </nav>
 
 
   <!-- ======================== HERO ======================== -->
-  <section class="bg-charcoal px-6 py-24 md:py-32 relative overflow-hidden">
+  <section class="bg-pit px-6 py-28 md:py-36 relative overflow-hidden">
 
-    <!-- Diagonal texture overlay -->
-    <div class="absolute inset-0 opacity-5"
-         style="background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%); background-size: 16px 16px;"></div>
+    <!-- Subtle grid texture -->
+    <div class="absolute inset-0 opacity-[0.03]"
+         style="background-image: linear-gradient(rgba(245,240,232,1) 1px, transparent 1px), linear-gradient(90deg, rgba(245,240,232,1) 1px, transparent 1px); background-size: 48px 48px;"></div>
 
-    <!-- Wheat accent bar -->
-    <div class="absolute top-0 left-0 right-0 h-1 bg-wheat"></div>
+    <!-- Gold left accent line -->
+    <div class="absolute top-0 left-0 bottom-0 w-px bg-gold/20"></div>
 
     <div class="relative z-10 max-w-6xl mx-auto">
 
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+      <p class="text-gold text-xs font-sans tracking-[0.3em] uppercase mb-8 font-light">
+        Est. 2009 &nbsp;&mdash;&nbsp; Hondo, Texas
+      </p>
 
-        <!-- Left: Text -->
-        <div>
-          <div class="flex items-center gap-3 mb-6">
-            <div class="h-px bg-wheat/50 w-8"></div>
-            <span class="text-wheat/80 text-xs font-sans font-semibold tracking-widest uppercase">
-              Est. 2009 &mdash; Hondo, TX
-            </span>
-          </div>
-          <h1 class="font-display text-5xl sm:text-6xl md:text-7xl font-bold text-cream leading-tight mb-6">
-            Good Food.<br />
-            <em class="text-wheat not-italic">Good Company.</em>
-          </h1>
-          <p class="text-cream/70 text-lg leading-relaxed mb-8 max-w-md">
-            Scratch-made comfort classics, hand-cut steaks, and the kind of welcome you only find in a small town.
-            Come hungry. Leave happy.
-          </p>
-          <div class="flex flex-wrap gap-4">
-            <a href="contact.html"
-               class="bg-crimson text-cream font-semibold px-7 py-3.5 rounded hover:bg-red-900 transition-colors shadow-sm">
-              Reserve a Table
-            </a>
-            <a href="menu.html"
-               class="border-2 border-cream/40 text-cream font-semibold px-7 py-3.5 rounded hover:border-cream hover:bg-cream/10 transition-colors">
-              View Our Menu
-            </a>
-          </div>
-        </div>
-
-        <!-- Right: Restaurant photo placeholder -->
-        <div class="hidden md:flex items-center justify-center">
-          <div class="bg-cream/10 border border-cream/20 rounded-lg w-full aspect-[4/3] flex flex-col items-center justify-center relative overflow-hidden">
-            <span class="text-8xl mb-4">🥩</span>
-            <p class="text-cream/50 text-sm font-sans">Restaurant photo here</p>
-            <!-- Wheat corner accent -->
-            <div class="absolute bottom-0 left-0 right-0 h-1 bg-wheat/40"></div>
-          </div>
-        </div>
-
+      <div class="max-w-3xl mb-10">
+        <h1 class="font-display text-6xl sm:text-7xl md:text-8xl font-light text-ivory leading-none mb-6">
+          Good Food.<br />
+          <em class="text-gold">Good Company.</em>
+        </h1>
+        <p class="text-ivory/50 text-lg font-sans font-light leading-relaxed max-w-md">
+          Scratch-made comfort classics, hand-cut steaks, and the kind of welcome you only find in a small town.
+        </p>
       </div>
 
-      <!-- Stats strip -->
-      <div class="flex flex-wrap items-center gap-0 border-t border-cream/10 mt-16 pt-10">
-        <div class="pr-8 md:pr-12 py-2">
-          <p class="font-display text-4xl font-bold text-cream">15<span class="text-wheat">+</span></p>
-          <p class="text-cream/50 text-xs font-sans font-medium tracking-wide uppercase mt-1">Years Serving Hondo</p>
+      <div class="flex flex-wrap gap-5">
+        <a href="contact.html" class="btn-primary">Reserve a Table</a>
+        <a href="menu.html"    class="btn-ghost">View Our Menu</a>
+      </div>
+
+      <!-- Stats -->
+      <div class="mt-20 pt-10 border-t border-ivory/10 flex flex-wrap gap-12">
+        <div>
+          <p class="font-display text-5xl font-light text-ivory">15<span class="text-gold text-3xl">+</span></p>
+          <p class="text-ivory/40 text-xs font-sans tracking-[0.2em] uppercase mt-1">Years Serving Hondo</p>
         </div>
-        <div class="w-px h-10 bg-cream/15 mx-4 hidden sm:block"></div>
-        <div class="px-8 md:px-12 py-2">
-          <p class="font-display text-4xl font-bold text-cream">100<span class="text-wheat">%</span></p>
-          <p class="text-cream/50 text-xs font-sans font-medium tracking-wide uppercase mt-1">Scratch Kitchen</p>
+        <div>
+          <p class="font-display text-5xl font-light text-ivory">100<span class="text-gold text-3xl">%</span></p>
+          <p class="text-ivory/40 text-xs font-sans tracking-[0.2em] uppercase mt-1">Scratch Kitchen</p>
         </div>
-        <div class="w-px h-10 bg-cream/15 mx-4 hidden sm:block"></div>
-        <div class="px-8 md:px-12 py-2">
-          <p class="font-display text-4xl font-bold text-cream">3<span class="text-wheat">×</span></p>
-          <p class="text-cream/50 text-xs font-sans font-medium tracking-wide uppercase mt-1">Best of Medina County</p>
+        <div>
+          <p class="font-display text-5xl font-light text-ivory">3<span class="text-gold text-3xl">×</span></p>
+          <p class="text-ivory/40 text-xs font-sans tracking-[0.2em] uppercase mt-1">Best of Medina County</p>
         </div>
       </div>
 
@@ -153,132 +123,121 @@
   </section>
 
 
-  <!-- Wheat rule divider -->
-  <div class="h-1.5 bg-wheat"></div>
+  <!-- Thin gold hairline -->
+  <div class="border-t border-gold/25 max-w-6xl mx-auto"></div>
 
 
   <!-- ======================== FROM THE KITCHEN ======================== -->
-  <section class="py-16 md:py-24 px-6 bg-white">
+  <section class="py-20 md:py-28 px-6 bg-pit">
     <div class="max-w-6xl mx-auto">
 
-      <div class="flex items-start justify-between flex-wrap gap-6 mb-12">
+      <div class="flex items-end justify-between flex-wrap gap-6 mb-16">
         <div>
-          <p class="text-crimson text-xs font-sans font-semibold tracking-widest uppercase mb-3">
-            — From the Kitchen
-          </p>
-          <h2 class="font-display text-3xl md:text-4xl font-bold text-charcoal">
+          <p class="text-gold text-xs font-sans tracking-[0.3em] uppercase font-light mb-4">From the Kitchen</p>
+          <h2 class="font-display text-4xl md:text-5xl font-light text-ivory leading-tight">
             Crowd Favorites
           </h2>
         </div>
         <a href="menu.html"
-           class="self-end text-sm font-semibold text-crimson border-b-2 border-crimson pb-0.5 hover:text-red-900 hover:border-red-900 transition-colors">
+           class="text-xs font-sans font-medium tracking-[0.15em] uppercase text-gold/70 hover:text-gold transition-colors pb-px border-b border-gold/30 hover:border-gold">
           Full Menu &rarr;
         </a>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-3 gap-px bg-ivory/5">
 
-        <!-- Ribeye -->
-        <div class="card bg-cream rounded-lg p-7 border border-amber-100 border-t-4 border-t-crimson">
-          <div class="text-4xl mb-4">🥩</div>
-          <div class="flex items-start justify-between mb-2">
-            <h3 class="font-display text-xl font-bold text-charcoal leading-tight">12oz Ribeye</h3>
-            <span class="text-crimson font-semibold text-sm ml-2 whitespace-nowrap">$32</span>
+        <!-- Card: Ribeye -->
+        <div class="card bg-pit p-8 group">
+          <p class="text-gold/60 text-xs font-sans tracking-[0.2em] uppercase mb-6 font-light">Signature</p>
+          <p class="text-3xl mb-5">🥩</p>
+          <div class="flex justify-between items-baseline mb-3">
+            <h3 class="font-display text-2xl font-light text-ivory">12oz Ribeye</h3>
+            <span class="text-gold font-sans text-sm font-light ml-4">$32</span>
           </div>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4">
-            Hand-cut and seasoned in-house, served with your choice of two sides and house bread.
+          <p class="text-ivory/40 text-sm font-sans font-light leading-relaxed">
+            Hand-cut and seasoned in-house, with your choice of two sides and house bread.
           </p>
-          <span class="inline-block bg-crimson/10 text-crimson text-xs font-semibold px-2.5 py-1 rounded">
-            ⭐ House Favorite
-          </span>
-        </div>
-
-        <!-- Smash Burger -->
-        <div class="card bg-crimson rounded-lg p-7 border-t-4 border-t-wheat relative overflow-hidden">
-          <div class="absolute top-5 right-5 bg-wheat text-charcoal text-xs font-bold px-2.5 py-1 rounded uppercase tracking-wide">
-            Chef's Pick
-          </div>
-          <div class="text-4xl mb-4">🍔</div>
-          <div class="flex items-start justify-between mb-2">
-            <h3 class="font-display text-xl font-bold text-cream leading-tight">Main Street Smash</h3>
-            <span class="text-wheat font-semibold text-sm ml-2 whitespace-nowrap">$14</span>
-          </div>
-          <p class="text-cream/75 text-sm leading-relaxed">
-            Double smashed patty, American cheese, caramelized onions, house sauce on a toasted brioche bun.
+          <p class="text-gold text-sm mt-5 font-display italic opacity-0 group-hover:opacity-100 transition-opacity">
+            ★ House Favorite
           </p>
         </div>
 
-        <!-- Peach Cobbler -->
-        <div class="card bg-cream rounded-lg p-7 border border-amber-100 border-t-4 border-t-wheat">
-          <div class="text-4xl mb-4">🍑</div>
-          <div class="flex items-start justify-between mb-2">
-            <h3 class="font-display text-xl font-bold text-charcoal leading-tight">Warm Peach Cobbler</h3>
-            <span class="text-crimson font-semibold text-sm ml-2 whitespace-nowrap">$8</span>
+        <!-- Card: Smash Burger -->
+        <div class="card bg-[#161210] p-8 group border-t border-gold/40">
+          <p class="text-gold/60 text-xs font-sans tracking-[0.2em] uppercase mb-6 font-light">Chef&rsquo;s Pick</p>
+          <p class="text-3xl mb-5">🍔</p>
+          <div class="flex justify-between items-baseline mb-3">
+            <h3 class="font-display text-2xl font-light text-ivory">Main Street Smash</h3>
+            <span class="text-gold font-sans text-sm font-light ml-4">$14</span>
           </div>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4">
-            Made fresh daily from Texas peaches, served warm with a scoop of vanilla bean ice cream.
+          <p class="text-ivory/40 text-sm font-sans font-light leading-relaxed">
+            Double smashed patty, American cheese, caramelized onions, house sauce, brioche bun.
           </p>
-          <span class="inline-block bg-crimson/10 text-crimson text-xs font-semibold px-2.5 py-1 rounded">
-            ⭐ House Favorite
-          </span>
+          <p class="text-gold text-sm mt-5 font-display italic opacity-0 group-hover:opacity-100 transition-opacity">
+            Our most-ordered burger
+          </p>
+        </div>
+
+        <!-- Card: Peach Cobbler -->
+        <div class="card bg-pit p-8 group">
+          <p class="text-gold/60 text-xs font-sans tracking-[0.2em] uppercase mb-6 font-light">Dessert</p>
+          <p class="text-3xl mb-5">🍑</p>
+          <div class="flex justify-between items-baseline mb-3">
+            <h3 class="font-display text-2xl font-light text-ivory">Warm Peach Cobbler</h3>
+            <span class="text-gold font-sans text-sm font-light ml-4">$8</span>
+          </div>
+          <p class="text-ivory/40 text-sm font-sans font-light leading-relaxed">
+            Texas peaches, baked fresh daily. Served warm with vanilla bean ice cream.
+          </p>
+          <p class="text-gold text-sm mt-5 font-display italic opacity-0 group-hover:opacity-100 transition-opacity">
+            ★ House Favorite
+          </p>
         </div>
 
       </div>
+
     </div>
   </section>
 
 
-  <!-- Decorative divider -->
-  <div class="flex items-center gap-4 px-6 py-2 max-w-6xl mx-auto">
-    <div class="flex-1 h-px bg-wheat/30"></div>
-    <span class="text-wheat text-sm">✦</span>
-    <div class="flex-1 h-px bg-wheat/30"></div>
-  </div>
-
-
   <!-- ======================== ABOUT SNIPPET ======================== -->
-  <section class="py-16 md:py-24 px-6 bg-white">
+  <section class="py-20 md:py-28 px-6 bg-[#141210]">
     <div class="max-w-6xl mx-auto">
-
-      <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+      <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
 
         <!-- Photo placeholder -->
-        <div class="bg-amber-50 rounded-lg aspect-[4/5] flex items-center justify-center relative overflow-hidden">
+        <div class="aspect-[4/5] bg-pit border border-ivory/10 flex items-center justify-center relative">
           <div class="text-center p-8">
-            <span class="text-8xl block mb-4">👨‍🍳</span>
-            <p class="font-display text-xl font-semibold text-charcoal">The Team</p>
-            <p class="text-sm text-gray-500 mt-1">Family owned &amp; operated</p>
+            <span class="text-7xl block mb-4">👨‍🍳</span>
+            <p class="font-display text-xl font-light text-ivory/70 italic">Jim &amp; Linda Caldwell</p>
+            <p class="text-xs text-ivory/30 font-sans tracking-widest uppercase mt-2">Owners since 2009</p>
           </div>
-          <div class="absolute left-0 top-8 bottom-8 w-1.5 bg-crimson rounded-full"></div>
+          <!-- Gold corner accents -->
+          <div class="absolute top-0 left-0 w-8 h-px bg-gold/50"></div>
+          <div class="absolute top-0 left-0 h-8 w-px bg-gold/50"></div>
+          <div class="absolute bottom-0 right-0 w-8 h-px bg-gold/50"></div>
+          <div class="absolute bottom-0 right-0 h-8 w-px bg-gold/50"></div>
         </div>
 
         <!-- Text -->
         <div>
-          <p class="text-crimson text-xs font-sans font-semibold tracking-widest uppercase mb-3">
-            — Our Story
-          </p>
-          <h2 class="font-display text-3xl md:text-4xl font-bold text-charcoal mb-6 leading-tight">
-            A Hondo Institution<br />Since 2009.
+          <p class="text-gold text-xs font-sans tracking-[0.3em] uppercase font-light mb-6">Our Story</p>
+          <h2 class="font-display text-4xl md:text-5xl font-light text-ivory mb-8 leading-tight">
+            A Hondo Institution<br /><em>Since 2009.</em>
           </h2>
-          <div class="space-y-4 text-gray-600 text-base leading-relaxed">
+          <div class="space-y-5 text-ivory/50 text-base font-sans font-light leading-relaxed">
             <p>
               Main Street Grille started as a simple idea: give Hondo a place where neighbors could sit down,
               eat something real, and feel at home. Fifteen years later, that idea hasn't changed a bit.
             </p>
             <p>
-              Every dish we serve comes out of a scratch kitchen. Our steaks are cut in-house, our sauces are
-              made from scratch, and our desserts are baked fresh daily. We don't do shortcuts.
+              Every dish comes out of a scratch kitchen. Our steaks are cut in-house, our sauces are
+              made from scratch, and our desserts are baked fresh daily.
             </p>
           </div>
-          <div class="mt-8 flex flex-wrap gap-4">
-            <a href="about.html"
-               class="bg-crimson text-cream font-semibold px-7 py-3.5 rounded hover:bg-red-900 transition-colors">
-              Our Full Story
-            </a>
-            <a href="menu.html"
-               class="border-2 border-charcoal/20 text-charcoal font-semibold px-7 py-3.5 rounded hover:border-charcoal/40 transition-colors">
-              Explore the Menu
-            </a>
+          <div class="mt-10 flex flex-wrap gap-5">
+            <a href="about.html" class="btn-primary">Our Full Story</a>
+            <a href="menu.html"  class="btn-ghost-dark">Explore the Menu</a>
           </div>
         </div>
 
@@ -287,65 +246,52 @@
   </section>
 
 
-  <!-- ======================== HOURS & LOCATION STRIP ======================== -->
-  <div class="h-1.5 bg-wheat"></div>
-  <section class="bg-charcoal py-12 px-6">
+  <!-- ======================== HOURS & LOCATION ======================== -->
+  <section class="py-16 px-6 bg-grove">
     <div class="max-w-6xl mx-auto">
-      <div class="grid sm:grid-cols-3 gap-8 text-center sm:text-left">
-
+      <div class="grid sm:grid-cols-3 gap-10">
         <div>
-          <p class="text-wheat text-xs font-sans font-semibold tracking-widest uppercase mb-3">Hours</p>
-          <p class="text-cream text-sm leading-relaxed">
-            Mon – Thu: 11am – 9pm<br />
-            Fri – Sat: 11am – 10pm<br />
-            Sunday: 11am – 8pm
+          <p class="text-gold text-xs font-sans tracking-[0.3em] uppercase font-light mb-4">Hours</p>
+          <p class="text-ivory/80 text-sm font-sans font-light leading-relaxed">
+            Mon – Thu &nbsp; 11am – 9pm<br />
+            Fri – Sat &nbsp;&nbsp;&nbsp; 11am – 10pm<br />
+            Sunday &nbsp;&nbsp;&nbsp;&nbsp; 11am – 8pm
           </p>
         </div>
-
-        <div>
-          <p class="text-wheat text-xs font-sans font-semibold tracking-widest uppercase mb-3">Find Us</p>
-          <p class="text-cream text-sm leading-relaxed">
-            112 Main Street<br />
-            Hondo, TX 78861
+        <div class="border-l border-ivory/10 pl-10">
+          <p class="text-gold text-xs font-sans tracking-[0.3em] uppercase font-light mb-4">Find Us</p>
+          <p class="text-ivory/80 text-sm font-sans font-light leading-relaxed">
+            112 Main Street<br />Hondo, TX 78861
           </p>
         </div>
-
-        <div>
-          <p class="text-wheat text-xs font-sans font-semibold tracking-widest uppercase mb-3">Call Ahead</p>
-          <p class="text-cream text-sm leading-relaxed mb-2">
-            <a href="tel:+18305550183" class="hover:text-wheat transition-colors">(830) 555-0183</a>
-          </p>
-          <p class="text-cream/50 text-xs">Walk-ins always welcome</p>
+        <div class="border-l border-ivory/10 pl-10">
+          <p class="text-gold text-xs font-sans tracking-[0.3em] uppercase font-light mb-4">Call Ahead</p>
+          <a href="tel:+18305550183" class="text-ivory/80 text-sm font-sans font-light hover:text-ivory transition-colors">
+            (830) 555-0183
+          </a>
+          <p class="text-ivory/30 text-xs font-sans mt-2">Walk-ins always welcome</p>
         </div>
-
       </div>
     </div>
   </section>
-  <div class="h-1.5 bg-wheat"></div>
 
 
   <!-- ======================== CTA STRIP ======================== -->
-  <section class="py-16 md:py-20 px-6 bg-cream">
+  <section class="py-24 px-6 bg-pit">
     <div class="max-w-6xl mx-auto">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+      <div class="border border-ivory/10 p-12 md:p-16 flex flex-col md:flex-row md:items-center justify-between gap-10">
         <div>
-          <p class="text-crimson text-xs font-sans font-semibold tracking-widest uppercase mb-2">— Come On In</p>
-          <h2 class="font-display text-3xl md:text-4xl font-bold text-charcoal">
+          <p class="text-gold text-xs font-sans tracking-[0.3em] uppercase font-light mb-4">Come On In</p>
+          <h2 class="font-display text-4xl md:text-5xl font-light text-ivory">
             Your Table Is Waiting.
           </h2>
-          <p class="text-gray-500 mt-3 text-base">
-            No reservation required, but we recommend one for parties of 6 or more.
+          <p class="text-ivory/40 text-sm font-sans font-light mt-3">
+            No reservation required, but recommended for parties of 6 or more.
           </p>
         </div>
-        <div class="flex flex-wrap gap-4 flex-shrink-0">
-          <a href="contact.html"
-             class="bg-crimson text-cream font-semibold px-7 py-3.5 rounded hover:bg-red-900 transition-colors shadow-sm whitespace-nowrap">
-            Reserve a Table
-          </a>
-          <a href="tel:+18305550183"
-             class="border-2 border-crimson text-crimson font-semibold px-7 py-3.5 rounded hover:bg-crimson hover:text-cream transition-colors whitespace-nowrap">
-            (830) 555-0183
-          </a>
+        <div class="flex flex-wrap gap-5 flex-shrink-0">
+          <a href="contact.html" class="btn-primary">Reserve a Table</a>
+          <a href="tel:+18305550183" class="btn-ghost-dark">(830) 555-0183</a>
         </div>
       </div>
     </div>
@@ -353,57 +299,53 @@
 
 
   <!-- ======================== FOOTER ======================== -->
-  <footer class="bg-charcoal text-cream py-12 px-6">
+  <footer class="bg-[#080706] text-ivory py-14 px-6 border-t border-ivory/5">
     <div class="max-w-6xl mx-auto">
-
-      <div class="grid md:grid-cols-3 gap-8 mb-10">
+      <div class="grid md:grid-cols-3 gap-10 mb-12">
 
         <div>
-          <div class="flex items-center gap-3 mb-4">
-            <span class="text-xl">🍽️</span>
-            <div>
-              <p class="font-display font-bold text-wheat leading-none">Main Street Grille</p>
-              <p class="text-xs text-gray-500 tracking-widest uppercase leading-none">Hondo, TX</p>
-            </div>
-          </div>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            Scratch-made American comfort food in the heart of Hondo, TX. Family owned since 2009.
+          <p class="font-display text-2xl font-light text-ivory mb-1">Main Street Grille</p>
+          <p class="text-gold/60 text-xs font-sans tracking-[0.2em] uppercase mb-4">Hondo, Texas</p>
+          <p class="text-ivory/30 text-sm font-sans font-light leading-relaxed">
+            Scratch-made American comfort food.<br />Family owned and operated since 2009.
           </p>
-          <!-- Social links -->
-          <div class="flex gap-3 mt-4">
+          <div class="flex gap-3 mt-5">
             <a href="#" aria-label="Facebook"
-               class="w-8 h-8 rounded bg-cream/10 hover:bg-wheat/20 flex items-center justify-center transition-colors text-sm">f</a>
+               class="w-8 h-8 border border-ivory/10 hover:border-gold/40 flex items-center justify-center transition-colors text-ivory/30 hover:text-gold/60 text-xs">f</a>
             <a href="#" aria-label="Instagram"
-               class="w-8 h-8 rounded bg-cream/10 hover:bg-wheat/20 flex items-center justify-center transition-colors text-sm">ig</a>
+               class="w-8 h-8 border border-ivory/10 hover:border-gold/40 flex items-center justify-center transition-colors text-ivory/30 hover:text-gold/60 text-xs">ig</a>
           </div>
         </div>
 
         <div>
-          <p class="text-xs font-sans font-semibold tracking-widest uppercase text-gray-500 mb-4">Navigate</p>
-          <div class="flex flex-col gap-2">
-            <a href="index.html"   class="text-sm text-gray-400 hover:text-cream transition-colors">Home</a>
-            <a href="menu.html"    class="text-sm text-gray-400 hover:text-cream transition-colors">Menu</a>
-            <a href="about.html"   class="text-sm text-gray-400 hover:text-cream transition-colors">About Us</a>
-            <a href="contact.html" class="text-sm text-gray-400 hover:text-cream transition-colors">Contact / Reserve</a>
+          <p class="text-xs font-sans tracking-[0.2em] uppercase text-ivory/30 mb-5">Navigate</p>
+          <div class="flex flex-col gap-3">
+            <a href="index.html"   class="text-sm text-ivory/40 hover:text-ivory font-sans font-light transition-colors">Home</a>
+            <a href="menu.html"    class="text-sm text-ivory/40 hover:text-ivory font-sans font-light transition-colors">Menu</a>
+            <a href="about.html"   class="text-sm text-ivory/40 hover:text-ivory font-sans font-light transition-colors">About Us</a>
+            <a href="contact.html" class="text-sm text-ivory/40 hover:text-ivory font-sans font-light transition-colors">Contact / Reserve</a>
           </div>
         </div>
 
         <div>
-          <p class="text-xs font-sans font-semibold tracking-widest uppercase text-gray-500 mb-4">Visit Us</p>
-          <div class="space-y-2">
-            <p class="text-sm text-gray-400">📍 112 Main Street, Hondo, TX 78861</p>
-            <p class="text-sm text-gray-400">📞 <a href="tel:+18305550183" class="hover:text-cream transition-colors">(830) 555-0183</a></p>
-            <p class="text-sm text-gray-400">🕐 Mon–Sat 11am–10pm, Sun 11am–8pm</p>
+          <p class="text-xs font-sans tracking-[0.2em] uppercase text-ivory/30 mb-5">Visit Us</p>
+          <div class="space-y-3">
+            <p class="text-sm text-ivory/40 font-sans font-light">112 Main Street, Hondo, TX 78861</p>
+            <p class="text-sm text-ivory/40 font-sans font-light">
+              <a href="tel:+18305550183" class="hover:text-ivory transition-colors">(830) 555-0183</a>
+            </p>
+            <p class="text-sm text-ivory/40 font-sans font-light">Mon–Sat 11am–10pm &nbsp;|&nbsp; Sun 11am–8pm</p>
           </div>
         </div>
 
       </div>
 
-      <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3">
-        <p class="text-gray-600 text-sm">&copy; 2025 Main Street Grille. All rights reserved.</p>
-        <p class="text-gray-600 text-xs">Website by <a href="../../index.html" class="text-wheat/70 hover:text-wheat transition-colors">Root &amp; Render</a></p>
+      <div class="border-t border-ivory/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <p class="text-ivory/20 text-xs font-sans font-light">&copy; 2025 Main Street Grille. All rights reserved.</p>
+        <p class="text-ivory/20 text-xs font-sans font-light">
+          Website by <a href="../../index.html" class="text-gold/40 hover:text-gold transition-colors">Root &amp; Render</a>
+        </p>
       </div>
-
     </div>
   </footer>
 
